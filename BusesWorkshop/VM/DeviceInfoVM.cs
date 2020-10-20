@@ -21,6 +21,7 @@ namespace BusesWorkshop.VM
         public string AssetMasterName { get; set; }
         public string SubAssetMasterName { get; set; }
         public string zzzzzzzzzzzzzzz { get; set; }
+        public string fffffffffffffffffff { get; set; }
 
     }
 }
