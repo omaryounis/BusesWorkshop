@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusesWorkshop", "BusesWorkshop\BusesWorkshop.csproj", "{5E11A63A-8EC3-48C3-91E8-8CD7152D693B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E11A63A-8EC3-48C3-91E8-8CD7152D693B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E11A63A-8EC3-48C3-91E8-8CD7152D693B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E11A63A-8EC3-48C3-91E8-8CD7152D693B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E11A63A-8EC3-48C3-91E8-8CD7152D693B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20A3BE64-1E66-4FDD-98DE-391AFDEEA0DC}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://196.218.113.238:9090/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BusesWorkshop\\BusesWorkshop.csproj
+		SccProjectName1 = BusesWorkshop
+		SccLocalPath1 = BusesWorkshop
+	EndGlobalSection
+EndGlobal

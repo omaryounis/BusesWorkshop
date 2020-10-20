@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="RealEstate" Class="dcAccountingDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=RealEstate;Persist Security Info=True;User ID=saUser" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="RealEstateConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.usp_Ast_Location_Delete" Method="usp_Ast_Location_Delete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Ast_Location_Insert" Method="usp_Ast_Location_Insert">
+    <Parameter Name="LocationName" Parameter="locationName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ParentID" Parameter="parentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsDefault" Parameter="isDefault" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsShown" Parameter="isShown" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsMain" Parameter="isMain" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ComID" Parameter="comID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Ast_Location_Update" Method="usp_Ast_Location_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LocationName" Parameter="locationName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ParentID" Parameter="parentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsDefault" Parameter="isDefault" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsShown" Parameter="isShown" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsMain" Parameter="isMain" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ComID" Parameter="comID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_AST_Select" Method="usp_AST_Select">
+    <ElementType Name="usp_AST_SelectResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CAT_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CatName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="COA_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COADescription" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DEP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Percent]" Member="Percent" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ScrapValue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DEPAnnuallValue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PurchaseDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PurchaseValue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CON_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPStartDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OppositeAccount_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OpenDep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDep" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PremDep" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AST_Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="JOB_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AST_Dep_COA_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AST_Dep_Total_COA_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOC_NUM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VEN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AST_PeriodUseValue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AST_DEP_LastDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="QTY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DepYears" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Disposals_Value" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Disposals_Date" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PlateNumber" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CountryOfManufacture" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="YearOfManufacture" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LicenseEndDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ComID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GJHID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AstLocations_Select_ByUserID" Method="usp_AstLocations_Select_ByUserID">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_AstLocations_Select_ByUserIDResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsShown" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMain" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Com_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ComName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_COM_Insert" Method="usp_COM_Insert">
+    <Parameter Name="COMName" Parameter="cOMName" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="COMDescription" Parameter="cOMDescription" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="COMAddress" Parameter="cOMAddress" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="COMUrl" Parameter="cOMUrl" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="COMLogo" Parameter="cOMLogo" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="COMPhone" Parameter="cOMPhone" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="COMFax" Parameter="cOMFax" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="COMStatus" Parameter="cOMStatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="COM_ID" Parameter="cOM_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DocFooter" Parameter="docFooter" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="Accountant_Name" Parameter="accountant_Name" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="FM_Name" Parameter="fM_Name" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="GM_Name" Parameter="gM_Name" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_BCD_Update" Method="usp_BCD_Update">
+    <Parameter Name="BCDID" Parameter="bCDID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BCDValue" Parameter="bCDValue" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_COM_Select" Method="usp_COM_Select">
+    <Parameter Name="COMID" Parameter="cOMID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_COM_SelectResult">
+      <Column Name="COMID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="COMDescription" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="COMAddress" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="COMUrl" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="COMLogo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="COMPhone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="COMFax" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="COMStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="COM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocFooter" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Accountant_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_COM_Update" Method="usp_COM_Update">
+    <Parameter Name="COMID" Parameter="cOMID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="COMName" Parameter="cOMName" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="COMDescription" Parameter="cOMDescription" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="COMAddress" Parameter="cOMAddress" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="COMUrl" Parameter="cOMUrl" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="COMLogo" Parameter="cOMLogo" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="COMPhone" Parameter="cOMPhone" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="COMFax" Parameter="cOMFax" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DocFooter" Parameter="docFooter" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="Accountant_Name" Parameter="accountant_Name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FM_Name" Parameter="fM_Name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="GM_Name" Parameter="gM_Name" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_FSY_Select" Method="usp_FSY_Select">
+    <Parameter Name="FSYID" Parameter="fSYID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_FSY_SelectResult">
+      <Column Name="FSYID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FSYStartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FSYEndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FSYStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="COM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Open" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Fsy_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FsyPrefix" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Usp_Company_Select_ByUserID" Method="Usp_Company_Select_ByUserID">
+    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Usp_Company_Select_ByUserIDResult">
+      <Column Name="COMID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Accountant_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_DefaultCompany" Method="Fn_DefaultCompany" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.usp_CON_USR_Update" Method="usp_CON_USR_Update">
+    <Parameter Name="CON_ID" Parameter="cON_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CONUserName" Parameter="cONUserName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CONPassword" Parameter="cONPassword" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CONConfirmPassword" Parameter="cONConfirmPassword" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CONPasswordHint" Parameter="cONPasswordHint" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ComID" Parameter="comID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Con_USR_ID" Parameter="con_USR_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_FSY_Insert" Method="usp_FSY_Insert">
+    <Parameter Name="FSYStartDate" Parameter="fSYStartDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FSYEndDate" Parameter="fSYEndDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FSYStatus" Parameter="fSYStatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="COM_ID" Parameter="cOM_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_CON_COM_Update" Method="usp_CON_COM_Update">
+    <Parameter Name="CONID" Parameter="cONID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CMP_ID" Parameter="cMP_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

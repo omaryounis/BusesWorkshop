@@ -1,0 +1,1735 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BusWorkshop" Class="BusWorkShopDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=104.199.83.86,1433;Initial Catalog=BusWorkshop;Persist Security Info=True;User ID=sauser" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BusWorkshopConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="Act.Alarms" Member="Alarms">
+    <Type Name="Alarm">
+      <Column Name="AlarmId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PlanId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="counter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsReaded" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PeriodicalPlan_Alarm" Member="PeriodicalPlan" ThisKey="PlanId" OtherKey="maintPlanId" Type="PeriodicalPlan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Net.StaticIPAddressWithBranches" Member="StaticIPAddressWithBranches">
+    <Type Name="StaticIPAddressWithBranch">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StaticIP" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="StaticIPAddressWithBranch_NetworkDevicesInformation" Member="NetworkDevicesInformations" ThisKey="ID" OtherKey="HDID" Type="NetworkDevicesInformation" />
+      <Association Name="Company_StaticIPAddressWithBranch" Member="Company" ThisKey="CompanyID" OtherKey="ID" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Act.FollowUpCard" Member="FollowUpCards">
+    <Type Name="FollowUpCard">
+      <Column Name="FollowUpCardId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DriverId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CounterReading" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="distence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Accompanigns" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="FollowUpCard_FuelSupply" Member="FuelSupplies" ThisKey="FollowUpCardId" OtherKey="FollowUpCardId" Type="FuelSupply" />
+      <Association Name="Employee_FollowUpCard" Member="Employee" ThisKey="DriverId" OtherKey="EmployeeId" Type="Employee" IsForeignKey="true" />
+      <Association Name="Vehcle_FollowUpCard" Member="Vehcle" ThisKey="VehcleId" OtherKey="VehcleId" Type="Vehcle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Act.FuelCardsCustody" Member="FuelCardsCustodies">
+    <Type Name="FuelCardsCustody">
+      <Column Name="CustodyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FuelCardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CountOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="FuelCardsDefinition_FuelCardsCustody" Member="FuelCardsDefinition" ThisKey="FuelCardId" OtherKey="FuelCardId" Type="FuelCardsDefinition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Act.FuelSupply" Member="FuelSupplies">
+    <Type Name="FuelSupply">
+      <Column Name="FuelSupplyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FollowUpCardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FuelCardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="FollowUpCard_FuelSupply" Member="FollowUpCard" ThisKey="FollowUpCardId" OtherKey="FollowUpCardId" Type="FollowUpCard" IsForeignKey="true" />
+      <Association Name="FuelCardsDefinition_FuelSupply" Member="FuelCardsDefinition" ThisKey="FuelCardId" OtherKey="FuelCardId" Type="FuelCardsDefinition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Act.PeriodicalPlanExecDetails" Member="PeriodicalPlanExecDetails">
+    <Type Name="PeriodicalPlanExecDetail">
+      <Column Name="PeriodicalPlanExecDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PeriodicalPlanExcutionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maintPlanDetailId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SparId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SparCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SparCount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SparTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LaborCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Employee_PeriodicalPlanExecDetail" Member="Employee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="Employee" IsForeignKey="true" />
+      <Association Name="PeriodicPlanDetail_PeriodicalPlanExecDetail" Member="PeriodicPlanDetail" ThisKey="maintPlanDetailId" OtherKey="maintPlanDetailId" Type="PeriodicPlanDetail" IsForeignKey="true" />
+      <Association Name="SparePart_PeriodicalPlanExecDetail" Member="SparePart" ThisKey="SparId" OtherKey="SpareId" Type="SparePart" IsForeignKey="true" />
+      <Association Name="PeriodicalPlanExecution_PeriodicalPlanExecDetail" Member="PeriodicalPlanExecution" ThisKey="PeriodicalPlanExcutionId" OtherKey="PeriodicalPlanExcutionId" Type="PeriodicalPlanExecution" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Act.StoppedCar" Member="StoppedCars">
+    <Type Name="StoppedCar">
+      <Column Name="StopId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VaehcleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StopDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="StopReason" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ReoperateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Vehcle_StoppedCar" Member="Vehcle" ThisKey="VaehcleId" OtherKey="VehcleId" Type="Vehcle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.Buidings" Member="Buidings">
+    <Type Name="Buiding">
+      <Column Name="BuildingId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildingName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StreetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PieceNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NorthBorder" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SouthBorder" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EasternBorder" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WesternBorder" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BuildingLicinseNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UsageId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="FloorNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Water" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Electricity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Gas" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BuildingTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OwnerShipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Buiding_BuildingMaint" Member="BuildingMaints" ThisKey="BuildingId" OtherKey="BuildingId" Type="BuildingMaint" />
+      <Association Name="Buiding_BuildPerExecPlan" Member="BuildPerExecPlans" ThisKey="BuildingId" OtherKey="BuildingId" Type="BuildPerExecPlan" />
+      <Association Name="Buiding_PeriodicalPlanToBuilding" Member="PeriodicalPlanToBuildings" ThisKey="BuildingId" OtherKey="BuildingId" Type="PeriodicalPlanToBuilding" />
+      <Association Name="Street_Buiding" Member="Street" ThisKey="StreetId" OtherKey="StreetId" Type="Street" IsForeignKey="true" />
+      <Association Name="Company_Buiding" Member="Company" ThisKey="CompanyId" OtherKey="ID" Type="Company" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Buiding" Member="ConfigDetail" ThisKey="UsageId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Buiding1" Member="ConfigDetail1" ThisKey="BuildingTypeId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Buiding2" Member="ConfigDetail2" ThisKey="OwnerShipId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.BuildingMaint" Member="BuildingMaints">
+    <Type Name="BuildingMaint">
+      <Column Name="BuildingMaintId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildingId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaintDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Defect" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Procedure]" Member="Procedure" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Buiding_BuildingMaint" Member="Buiding" ThisKey="BuildingId" OtherKey="BuildingId" Type="Buiding" IsForeignKey="true" />
+      <Association Name="ConfigDetail_BuildingMaint" Member="ConfigDetail" ThisKey="WorkId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.BuildingMaintDetail" Member="BuildingMaintDetails">
+    <Type Name="BuildingMaintDetail">
+      <Column Name="BuildingMaintDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildingMaintId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="MaterialCount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LabourCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Material_BuildingMaintDetail" Member="Material" ThisKey="MaterialId" OtherKey="MaterialId" Type="Material" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.BuildingPlan" Member="BuildingPlans">
+    <Type Name="BuildingPlan">
+      <Column Name="PlanId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlanName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EveryWhileMon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlanDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="BuildingPlan_BuildPerExecPlan" Member="BuildPerExecPlans" ThisKey="PlanId" OtherKey="PlanId" Type="BuildPerExecPlan" />
+      <Association Name="BuildingPlan_PeriodicalPlanToBuilding" Member="PeriodicalPlanToBuildings" ThisKey="PlanId" OtherKey="PlanId" Type="PeriodicalPlanToBuilding" />
+    </Type>
+  </Table>
+  <Table Name="BLD.BuildingPlanDetail" Member="BuildingPlanDetails">
+    <Type Name="BuildingPlanDetail">
+      <Column Name="BuildingPlanDetail" Member="BuildingPlanDetail1" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="ConfigDetail_BuildingPlanDetail" Member="ConfigDetail" ThisKey="WorkId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.BuildPerExecPlan" Member="BuildPerExecPlans">
+    <Type Name="BuildPerExecPlan">
+      <Column Name="PerioicalPlanId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildingId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Buiding_BuildPerExecPlan" Member="Buiding" ThisKey="BuildingId" OtherKey="BuildingId" Type="Buiding" IsForeignKey="true" />
+      <Association Name="BuildingPlan_BuildPerExecPlan" Member="BuildingPlan" ThisKey="PlanId" OtherKey="PlanId" Type="BuildingPlan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.BuildPerExecPlanDetail" Member="BuildPerExecPlanDetails">
+    <Type Name="BuildPerExecPlanDetail">
+      <Column Name="PeriodicalPlanDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PerioicalPlanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialCost" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialCount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialTotal" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="LabourCost" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Material_BuildPerExecPlanDetail" Member="Material" ThisKey="MaterialId" OtherKey="MaterialId" Type="Material" IsForeignKey="true" />
+      <Association Name="ConfigDetail_BuildPerExecPlanDetail" Member="ConfigDetail" ThisKey="WorkId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.Districts" Member="Districts">
+    <Type Name="District">
+      <Column Name="DistrictId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DistrictName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="District_Street" Member="Streets" ThisKey="DistrictId" OtherKey="DistrictId" Type="Street" />
+      <Association Name="ConfigDetail_District" Member="ConfigDetail" ThisKey="CityId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.PeriodicalPlanToBuilding" Member="PeriodicalPlanToBuildings">
+    <Type Name="PeriodicalPlanToBuilding">
+      <Column Name="PeriodicalPlanId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildingId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NextPlanDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Buiding_PeriodicalPlanToBuilding" Member="Buiding" ThisKey="BuildingId" OtherKey="BuildingId" Type="Buiding" IsForeignKey="true" />
+      <Association Name="BuildingPlan_PeriodicalPlanToBuilding" Member="BuildingPlan" ThisKey="PlanId" OtherKey="PlanId" Type="BuildingPlan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="BLD.Streets" Member="Streets">
+    <Type Name="Street">
+      <Column Name="StreetId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StreetName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DistrictId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Street_Buiding" Member="Buidings" ThisKey="StreetId" OtherKey="StreetId" Type="Buiding" />
+      <Association Name="District_Street" Member="District" ThisKey="DistrictId" OtherKey="DistrictId" Type="District" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Buses" Member="Buses">
+    <Type Name="Buse">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlateNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="BodyDesc" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="RenewDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OwnerName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="StudentsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DriverID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="model" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Serial" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="PeriodicalInspectionDateExpiry" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DocumentNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SuperVisorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Buse_Buse" Member="Buse2" ThisKey="ID" OtherKey="ID" Type="Buse" Cardinality="One" />
+      <Association Name="Buse_Buse" Member="Buse1" ThisKey="ID" OtherKey="ID" Type="Buse" IsForeignKey="true" />
+      <Association Name="Type_Buse" Member="Type" ThisKey="model" OtherKey="Id" Type="Type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BusesServices" Member="BusesServices">
+    <Type Name="BusesService">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CheckDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CheckKiloM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Defects" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Prodedures" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="BusesService_BusesServicesSpar" Member="BusesServicesSpars" ThisKey="ID" OtherKey="BusesServicesId" Type="BusesServicesSpar" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BusesServicesSpars" Member="BusesServicesSpars">
+    <Type Name="BusesServicesSpar">
+      <Column Name="BusServicesSparId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BusesServicesId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpareId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SparCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SparCount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SparTotal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LaborCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="BusesService_BusesServicesSpar" Member="BusesService" ThisKey="BusesServicesId" OtherKey="ID" Type="BusesService" IsForeignKey="true" />
+      <Association Name="Employee_BusesServicesSpar" Member="Employee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="Employee" IsForeignKey="true" />
+      <Association Name="SparePart_BusesServicesSpar" Member="SparePart" ThisKey="SpareId" OtherKey="SpareId" Type="SparePart" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COM" Member="COMs">
+    <Type Name="COM">
+      <Column Name="COMID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="COMDescription" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="COMAddress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="COMUrl" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ComCard" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="COMLogo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="COMPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COMFax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COMStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DocFooter" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="COM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Accountant_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Is_Multiple_owner" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Current_AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Companies" Member="Companies">
+    <Type Name="Company">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SchoolID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HrId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Company_StaticIPAddressWithBranch" Member="StaticIPAddressWithBranches" ThisKey="ID" OtherKey="CompanyID" Type="StaticIPAddressWithBranch" />
+      <Association Name="Company_Buiding" Member="Buidings" ThisKey="ID" OtherKey="CompanyId" Type="Buiding" />
+      <Association Name="Company_Employee" Member="Employees" ThisKey="ID" OtherKey="CompanyID" Type="Employee" />
+      <Association Name="Company_Vehcle" Member="Vehcles" ThisKey="ID" OtherKey="CompanyId" Type="Vehcle" />
+      <Association Name="Company_UserCompany" Member="UserCompanies" ThisKey="ID" OtherKey="CompID" Type="UserCompany" />
+      <Association Name="Company_MaintRequest" Member="MaintRequests" ThisKey="ID" OtherKey="CompanyId" Type="MaintRequest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Con_Company" Member="Con_Companies">
+    <Type Name="Con_Company">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CON_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ComID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Drivers" Member="Drivers">
+    <Type Name="Driver">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DriverName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LicenseExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LicenseNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AccommodationNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LastBus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupPermission" Member="GroupPermissions">
+    <Type Name="GroupPermission">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Page_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Display" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UpdateA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeleteA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Groups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="School_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MaintReqComment" Member="MaintReqComments">
+    <Type Name="MaintReqComment">
+      <Column Name="MaintReqCommentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaintReqId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="MaintRequest_MaintReqComment" Member="MaintRequest" ThisKey="MaintReqId" OtherKey="MaintReqId" Type="MaintRequest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MaintReqPicture" Member="MaintReqPictures">
+    <Type Name="MaintReqPicture">
+      <Column Name="PictureId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaintReqId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PicturePath" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="MaintRequest_MaintReqPicture" Member="MaintRequest" ThisKey="MaintReqId" OtherKey="MaintReqId" Type="MaintRequest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Material" Member="Materials">
+    <Type Name="Material">
+      <Column Name="MaterialId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaterialPrice" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Material_BuildingMaintDetail" Member="BuildingMaintDetails" ThisKey="MaterialId" OtherKey="MaterialId" Type="BuildingMaintDetail" />
+      <Association Name="Material_BuildPerExecPlanDetail" Member="BuildPerExecPlanDetails" ThisKey="MaterialId" OtherKey="MaterialId" Type="BuildPerExecPlanDetail" />
+      <Association Name="ConfigDetail_Material" Member="ConfigDetail" ThisKey="CategoryId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mobiles" Member="Mobiles">
+    <Type Name="Mobile">
+      <Column Name="MobileId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MobileParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MobileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceRequest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Mobile_Mobile" Member="Mobiles" ThisKey="MobileId" OtherKey="MobileParentId" Type="Mobile" />
+      <Association Name="Mobile_Mobile" Member="Mobile1" ThisKey="MobileParentId" OtherKey="MobileId" Type="Mobile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PageActions" Member="PageActions">
+    <Type Name="PageAction">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Page_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Display" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pages" Member="Pages">
+    <Type Name="Page">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ArName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PageOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Phases" Member="Phases">
+    <Type Name="Phase">
+      <Column Name="phases_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="phases_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phase_Order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="requestType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_Delete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phase_Step" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Phase_ReqPhase" Member="ReqPhases" ThisKey="phases_Id" OtherKey="Phase_Id" Type="ReqPhase" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Process" Member="Processes">
+    <Type Name="Process">
+      <Column Name="ProcessId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Req_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="User_Process" Member="User" ThisKey="User_Id" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="MaintRequest_Process" Member="MaintRequest" ThisKey="Req_Id" OtherKey="MaintReqId" Type="MaintRequest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReqPhase" Member="ReqPhases">
+    <Type Name="ReqPhase">
+      <Column Name="ReqPhaseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phase_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Req_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ReqPhase_ReqPhase" Member="ReqPhase2" ThisKey="ReqPhaseID" OtherKey="ReqPhaseID" Type="ReqPhase" Cardinality="One" />
+      <Association Name="Phase_ReqPhase" Member="Phase" ThisKey="Phase_Id" OtherKey="phases_Id" Type="Phase" IsForeignKey="true" />
+      <Association Name="ReqPhase_ReqPhase" Member="ReqPhase1" ThisKey="ReqPhaseID" OtherKey="ReqPhaseID" Type="ReqPhase" IsForeignKey="true" />
+      <Association Name="User_ReqPhase" Member="User" ThisKey="User_Id" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_ReqPhase1" Member="User1" ThisKey="User_Id" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="MaintRequest_ReqPhase" Member="MaintRequest" ThisKey="Req_Id" OtherKey="MaintReqId" Type="MaintRequest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServicesSetting" Member="ServicesSettings">
+    <Type Name="ServicesSetting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="KVPlus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KVMinus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ServicesSetting_PeriodicPlanDetail" Member="PeriodicPlanDetails" ThisKey="ID" OtherKey="RequiredJob" Type="PeriodicPlanDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User_Phase" Member="User_Phases">
+    <Type Name="User_Phase">
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="phases_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserGroups" Member="UserGroups">
+    <Type Name="UserGroup">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="School_ID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.userRequest" Member="userRequests">
+    <Type Name="userRequest">
+      <Column Name="userRequestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaintRequestId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_userRequest" Member="User" ThisKey="UserId" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="MaintRequest_userRequest" Member="MaintRequest" ThisKey="MaintRequestId" OtherKey="MaintReqId" Type="MaintRequest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.Brand" Member="Brands">
+    <Type Name="Brand">
+      <Column Name="BrandId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BrandName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Brand_Brand" Member="Brand2" ThisKey="BrandId" OtherKey="BrandId" Type="Brand" Cardinality="One" />
+      <Association Name="Brand_Model" Member="Models" ThisKey="BrandId" OtherKey="BrandId" Type="Model" />
+      <Association Name="Brand_Brand" Member="Brand1" ThisKey="BrandId" OtherKey="BrandId" Type="Brand" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.BusAttachments" Member="BusAttachments">
+    <Type Name="BusAttachment">
+      <Column Name="AttachmentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AttachmentName" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Vehcle_BusAttachment" Member="Vehcle" ThisKey="VehcleId" OtherKey="VehcleId" Type="Vehcle" IsForeignKey="true" />
+      <Association Name="ConfigDetail_BusAttachment" Member="ConfigDetail" ThisKey="AttachmentName" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.Classes" Member="Classes">
+    <Type Name="Class">
+      <Column Name="ClassId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ModelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Class_SparePart" Member="SpareParts" ThisKey="ClassId" OtherKey="ClassId" Type="SparePart" />
+      <Association Name="Class_SparPart" Member="SparParts" ThisKey="ClassId" OtherKey="ClassId" Type="SparPart" />
+      <Association Name="Class_Vehcle" Member="Vehcles" ThisKey="ClassId" OtherKey="ClassId" Type="Vehcle" />
+      <Association Name="Model_Class" Member="Model" ThisKey="ModelId" OtherKey="ModelId" Type="Model" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.Employees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDriver" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsTecnician" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsSuperVisor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsServicesSpecialist" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SpecializationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeAddress" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Salary" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RatePerHour" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DrivingLicenseId" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DrivingLicenseExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AccomodationNo" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="LicenseType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LastVehcle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Employee_FollowUpCard" Member="FollowUpCards" ThisKey="EmployeeId" OtherKey="DriverId" Type="FollowUpCard" />
+      <Association Name="Employee_PeriodicalPlanExecDetail" Member="PeriodicalPlanExecDetails" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PeriodicalPlanExecDetail" />
+      <Association Name="Employee_BusesServicesSpar" Member="BusesServicesSpars" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="BusesServicesSpar" />
+      <Association Name="Employee_Employee" Member="Employee2" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="Employee" Cardinality="One" />
+      <Association Name="Employee_Vehcle" Member="Vehcles" ThisKey="EmployeeId" OtherKey="MainDriver" Type="Vehcle" />
+      <Association Name="Company_Employee" Member="Company" ThisKey="CompanyID" OtherKey="ID" Type="Company" IsForeignKey="true" />
+      <Association Name="Employee_Employee" Member="Employee1" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="Employee" IsForeignKey="true" />
+      <Association Name="Vehcle_Employee" Member="Vehcle" ThisKey="LastVehcle" OtherKey="VehcleId" Type="Vehcle" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Employee" Member="ConfigDetail" ThisKey="SpecializationId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Employee1" Member="ConfigDetail1" ThisKey="LicenseType" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.FuelCardsDefinition" Member="FuelCardsDefinitions">
+    <Type Name="FuelCardsDefinition">
+      <Column Name="FuelCardId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FuelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Litres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="FuelCardsDefinition_FuelCardsCustody" Member="FuelCardsCustodies" ThisKey="FuelCardId" OtherKey="FuelCardId" Type="FuelCardsCustody" />
+      <Association Name="FuelCardsDefinition_FuelSupply" Member="FuelSupplies" ThisKey="FuelCardId" OtherKey="FuelCardId" Type="FuelSupply" />
+      <Association Name="ConfigDetail_FuelCardsDefinition" Member="ConfigDetail" ThisKey="FuelId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.Models" Member="Models">
+    <Type Name="Model">
+      <Column Name="ModelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BrandId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Model_Class" Member="Classes" ThisKey="ModelId" OtherKey="ModelId" Type="Class" />
+      <Association Name="Brand_Model" Member="Brand" ThisKey="BrandId" OtherKey="BrandId" Type="Brand" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.PeriodicalPlan" Member="PeriodicalPlans">
+    <Type Name="PeriodicalPlan">
+      <Column Name="maintPlanId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlanName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EveryKm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EveryWhilePerMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequiredSpareParts" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PlanDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="PeriodicalPlan_Alarm" Member="Alarms" ThisKey="maintPlanId" OtherKey="PlanId" Type="Alarm" />
+      <Association Name="PeriodicalPlan_PeriodicalPlanSpar" Member="PeriodicalPlanSpars" ThisKey="maintPlanId" OtherKey="maintPlanId" Type="PeriodicalPlanSpar" />
+      <Association Name="PeriodicalPlan_PeriodicalPlanToVehcle" Member="PeriodicalPlanToVehcles" ThisKey="maintPlanId" OtherKey="maintPlanId" Type="PeriodicalPlanToVehcle" />
+      <Association Name="PeriodicalPlan_PeriodicPlanDetail" Member="PeriodicPlanDetails" ThisKey="maintPlanId" OtherKey="maintPlanId" Type="PeriodicPlanDetail" />
+      <Association Name="PeriodicalPlan_PeriodicalPlanExecution" Member="PeriodicalPlanExecutions" ThisKey="maintPlanId" OtherKey="maintPlanId" Type="PeriodicalPlanExecution" />
+    </Type>
+  </Table>
+  <Table Name="Def.PeriodicalPlanSpars" Member="PeriodicalPlanSpars">
+    <Type Name="PeriodicalPlanSpar">
+      <Column Name="PeriodicalPlanSparId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maintPlanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpareId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SparCount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="PeriodicalPlan_PeriodicalPlanSpar" Member="PeriodicalPlan" ThisKey="maintPlanId" OtherKey="maintPlanId" Type="PeriodicalPlan" IsForeignKey="true" />
+      <Association Name="SparePart_PeriodicalPlanSpar" Member="SparePart" ThisKey="SpareId" OtherKey="SpareId" Type="SparePart" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.PeriodicalPlanToVehcle" Member="PeriodicalPlanToVehcles">
+    <Type Name="PeriodicalPlanToVehcle">
+      <Column Name="PeriodicalPlanToVehcleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maintPlanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NextPlanCounter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NextPLanDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="PeriodicalPlan_PeriodicalPlanToVehcle" Member="PeriodicalPlan" ThisKey="maintPlanId" OtherKey="maintPlanId" Type="PeriodicalPlan" IsForeignKey="true" />
+      <Association Name="Vehcle_PeriodicalPlanToVehcle" Member="Vehcle" ThisKey="VehcleId" OtherKey="VehcleId" Type="Vehcle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.PeriodicPlanDetail" Member="PeriodicPlanDetails">
+    <Type Name="PeriodicPlanDetail">
+      <Column Name="maintPlanDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maintPlanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RequiredJob" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="PeriodicPlanDetail_PeriodicalPlanExecDetail" Member="PeriodicalPlanExecDetails" ThisKey="maintPlanDetailId" OtherKey="maintPlanDetailId" Type="PeriodicalPlanExecDetail" />
+      <Association Name="PeriodicalPlan_PeriodicPlanDetail" Member="PeriodicalPlan" ThisKey="maintPlanId" OtherKey="maintPlanId" Type="PeriodicalPlan" IsForeignKey="true" />
+      <Association Name="ServicesSetting_PeriodicPlanDetail" Member="ServicesSetting" ThisKey="RequiredJob" OtherKey="ID" Type="ServicesSetting" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.ServiceCenters" Member="ServiceCenters">
+    <Type Name="ServiceCenter">
+      <Column Name="ServiceCenterId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceCenterName" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="BankName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BankAccount" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BankBranch" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactPersonPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Phone1" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Phone3" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="ConfigDetail_ServiceCenter" Member="ConfigDetail" ThisKey="BankName" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.SpareParts" Member="SpareParts">
+    <Type Name="SparePart">
+      <Column Name="SpareId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SpareName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MainCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SparePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LabourCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="SparePart_PeriodicalPlanExecDetail" Member="PeriodicalPlanExecDetails" ThisKey="SpareId" OtherKey="SparId" Type="PeriodicalPlanExecDetail" />
+      <Association Name="SparePart_BusesServicesSpar" Member="BusesServicesSpars" ThisKey="SpareId" OtherKey="SpareId" Type="BusesServicesSpar" />
+      <Association Name="SparePart_PeriodicalPlanSpar" Member="PeriodicalPlanSpars" ThisKey="SpareId" OtherKey="SpareId" Type="PeriodicalPlanSpar" />
+      <Association Name="Class_SparePart" Member="Class" ThisKey="ClassId" OtherKey="ClassId" Type="Class" IsForeignKey="true" />
+      <Association Name="ConfigDetail_SparePart" Member="ConfigDetail" ThisKey="MainCategory" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.SparPart" Member="SparParts">
+    <Type Name="SparPart">
+      <Column Name="SparPartId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SparName" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MainCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LaborCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Class_SparPart" Member="Class" ThisKey="ClassId" OtherKey="ClassId" Type="Class" IsForeignKey="true" />
+      <Association Name="ConfigDetail_SparPart" Member="ConfigDetail" ThisKey="MainCategory" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.Types" Member="Types">
+    <Type Name="Type">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Type_Buse" Member="Buses" ThisKey="Id" OtherKey="model" Type="Buse" />
+    </Type>
+  </Table>
+  <Table Name="Def.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="UserPassword" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="User_Process" Member="Processes" ThisKey="ID" OtherKey="User_Id" Type="Process" />
+      <Association Name="User_ReqPhase" Member="ReqPhases" ThisKey="ID" OtherKey="User_Id" Type="ReqPhase" />
+      <Association Name="User_ReqPhase1" Member="ReqPhases1" ThisKey="ID" OtherKey="User_Id" Type="ReqPhase" />
+      <Association Name="User_userRequest" Member="userRequests" ThisKey="ID" OtherKey="UserId" Type="userRequest" />
+      <Association Name="User_UserCompany" Member="UserCompanies" ThisKey="ID" OtherKey="UserID" Type="UserCompany" />
+    </Type>
+  </Table>
+  <Table Name="Def.Vehcles" Member="Vehcles">
+    <Type Name="Vehcle">
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LicenseType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LicenseNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LicenseExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InspectioDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InsuranceCompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsuranceExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="VehcleType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FueL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BodyNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MotorNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MainDriver" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SuperVisorId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CounterReadingStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentReading" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AverageFuelConsumption" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Color" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CylenderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ManufactureYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ManufacturingCountry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartOperationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndOperationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Vehcle_FollowUpCard" Member="FollowUpCards" ThisKey="VehcleId" OtherKey="VehcleId" Type="FollowUpCard" />
+      <Association Name="Vehcle_StoppedCar" Member="StoppedCars" ThisKey="VehcleId" OtherKey="VaehcleId" Type="StoppedCar" />
+      <Association Name="Vehcle_BusAttachment" Member="BusAttachments" ThisKey="VehcleId" OtherKey="VehcleId" Type="BusAttachment" />
+      <Association Name="Vehcle_Employee" Member="Employees" ThisKey="VehcleId" OtherKey="LastVehcle" Type="Employee" />
+      <Association Name="Vehcle_PeriodicalPlanToVehcle" Member="PeriodicalPlanToVehcles" ThisKey="VehcleId" OtherKey="VehcleId" Type="PeriodicalPlanToVehcle" />
+      <Association Name="Vehcle_PeriodicalPlanExecution" Member="PeriodicalPlanExecutions" ThisKey="VehcleId" OtherKey="VehcleId" Type="PeriodicalPlanExecution" />
+      <Association Name="Class_Vehcle" Member="Class" ThisKey="ClassId" OtherKey="ClassId" Type="Class" IsForeignKey="true" />
+      <Association Name="Company_Vehcle" Member="Company" ThisKey="CompanyId" OtherKey="ID" Type="Company" IsForeignKey="true" />
+      <Association Name="Employee_Vehcle" Member="Employee" ThisKey="MainDriver" OtherKey="EmployeeId" Type="Employee" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Vehcle" Member="ConfigDetail" ThisKey="FueL" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Vehcle1" Member="ConfigDetail1" ThisKey="LicenseType" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Vehcle2" Member="ConfigDetail2" ThisKey="CC" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Vehcle3" Member="ConfigDetail3" ThisKey="CylenderNo" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Vehcle4" Member="ConfigDetail4" ThisKey="ManufacturingCountry" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Vehcle5" Member="ConfigDetail5" ThisKey="VehcleType" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Vehcle6" Member="ConfigDetail6" ThisKey="Color" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="ConfigDetail_Vehcle7" Member="ConfigDetail7" ThisKey="InsuranceCompanyId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.ConfigMaster" Member="ConfigMasters">
+    <Type Name="ConfigMaster">
+      <Column Name="MasterId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MasterName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OrderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ConfigMaster_ConfigDetail" Member="ConfigDetails" ThisKey="MasterId" OtherKey="MasterId" Type="ConfigDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserCompany" Member="UserCompanies">
+    <Type Name="UserCompany">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Company_UserCompany" Member="Company" ThisKey="CompID" OtherKey="ID" Type="Company" IsForeignKey="true" />
+      <Association Name="User_UserCompany" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Act.PeriodicalPlanExecution" Member="PeriodicalPlanExecutions">
+    <Type Name="PeriodicalPlanExecution">
+      <Column Name="PeriodicalPlanExcutionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BillNo" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="maintPlanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CounterReading" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="PeriodicalPlanExecution_PeriodicalPlanExecDetail" Member="PeriodicalPlanExecDetails" ThisKey="PeriodicalPlanExcutionId" OtherKey="PeriodicalPlanExcutionId" Type="PeriodicalPlanExecDetail" />
+      <Association Name="Vehcle_PeriodicalPlanExecution" Member="Vehcle" ThisKey="VehcleId" OtherKey="VehcleId" Type="Vehcle" IsForeignKey="true" />
+      <Association Name="PeriodicalPlan_PeriodicalPlanExecution" Member="PeriodicalPlan" ThisKey="maintPlanId" OtherKey="maintPlanId" Type="PeriodicalPlan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vehclesConsumedSparesVw" Member="vehclesConsumedSparesVws">
+    <Type Name="vehclesConsumedSparesVw">
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SparId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Net.NetworkDevicesInformation" Member="NetworkDevicesInformations">
+    <Type Name="NetworkDevicesInformation">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HDID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IpAddress" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MacAddress" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DeviceName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="StaticIPAddressWithBranch_NetworkDevicesInformation" Member="StaticIPAddressWithBranch" ThisKey="HDID" OtherKey="ID" Type="StaticIPAddressWithBranch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Net.DeviceWithIPAddress" Member="DeviceWithIPAddresses">
+    <Type Name="DeviceWithIPAddress">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BranchIdInAcc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SectionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FloorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoomId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssetMasterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubAssetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NetworkDeviceInformationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Def.ConfigDetail" Member="ConfigDetails">
+    <Type Name="ConfigDetail">
+      <Column Name="ConfigDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MasterId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConfigDetailName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ast_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MasterAssetId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ConfigDetail_Buiding" Member="Buidings" ThisKey="ConfigDetailId" OtherKey="UsageId" Type="Buiding" />
+      <Association Name="ConfigDetail_Buiding1" Member="Buidings1" ThisKey="ConfigDetailId" OtherKey="BuildingTypeId" Type="Buiding" />
+      <Association Name="ConfigDetail_Buiding2" Member="Buidings2" ThisKey="ConfigDetailId" OtherKey="OwnerShipId" Type="Buiding" />
+      <Association Name="ConfigDetail_BuildingMaint" Member="BuildingMaints" ThisKey="ConfigDetailId" OtherKey="WorkId" Type="BuildingMaint" />
+      <Association Name="ConfigDetail_BuildingPlanDetail" Member="BuildingPlanDetails" ThisKey="ConfigDetailId" OtherKey="WorkId" Type="BuildingPlanDetail" />
+      <Association Name="ConfigDetail_BuildPerExecPlanDetail" Member="BuildPerExecPlanDetails" ThisKey="ConfigDetailId" OtherKey="WorkId" Type="BuildPerExecPlanDetail" />
+      <Association Name="ConfigDetail_District" Member="Districts" ThisKey="ConfigDetailId" OtherKey="CityId" Type="District" />
+      <Association Name="ConfigDetail_Material" Member="Materials" ThisKey="ConfigDetailId" OtherKey="CategoryId" Type="Material" />
+      <Association Name="ConfigDetail_BusAttachment" Member="BusAttachments" ThisKey="ConfigDetailId" OtherKey="AttachmentName" Type="BusAttachment" />
+      <Association Name="ConfigDetail_Employee" Member="Employees" ThisKey="ConfigDetailId" OtherKey="SpecializationId" Type="Employee" />
+      <Association Name="ConfigDetail_Employee1" Member="Employees1" ThisKey="ConfigDetailId" OtherKey="LicenseType" Type="Employee" />
+      <Association Name="ConfigDetail_FuelCardsDefinition" Member="FuelCardsDefinitions" ThisKey="ConfigDetailId" OtherKey="FuelId" Type="FuelCardsDefinition" />
+      <Association Name="ConfigDetail_ServiceCenter" Member="ServiceCenters" ThisKey="ConfigDetailId" OtherKey="BankName" Type="ServiceCenter" />
+      <Association Name="ConfigDetail_SparePart" Member="SpareParts" ThisKey="ConfigDetailId" OtherKey="MainCategory" Type="SparePart" />
+      <Association Name="ConfigDetail_SparPart" Member="SparParts" ThisKey="ConfigDetailId" OtherKey="MainCategory" Type="SparPart" />
+      <Association Name="ConfigDetail_Vehcle" Member="Vehcles" ThisKey="ConfigDetailId" OtherKey="FueL" Type="Vehcle" />
+      <Association Name="ConfigDetail_Vehcle1" Member="Vehcles1" ThisKey="ConfigDetailId" OtherKey="LicenseType" Type="Vehcle" />
+      <Association Name="ConfigDetail_Vehcle2" Member="Vehcles2" ThisKey="ConfigDetailId" OtherKey="CC" Type="Vehcle" />
+      <Association Name="ConfigDetail_Vehcle3" Member="Vehcles3" ThisKey="ConfigDetailId" OtherKey="CylenderNo" Type="Vehcle" />
+      <Association Name="ConfigDetail_Vehcle4" Member="Vehcles4" ThisKey="ConfigDetailId" OtherKey="ManufacturingCountry" Type="Vehcle" />
+      <Association Name="ConfigDetail_Vehcle5" Member="Vehcles5" ThisKey="ConfigDetailId" OtherKey="VehcleType" Type="Vehcle" />
+      <Association Name="ConfigDetail_Vehcle6" Member="Vehcles6" ThisKey="ConfigDetailId" OtherKey="Color" Type="Vehcle" />
+      <Association Name="ConfigDetail_Vehcle7" Member="Vehcles7" ThisKey="ConfigDetailId" OtherKey="InsuranceCompanyId" Type="Vehcle" />
+      <Association Name="ConfigDetail_Recommendation" Member="Recommendations" ThisKey="ConfigDetailId" OtherKey="ConfigDetailId" Type="Recommendation" />
+      <Association Name="ConfigDetail_MaintReqDetail" Member="MaintReqDetails" ThisKey="ConfigDetailId" OtherKey="WorkId" Type="MaintReqDetail" />
+      <Association Name="ConfigMaster_ConfigDetail" Member="ConfigMaster" ThisKey="MasterId" OtherKey="MasterId" Type="ConfigMaster" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recommendation" Member="Recommendations">
+    <Type Name="Recommendation">
+      <Column Name="RecID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ConfigDetailId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SupportType" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ConfigDetail_Recommendation" Member="ConfigDetail" ThisKey="ConfigDetailId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MaintReqDetail" Member="MaintReqDetails">
+    <Type Name="MaintReqDetail">
+      <Column Name="MaintReqDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaintReqId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PicDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MobileId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RecommendationId" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IsAsset" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ConfigDetail_MaintReqDetail" Member="ConfigDetail" ThisKey="WorkId" OtherKey="ConfigDetailId" Type="ConfigDetail" IsForeignKey="true" />
+      <Association Name="MaintRequest_MaintReqDetail" Member="MaintRequest" ThisKey="MaintReqId" OtherKey="MaintReqId" Type="MaintRequest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MaintRequest" Member="MaintRequests">
+    <Type Name="MaintRequest">
+      <Column Name="MaintReqId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PriorUrgent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PriorHigh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PriorLow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RequestedEmpId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsAccepted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsRejected" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReqPhaseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RequestType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MaintRequest_MaintReqComment" Member="MaintReqComments" ThisKey="MaintReqId" OtherKey="MaintReqId" Type="MaintReqComment" />
+      <Association Name="MaintRequest_MaintReqPicture" Member="MaintReqPictures" ThisKey="MaintReqId" OtherKey="MaintReqId" Type="MaintReqPicture" />
+      <Association Name="MaintRequest_Process" Member="Processes" ThisKey="MaintReqId" OtherKey="Req_Id" Type="Process" />
+      <Association Name="MaintRequest_ReqPhase" Member="ReqPhases" ThisKey="MaintReqId" OtherKey="Req_Id" Type="ReqPhase" />
+      <Association Name="MaintRequest_userRequest" Member="userRequests" ThisKey="MaintReqId" OtherKey="MaintRequestId" Type="userRequest" />
+      <Association Name="MaintRequest_MaintReqDetail" Member="MaintReqDetails" ThisKey="MaintReqId" OtherKey="MaintReqId" Type="MaintReqDetail" />
+      <Association Name="Company_MaintRequest" Member="Company" ThisKey="CompanyId" OtherKey="ID" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AlarmSave" Method="AlarmSave">
+    <ElementType Name="AlarmSaveResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AlarmsPlanDelete" Method="AlarmsPlanDelete">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="maintPlanId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="exeDate" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CardsAvailableNo" Method="CardsAvailableNo">
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FuelCardId" Parameter="fuelCardId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CardsAvailableNoResult">
+      <Column Name="Available" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EmployeesSelectWithJob" Method="EmployeesSelectWithJob">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompanyId" Parameter="companyId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="EmployeesSelectWithJobResult">
+      <Column Name="Job" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FollowUpCardBetweenTwoDates" Method="FollowUpCardBetweenTwoDates">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="FollowUpCardBetweenTwoDatesResult">
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DriverName" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CounterReading" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="distence" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FuelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LitresConsumed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="FollowUpCardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FollowUpInsert" Method="FollowUpInsert">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DriverId" Parameter="driverId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Date" Parameter="date" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="CounterReading" Parameter="counterReading" Type="System.Int32" DbType="Int" />
+    <Parameter Name="distence" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Path" Parameter="path" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Accompanigns" Parameter="accompanigns" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Notes" Parameter="notes" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="FuelCardId" Parameter="fuelCardId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Count" Parameter="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Value" Parameter="value" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Total" Parameter="total" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FuelCardBalances" Method="FuelCardBalances">
+    <ElementType Name="FuelCardBalancesResult">
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FuelCardsBalance" Method="FuelCardsBalance">
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="FuelCardsBalanceResult">
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="countOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FuelCardsSelectByFuelTypeAndSuperVisorID" Method="FuelCardsSelectByFuelTypeAndSuperVisorID">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="FuelCardsSelectByFuelTypeAndSuperVisorIDResult">
+      <Column Name="FuelCardId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetBillId" Method="GetBillId">
+    <ElementType Name="GetBillIdResult">
+      <Column Name="BillNO" Type="System.String" DbType="NVarChar(34)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsuranceAlarmSelect" Method="InsuranceAlarmSelect">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="InsuranceAlarmSelectResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InsuranceCompanyId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LastSupplyInfo" Method="LastSupplyInfo">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LastSupplyInfoResult">
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="LastReading" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LitresNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MaintenenceCost" Method="MaintenenceCost">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="maintType" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="PlanId" Parameter="planId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ServiceId" Parameter="serviceId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SparId" Parameter="sparId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="MaintenenceCostResult">
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CounterReading" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaintType" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SpareName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SparCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SparCount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SparTotal" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="LaborCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SpareId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maintPlanId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ServiceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MaintReqAlarmSave" Method="MaintReqAlarmSave">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MaintRequestsReport" Method="MaintRequestsReport" IsComposable="true">
+    <Parameter Name="IsClosed" Parameter="isClosed" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsNotClosed" Parameter="isNotClosed" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CompanyId" Parameter="companyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RequestedEmpId" Parameter="requestedEmpId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DelayDays" Parameter="delayDays" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PriorUrgent" Parameter="priorUrgent" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PriorHigh" Parameter="priorHigh" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PriorLow" Parameter="priorLow" Type="System.Boolean" DbType="Bit" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.RequestSelectInWhile" Method="RequestSelectInWhile">
+    <ElementType Name="RequestSelectInWhileResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RequestSelectInWhileDetails" Method="RequestSelectInWhileDetails" IsComposable="true">
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.ShowLicenseNotifications" Method="ShowLicenseNotifications">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowLicenseNotificationsResult">
+      <Column Name="AlarmId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notification" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowMaintainanceNotifications" Method="ShowMaintainanceNotifications">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowMaintainanceNotificationsResult">
+      <Column Name="AlarmId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notification" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowNotifications" Method="ShowNotifications">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowNotificationsResult">
+      <Column Name="AlarmId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notification" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShowPlanNotifications" Method="ShowPlanNotifications">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShowPlanNotificationsResult">
+      <Column Name="AlarmId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expr1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_CompaniesSelectAll" Method="Sp_CompaniesSelectAll">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Sp_CompaniesSelectAllResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_MobileSelectAll" Method="Sp_MobileSelectAll">
+    <ElementType Name="Sp_MobileSelectAllResult">
+      <Column Name="MobileId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MobileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_SelectConfigDetails" Method="Sp_SelectConfigDetails">
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="astID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Sp_SelectConfigDetailsResult">
+      <Column Name="ConfigDetailName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RecType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ast_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConfigDetailId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_SelectMainMobile" Method="Sp_SelectMainMobile">
+    <Parameter Name="RequestTypeId" Parameter="requestTypeId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Sp_SelectMainMobileResult">
+      <Column Name="MobileId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MobileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_SelectMobile" Method="Sp_SelectMobile">
+    <Parameter Name="MobileParentId" Parameter="mobileParentId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Sp_SelectMobileResult">
+      <Column Name="MobileId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MobileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_SelectParentMobile" Method="Sp_SelectParentMobile">
+    <ElementType Name="Sp_SelectParentMobileResult">
+      <Column Name="MobileId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MobileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_WorksSelectAll" Method="Sp_WorksSelectAll">
+    <ElementType Name="Sp_WorksSelectAllResult">
+      <Column Name="ConfigDetailId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConfigDetailName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SparePartsSelectAll" Method="SparePartsSelectAll" IsComposable="true">
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.SparePartsSelectByBrandId" Method="SparePartsSelectByBrandId" IsComposable="true">
+    <Parameter Name="BrandId" Parameter="brandId" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.SparePartsSelectBySpareId" Method="SparePartsSelectBySpareId" IsComposable="true">
+    <Parameter Name="SpareId" Parameter="spareId" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.StoppedCarsSelectById" Method="StoppedCarsSelectById">
+    <Parameter Name="VaehcleId" Parameter="vaehcleId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="StoppedCarsSelectByIdResult">
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="StopReason" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="StopDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ReoperateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StopPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TotalCostSp" Method="TotalCostSp">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DateFrom" Parameter="dateFrom" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DateTo" Parameter="dateTo" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="TotalCostSpResult">
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SparTotal" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="LaborCost" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="FuelCost" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="TotalCost" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_AstLocations_Select_ByUserID" Method="usp_AstLocations_Select_ByUserID">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_AstLocations_Select_ByUserIDResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsShown" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMain" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Com_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ComName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_BCD_Update" Method="usp_BCD_Update" IsComposable="true">
+    <Parameter Name="BCDID" Parameter="bCDID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BCDValue" Parameter="bCDValue" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_Buses_RenewDates" Method="usp_Buses_RenewDates">
+    <ElementType Name="usp_Buses_RenewDatesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlateNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="BodyDesc" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="RenewDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OwnerName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="StudentsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DriverID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_BusesDrivers" Method="usp_BusesDrivers">
+    <Parameter Name="BusID" Parameter="busID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_BusesDriversResult">
+      <Column Name="busId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="OwnerName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DriverId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_BusesServices_Select" Method="usp_BusesServices_Select">
+    <Parameter Name="BusID" Parameter="busID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_BusesServices_SelectResult">
+      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlateNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ServiceName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CheckDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_COM_Insert" Method="usp_COM_Insert">
+    <Parameter Name="COMName" Parameter="cOMName" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="COMDescription" Parameter="cOMDescription" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="COMAddress" Parameter="cOMAddress" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="COMUrl" Parameter="cOMUrl" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="COMLogo" Parameter="cOMLogo" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="COMPhone" Parameter="cOMPhone" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="COMFax" Parameter="cOMFax" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="COMStatus" Parameter="cOMStatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="COM_ID" Parameter="cOM_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DocFooter" Parameter="docFooter" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="Accountant_Name" Parameter="accountant_Name" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="FM_Name" Parameter="fM_Name" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="GM_Name" Parameter="gM_Name" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_COM_Select" Method="usp_COM_Select">
+    <Parameter Name="COMID" Parameter="cOMID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_COM_SelectResult">
+      <Column Name="COMID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COMName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="COMDescription" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="COMAddress" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="COMUrl" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="COMLogo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="COMPhone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="COMFax" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="COMStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="COM_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocFooter" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Accountant_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_COM_Update" Method="usp_COM_Update">
+    <Parameter Name="COMID" Parameter="cOMID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="COMName" Parameter="cOMName" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="COMDescription" Parameter="cOMDescription" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="COMAddress" Parameter="cOMAddress" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="COMUrl" Parameter="cOMUrl" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="COMLogo" Parameter="cOMLogo" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="COMPhone" Parameter="cOMPhone" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="COMFax" Parameter="cOMFax" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DocFooter" Parameter="docFooter" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="Accountant_Name" Parameter="accountant_Name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FM_Name" Parameter="fM_Name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="GM_Name" Parameter="gM_Name" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Companies_Select_ByUserID" Method="usp_Companies_Select_ByUserID">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Companies_Select_ByUserIDResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SchoolID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HrId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Usp_Company_Select_ByUserID" Method="Usp_Company_Select_ByUserID">
+    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Usp_Company_Select_ByUserIDResult">
+      <Column Name="COMID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COMName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Accountant_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="GM_Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_CON_COM_Update" Method="usp_CON_COM_Update" IsComposable="true">
+    <Parameter Name="CONID" Parameter="cONID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CMP_ID" Parameter="cMP_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_CON_USR_Update" Method="usp_CON_USR_Update" IsComposable="true">
+    <Parameter Name="CON_ID" Parameter="cON_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CONUserName" Parameter="cONUserName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CONPassword" Parameter="cONPassword" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CONConfirmPassword" Parameter="cONConfirmPassword" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CONPasswordHint" Parameter="cONPasswordHint" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ComID" Parameter="comID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Con_USR_ID" Parameter="con_USR_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_FSY_Insert" Method="usp_FSY_Insert" IsComposable="true">
+    <Parameter Name="FSYStartDate" Parameter="fSYStartDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FSYEndDate" Parameter="fSYEndDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FSYStatus" Parameter="fSYStatus" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="COM_ID" Parameter="cOM_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_FSY_Select" Method="usp_FSY_Select" IsComposable="true">
+    <Parameter Name="FSYID" Parameter="fSYID" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_GroupPermission_Delete" Method="usp_GroupPermission_Delete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GroupPermission_GroupDelete" Method="usp_GroupPermission_GroupDelete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GroupPermission_GroupSelect" Method="usp_GroupPermission_GroupSelect">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_GroupPermission_GroupSelectResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Page_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Display" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Display1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertA1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdateA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateA1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeleteA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteA1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GroupPermission_Insert" Method="usp_GroupPermission_Insert">
+    <Parameter Name="Group_ID" Parameter="group_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Page_ID" Parameter="page_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Display" Parameter="display" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="InsertA" Parameter="insertA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="UpdateA" Parameter="updateA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="DeleteA" Parameter="deleteA" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_GroupPermission_Select" Method="usp_GroupPermission_Select">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_GroupPermission_SelectResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Page_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Display" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Display1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertA1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdateA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateA1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeleteA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteA1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_GroupPermission_Update" Method="usp_GroupPermission_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Group_ID" Parameter="group_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Page_ID" Parameter="page_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Display" Parameter="display" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="InsertA" Parameter="insertA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="UpdateA" Parameter="updateA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="DeleteA" Parameter="deleteA" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Groups_Delete" Method="usp_Groups_Delete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Groups_Insert" Method="usp_Groups_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="School_ID" Parameter="school_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Groups_Select" Method="usp_Groups_Select">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Groups_SelectResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Groups_Update" Method="usp_Groups_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_PageActions_Delete" Method="usp_PageActions_Delete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_PageActions_Insert" Method="usp_PageActions_Insert">
+    <Parameter Name="Page_ID" Parameter="page_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Display" Parameter="display" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="InsertA" Parameter="insertA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="UpdateA" Parameter="updateA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="DeleteA" Parameter="deleteA" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_PageActions_Select" Method="usp_PageActions_Select">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_PageActions_SelectResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Page_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Display" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_PageActions_Update" Method="usp_PageActions_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Page_ID" Parameter="page_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Display" Parameter="display" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="InsertA" Parameter="insertA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="UpdateA" Parameter="updateA" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="DeleteA" Parameter="deleteA" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Pages_Delete" Method="usp_Pages_Delete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Pages_Insert" Method="usp_Pages_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="URL" Parameter="uRL" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Pages_Select" Method="usp_Pages_Select">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Pages_SelectResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Pages_Update" Method="usp_Pages_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="URL" Parameter="uRL" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Services_Reminder" Method="usp_Services_Reminder">
+    <Parameter Name="ServiceID" Parameter="serviceID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_Services_ReminderResult">
+      <Column Name="ServiceName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="BusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlateNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DriverID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DriverName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastCheckDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_User_Delete" Method="usp_User_Delete" IsComposable="true">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_User_PagesPermission" Method="usp_User_PagesPermission">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PageID" Parameter="pageID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_User_PagesPermissionResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Page_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PageName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Display" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InsertA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteA" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UserCompanies_Select" Method="usp_UserCompanies_Select">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_UserCompanies_SelectResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CompID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UserGroups_Delete" Method="usp_UserGroups_Delete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UserGroups_Insert" Method="usp_UserGroups_Insert">
+    <Parameter Name="Group_ID" Parameter="group_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="School_ID" Parameter="school_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UserGroups_Select" Method="usp_UserGroups_Select">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="usp_UserGroups_SelectResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Group_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_UserGroups_Update" Method="usp_UserGroups_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Group_ID" Parameter="group_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="User_ID" Parameter="user_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_UserPermission_Insert" Method="usp_UserPermission_Insert" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusID" Parameter="statusID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GenderID" Parameter="genderID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LevelID" Parameter="levelID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RowID" Parameter="rowID" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.usp_Users_Delete" Method="usp_Users_Delete">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Users_Insert" Method="usp_Users_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_Users_Select" Method="usp_Users_Select">
+    <ElementType Name="usp_Users_SelectResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="UserPassword" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.usp_Users_Update" Method="usp_Users_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.VehclesPlansRequired" Method="VehclesPlansRequired">
+    <Parameter Name="CompId" Parameter="compId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="VehclesPlansRequiredResult">
+      <Column Name="AlarmId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PlanName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="counter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentReading" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KmDiffrence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateNow" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PLANDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DayDiffrence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VehcleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MainDriver" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.VehclesSelectAll" Method="VehclesSelectAll">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PlateNo" Parameter="plateNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CompanyId" Parameter="companyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ClassId" Parameter="classId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LicenseType" Parameter="licenseType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LicenseNo" Parameter="licenseNo" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="LicenseExpiryDateStart" Parameter="licenseExpiryDateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="LicenseExpiryDateEnd" Parameter="licenseExpiryDateEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="InspectioDateStart" Parameter="inspectioDateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="InspectioDateEnd" Parameter="inspectioDateEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="VehcleType" Parameter="vehcleType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FueL" Parameter="fueL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BodyNo" Parameter="bodyNo" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="MotorNo" Parameter="motorNo" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="CC" Parameter="cC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MainDriver" Parameter="mainDriver" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SuperVisorId" Parameter="superVisorId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CounterReadingStartSart" Parameter="counterReadingStartSart" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CounterReadingStartEnd" Parameter="counterReadingStartEnd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CurrentReadingStart" Parameter="currentReadingStart" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CurrentReadingEnd" Parameter="currentReadingEnd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AverageFuelConsumptionStart" Parameter="averageFuelConsumptionStart" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="AverageFuelConsumptionEnd" Parameter="averageFuelConsumptionEnd" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Color" Parameter="color" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CylenderNo" Parameter="cylenderNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ManufactureYearStart" Parameter="manufactureYearStart" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ManufactureYearEnd" Parameter="manufactureYearEnd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ManufacturingCountry" Parameter="manufacturingCountry" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartOperationDateStart" Parameter="startOperationDateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="StartOperationDateEnd" Parameter="startOperationDateEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndOperationDateStart" Parameter="endOperationDateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndOperationDateEnd" Parameter="endOperationDateEnd" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="VehclesSelectAllResult">
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BrandName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="LicenseType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LicenseNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LicenseExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InspectioDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FuelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VehcleType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BodyNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MotorNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="SuperVisorId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CounterReadingStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CurrentReading" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AverageFuelConsumption" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Color" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CylenderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ManufactureYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ManufactureCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StartOperationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndOperationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.VehclesSelectAllFirst" Method="VehclesSelectAllFirst">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompanyId" Parameter="companyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BrandId" Parameter="brandId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ModelId" Parameter="modelId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ClassId" Parameter="classId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LicenseType" Parameter="licenseType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LicenseNo" Parameter="licenseNo" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="LicenseExpiryDateStart" Parameter="licenseExpiryDateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="LicenseExpiryDateEnd" Parameter="licenseExpiryDateEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="InspectioDateStart" Parameter="inspectioDateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="InspectioDateEnd" Parameter="inspectioDateEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="SuperVisorId" Parameter="superVisorId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CurrentReadingStart" Parameter="currentReadingStart" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CurrentReadingEnd" Parameter="currentReadingEnd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MainDriver" Parameter="mainDriver" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="VehclesSelectAllFirstResult">
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BrandName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ModelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="LicenseType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LicenseNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LicenseExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InspectioDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EmployeeName" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="SuperVisorId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CurrentReading" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.VehclesSelectAllSecond" Method="VehclesSelectAllSecond">
+    <Parameter Name="VehcleId" Parameter="vehcleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompanyId" Parameter="companyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FueL" Parameter="fueL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MotorNo" Parameter="motorNo" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="BodyNo" Parameter="bodyNo" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="CC" Parameter="cC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CounterReadingStartSart" Parameter="counterReadingStartSart" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CounterReadingStartEnd" Parameter="counterReadingStartEnd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AverageFuelConsumptionStart" Parameter="averageFuelConsumptionStart" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="AverageFuelConsumptionEnd" Parameter="averageFuelConsumptionEnd" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Color" Parameter="color" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CylenderNo" Parameter="cylenderNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ManufactureYearStart" Parameter="manufactureYearStart" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ManufactureYearEnd" Parameter="manufactureYearEnd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ManufacturingCountry" Parameter="manufacturingCountry" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StartOperationDateStart" Parameter="startOperationDateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="StartOperationDateEnd" Parameter="startOperationDateEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndOperationDateStart" Parameter="endOperationDateStart" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="EndOperationDateEnd" Parameter="endOperationDateEnd" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsInActive" Parameter="isInActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="VehclesSelectAllSecondResult">
+      <Column Name="PlateNo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CompName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="FuelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VehcleType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MotorNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CounterReadingStart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AverageFuelConsumption" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ManufactureYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ManufactureCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StartOperationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndOperationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BodyNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Active" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylenderNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

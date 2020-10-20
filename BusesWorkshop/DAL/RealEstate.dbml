@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ESOL_EsolERP" Class="RealEstateDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=104.199.83.86,1433;Initial Catalog=ESOL_EsolERP;Persist Security Info=True;User ID=sauser;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AccountingTestConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AssetLocationsWithLevelsSelect_Vw" Member="AssetLocationsWithLevelsSelect_Vws">
+    <Type Name="AssetLocationsWithLevelsSelect_Vw">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsShown" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMain" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Com_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsResidential" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaxCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ast_Location" Member="Ast_Locations">
+    <Type Name="Ast_Location">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsShown" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMain" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Com_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsResidential" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaxCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClassID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="width" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Depth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Ast_Location_Asset" Member="Assets" ThisKey="ID" OtherKey="LocationID" Type="Asset" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CAT" Member="CATs">
+    <Type Name="CAT">
+      <Column Name="CAT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CAT_Name" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="COA_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MainDepAcc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MainTotalDepAcc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEP_Percent" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DepYears" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CAT_AstName" Member="AstNames" ThisKey="CAT_ID" OtherKey="CAT_ID" Type="AstName" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AstNames" Member="AstNames">
+    <Type Name="AstName">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="CAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ComID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AstName_Asset" Member="Assets" ThisKey="ID" OtherKey="AST_ID" Type="Asset" />
+      <Association Name="CAT_AstName" Member="CAT" ThisKey="CAT_ID" OtherKey="CAT_ID" Type="CAT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Assets" Member="Assets">
+    <Type Name="Asset">
+      <Column Name="AssetId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Asset_MasterId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AST_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cat_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QTY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PurchaseValue" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PurchaseDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="LocationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlateNumber" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CountryOfManufacture" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="YearOfManufacture" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LicenseEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="JOBList_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JOB_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SupplierId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsOld" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ImgURL" Type="System.String" DbType="NVarChar(600)" CanBeNull="true" />
+      <Column Name="BarCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Ast_Location_Asset" Member="Ast_Location" ThisKey="LocationID" OtherKey="ID" Type="Ast_Location" IsForeignKey="true" />
+      <Association Name="AstName_Asset" Member="AstName" ThisKey="AST_ID" OtherKey="ID" Type="AstName" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Sp_SelectLocation" Method="Sp_SelectLocation">
+    <Parameter Name="ParentLocationId" Parameter="parentLocationId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Sp_SelectLocationResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_SelectParentLocation" Method="Sp_SelectParentLocation">
+    <Parameter Name="ComID" Parameter="comID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Sp_SelectParentLocationResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_SelectParentLocationById" Method="Sp_SelectParentLocationById">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Sp_SelectParentLocationByIdResult">
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.AssetLocationsWithLevelsSelect_Sp" Method="AssetLocationsWithLevelsSelect_Sp">
+    <ElementType Name="AssetLocationsWithLevelsSelect_SpResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsShown" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMain" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Com_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsResidential" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaxCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClassID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="width" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Depth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HR_sales" Class="HrDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=104.199.83.86,1433;Initial Catalog=HR_sales;Persist Security Info=True;User ID=sauser;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HR_salesConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Branchies" Member="Branchies">
+    <Type Name="Branchy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BranchName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BranchManager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FinancialManager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HRManager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ManagerialManager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExecutiveManager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExcManagerAssist" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RealEstateComID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BranchAdress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BranchLogo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BranchPhone1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BranchPhone2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BranchPhone3" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BranchMobile1" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BranchMobile2" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BranchMobile3" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ReponsiblePersonMobile" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BranchFax" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="BranchEmail1" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="BranchEmail2" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="BranchEmail3" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeesCapacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Test" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Branchy_Branchy" Member="Branchies" ThisKey="ID" OtherKey="ParentID" Type="Branchy" />
+      <Association Name="Branchy_UserSection" Member="UserSections" ThisKey="ID" OtherKey="BranchID" Type="UserSection" />
+      <Association Name="Branchy_User" Member="Users" ThisKey="ID" OtherKey="BranchID" Type="User" />
+      <Association Name="Branchy_Branchy" Member="Branchy1" ThisKey="ParentID" OtherKey="ID" Type="Branchy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sections" Member="Sections">
+    <Type Name="Section">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ManagmentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Section_UserSection" Member="UserSections" ThisKey="ID" OtherKey="SectionID" Type="UserSection" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserSections" Member="UserSections">
+    <Type Name="UserSection">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SectionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Branchy_UserSection" Member="Branchy" ThisKey="BranchID" OtherKey="ID" Type="Branchy" IsForeignKey="true" />
+      <Association Name="Section_UserSection" Member="Section" ThisKey="SectionID" OtherKey="ID" Type="Section" IsForeignKey="true" />
+      <Association Name="User_UserSection" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="OneSignalPlayerId" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="User_UserSection" Member="UserSections" ThisKey="ID" OtherKey="UserID" Type="UserSection" />
+      <Association Name="Branchy_User" Member="Branchy" ThisKey="BranchID" OtherKey="ID" Type="Branchy" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

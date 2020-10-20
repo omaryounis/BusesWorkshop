@@ -1,0 +1,1026 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 23.25, 53.75" name="BusWorkShop">
+  <DataContextMoniker Name="/BusWorkShopDataContext" />
+  <nestedChildShapes>
+    <classShape Id="889e8a0d-35a6-45cd-9a16-7477375cd352" absoluteBounds="12.25, 51.25, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Alarm" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbecf75b-7cd1-480b-9f26-4cda02d122f3" absoluteBounds="12.265, 51.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aff41241-97c9-49c3-87e5-b2903560cf2b" absoluteBounds="12, 18.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/StaticIPAddressWithBranch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2fc8213-aab5-45c1-9a01-7619fed068d6" absoluteBounds="12.015, 18.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29d1c80c-a9e4-410a-b59a-718a72bc1436" absoluteBounds="12.25, 35, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/FollowUpCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6669e923-492e-4691-aa2d-46a5f17a7433" absoluteBounds="12.265, 35.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="556f692c-b2fe-4631-843d-8579521d4542" absoluteBounds="6.25, 37.5, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/FuelCardsCustody" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a582f84f-cfd7-4118-a9d0-4a8e28ad1be6" absoluteBounds="6.265, 37.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84e6c304-d7ec-4047-9523-236686f08cda" absoluteBounds="18, 39.25, 2, 2.1554996744791737">
+      <DataClassMoniker Name="/BusWorkShopDataContext/FuelSupply" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e745d23-5665-43dc-9ff5-9069369f66a7" absoluteBounds="18.015, 39.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="568de5ff-b5fa-4b50-95ec-af359f9052dc" absoluteBounds="15.25, 33, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/BusWorkShopDataContext/PeriodicalPlanExecDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abe8c78b-5732-49ee-a9dd-991100a146d1" absoluteBounds="15.265, 33.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89ffd177-3af0-44d2-b2ab-6b3ff21b511f" absoluteBounds="21, 33.625, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/BusWorkShopDataContext/StoppedCar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1be7e66f-3eda-4e18-bc7d-355672defb9b" absoluteBounds="21.015, 34.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d41e225-7a0b-4f48-82c2-495403393e92" absoluteBounds="12, 24.375, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Buiding" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b1fced4-470f-427b-b8eb-538f81c10dd2" absoluteBounds="12.015, 24.835, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc81c2de-fb84-4ced-81cd-d43f0514c356" absoluteBounds="14.75, 28.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BuildingMaint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0d3c12b-e377-463f-9a92-d838a53ae28e" absoluteBounds="14.765, 28.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2529b3d-fecd-472c-b5e2-e24f9dc35d51" absoluteBounds="6.25, 29.5, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BuildingMaintDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6c66669-e56a-4866-8600-3b01df29d238" absoluteBounds="6.265, 29.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="570122ee-2856-4ed2-a3f8-bb6b2128f731" absoluteBounds="12, 21.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BuildingPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7702587a-45fc-4656-81fd-2e2a7fe82590" absoluteBounds="12.015, 22.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2438f623-2e8f-4b37-9a8e-a421033ce14e" absoluteBounds="3.5, 27.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BuildingPlanDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="658a231a-8a67-4abc-b5f0-d91720c5596f" absoluteBounds="3.515, 27.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="186208da-34a4-4c51-af44-1200d8a8e1f3" absoluteBounds="14.75, 22.625, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BuildPerExecPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60cc0a46-011a-4073-b4ce-619227202773" absoluteBounds="14.765, 23.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14ba9b96-81cd-4bfa-8500-74a64d6f5dd5" absoluteBounds="9.25, 26.75, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BuildPerExecPlanDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39d6c366-b39f-41b4-9f4f-cc7b27c8d217" absoluteBounds="9.265, 27.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77638822-4b29-4453-b6da-7abe09470f62" absoluteBounds="3.5, 23, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/District" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eeb3dc0f-1a4c-4e2c-9d10-b34ab0707f80" absoluteBounds="3.515, 23.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4aed7d58-db60-4baf-8f4c-baf2b7b100ba" absoluteBounds="14.75, 25.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/PeriodicalPlanToBuilding" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24c77dae-b428-4205-ba19-222dc3fb08e2" absoluteBounds="14.765, 26.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8d55375-e551-44c4-acd1-7c7c86bd64e9" absoluteBounds="6.25, 23, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Street" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7b49d46-4514-4998-8be1-cbf54bf60c57" absoluteBounds="6.265, 23.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19189f50-f12f-4465-b1db-fc29515a8803" absoluteBounds="3.5, 1, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Buse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb5f98a9-da70-442c-9837-ae64702dd3d4" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d626bc3-31ca-4d4b-b03c-62ffeb110397" absoluteBounds="12.5, 47.125, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BusesService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ae03e4c-cf27-4ed2-8e61-9dfbc1d51fd9" absoluteBounds="12.515, 47.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9bfc83c3-d30d-4c70-ab78-708f224de0fd" absoluteBounds="15.25, 37, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BusesServicesSpar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24ef366d-07a6-4fb7-8551-e78d7b076dfd" absoluteBounds="15.265, 37.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aea6d15f-cfa5-4106-b162-085570258605" absoluteBounds="3.75, 5.75, 2, 4.2708154296874987">
+      <DataClassMoniker Name="/BusWorkShopDataContext/COM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0dc7f86f-9f61-4d9e-92d6-6500178518f0" absoluteBounds="3.765, 6.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a2eee07-0f18-4f8e-94f5-3bc9685524a9" absoluteBounds="9.25, 23.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6b699c7-7813-4484-a81e-d471a999bf03" absoluteBounds="9.265, 24.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ac268b7-0f0c-40b9-8893-0c21605c2f60" absoluteBounds="6.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Con_Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f3f6fb3-999a-407b-a8ff-1db95d998a2f" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7626415c-1f19-4719-bc15-23e4c946e493" absoluteBounds="6.75, 3.75, 2, 2.347801106770834">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Driver" />
+      <nestedChildShapes>
+        <elementListCompartment Id="678c6481-7890-4ae2-a192-2d5421bf452a" absoluteBounds="6.765, 4.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf192ff5-4c6c-44e1-bf04-c10ba07a9ad9" absoluteBounds="6.75, 7.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/BusWorkShopDataContext/GroupPermission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="728cb02c-65b4-40b4-a670-fc44b243bd06" absoluteBounds="6.765, 8.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8aa26da6-b5f7-4557-b6b3-b6cc002cba85" absoluteBounds="9.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3f2a970-59e9-4791-ad26-196818a342fd" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b49659a3-1d3a-4715-b1bf-740b41068b44" absoluteBounds="14.75, 15.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/BusWorkShopDataContext/MaintReqComment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c94320cf-cb7c-4ef6-bd40-1ac148909ba1" absoluteBounds="14.765, 15.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7adc8193-9596-491d-b612-010ff218d07c" absoluteBounds="14.75, 13.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/MaintReqPicture" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a6ff9af8-03d5-4e9a-aad4-984cba293ee8" absoluteBounds="14.765, 13.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59d8c0c8-8358-448a-aad4-0cd8cd4ff9ff" absoluteBounds="3.5, 29.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Material" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab6701a5-aa84-4ece-a434-2ee6e080d719" absoluteBounds="3.515, 30.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="335159f4-a586-46fa-b793-50ff4c2baad1" absoluteBounds="3.75, 41.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Mobile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d67a8a19-4100-4ea9-95ff-b2375b209fdf" absoluteBounds="3.765, 41.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="40c4810b-1289-48cc-96bc-d3d45b897a85" absoluteBounds="9.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/BusWorkShopDataContext/PageAction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a075348-26e4-4f6e-a902-1d21588d199b" absoluteBounds="9.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c792821-982c-4327-887f-da28acb7b366" absoluteBounds="9.75, 6.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Page" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c5ef908-b405-4dc9-9765-8c0e5271a12a" absoluteBounds="9.765, 7.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8432f12-21f8-42ed-be98-97b3609daaab" absoluteBounds="15, 6.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Phase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbfc5945-f8e5-4066-94b8-cc6d54158ab5" absoluteBounds="15.015, 6.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73431ead-5bcd-44e8-a780-e399ea169bfc" absoluteBounds="17.75, 14.125, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Process" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afc74eec-ff86-4679-bedb-0cdcfd1877b5" absoluteBounds="17.765, 14.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9a53690-ae1f-432c-a7c9-73fe5bda621f" absoluteBounds="17.75, 11.125, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/BusWorkShopDataContext/ReqPhase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f56b9294-6820-4bc4-bae8-e4b5661ea88a" absoluteBounds="17.765, 11.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fb73441-61b7-407f-a77b-de0bc3942cd8" absoluteBounds="9.75, 44, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/ServicesSetting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="492ad98e-a5f0-4dfe-b048-6d7f8d4a0201" absoluteBounds="9.765, 44.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d599b6b8-8ea3-4d44-bb79-c6cdbadcebf4" absoluteBounds="9.75, 9.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/User_Phase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b11f456-abc0-4526-bfd2-9c1c1e0c992a" absoluteBounds="9.765, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="179f7768-92f9-4f6c-b50f-ebc8b36e7fc0" absoluteBounds="3.75, 11.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/BusWorkShopDataContext/UserGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb987ea2-a02a-45d5-a4a5-ea4be61dbcc7" absoluteBounds="3.765, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="04a76482-897f-473b-8216-790b20afe197" absoluteBounds="17.75, 17.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/userRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="633f1f12-0c9e-41b2-9cc3-2d6130db919a" absoluteBounds="17.765, 17.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="054838ee-3369-4e3c-b960-573dbf7d1e10" absoluteBounds="1.75, 17.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Brand" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4fc7c833-e9d6-4e12-95ad-337e11a430a1" absoluteBounds="1.7650000000000001, 18.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10f4d3f1-03d1-42a9-b924-6bef5511d1c9" absoluteBounds="3.5, 32.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/BusWorkShopDataContext/BusAttachment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abf794cc-2d52-4410-9e22-bece14ad3dea" absoluteBounds="3.515, 32.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b64ccb25-db83-459f-ba4b-5f2fbe250c62" absoluteBounds="3.75, 20.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Class" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e31b9f0-3d29-42f5-b610-1a8173c58b75" absoluteBounds="3.765, 20.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" absoluteBounds="9.5, 34, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93283838-ace0-47f8-976b-6b180bf51645" absoluteBounds="9.515, 34.46, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d9976a2-0697-465e-88b0-0bbe9767cc31" absoluteBounds="3.5, 37.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/FuelCardsDefinition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="070f8a92-1b53-40b1-9922-741a762d755c" absoluteBounds="3.515, 38.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be687ce4-465b-4cc1-b712-310024aeeca3" absoluteBounds="1, 20.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Model" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74199599-e72c-4b4f-9d97-438c04c7407e" absoluteBounds="1.0150000000000001, 20.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a140f73-1755-482d-bab6-3920e96489a6" absoluteBounds="9.5, 40.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/PeriodicalPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5194a129-4ccf-4efb-a886-f32d370cf340" absoluteBounds="9.515, 40.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4a0e8e3-0fbf-47a0-9386-b2d5c32efb7e" absoluteBounds="12.25, 31.375, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/BusWorkShopDataContext/PeriodicalPlanSpar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18d9cc82-d4e0-4042-a7d4-c438a40f7038" absoluteBounds="12.265, 31.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a4e339c-d7d4-4eba-a471-c31f14163433" absoluteBounds="21, 30.375, 2, 2.155499674479163">
+      <DataClassMoniker Name="/BusWorkShopDataContext/PeriodicalPlanToVehcle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2034ec8e-c8e1-4969-8bbd-bca7a56d2c30" absoluteBounds="21.015, 30.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="374a3b48-25fa-45d4-965e-45b9029ce0d5" absoluteBounds="12.5, 44.125, 2, 1.5785953776041737">
+      <DataClassMoniker Name="/BusWorkShopDataContext/PeriodicPlanDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff1fce07-0c35-4fc3-b241-67ea83058b41" absoluteBounds="12.515, 44.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="983fa9b4-7849-4ce2-a4d0-62fb7732968f" absoluteBounds="3.5, 49.75, 2, 3.6939111328125023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/ServiceCenter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52f7d603-424e-45be-8203-ecdbcb976350" absoluteBounds="3.515, 50.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f324d44-eab4-4e12-8952-b1200677e570" absoluteBounds="9.5, 30.25, 2, 2.155499674479163">
+      <DataClassMoniker Name="/BusWorkShopDataContext/SparePart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a1249ac-99c2-4690-a79c-f63205046752" absoluteBounds="9.515, 30.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51257d8d-d70d-4154-ba34-195c8de352f0" absoluteBounds="6.5, 26.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/BusWorkShopDataContext/SparPart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d69d8075-7db5-4e4f-9c44-195ea3a7d59c" absoluteBounds="6.515, 26.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a341ecf-f5d7-400a-91f0-c6064238204c" absoluteBounds="0.75, 2, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05abe60e-de75-4a4f-a378-e3b9ac82200a" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15313d5e-35d2-485f-9273-3f6fd9bf2dd4" absoluteBounds="15, 9.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/BusWorkShopDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b34ab592-da0f-4651-a1d0-bb3112152381" absoluteBounds="15.015, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" absoluteBounds="18.25, 31.375, 2, 6.193829752604163">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Vehcle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0ccfe043-7a54-4584-b813-ac9d3aa840da" absoluteBounds="18.265, 31.835, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.25 : 37.538563077524); (14.875 : 38.163563077524); (14.875 : 40.6002013229167); (18 : 40.6002013229167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/FollowUpCard/FollowUpCard_FuelSupply" />
+      <nodes>
+        <classShapeMoniker Id="29d1c80c-a9e4-410a-b59a-718a72bc1436" />
+        <classShapeMoniker Id="84e6c304-d7ec-4047-9523-236686f08cda" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 28.4815584309896); (14.1666666666667 : 28.4815584309896 : JumpStart); (14.3333333333333 : 28.4815584309896 : JumpEnd); (14.75 : 28.4815584309896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Buiding/Buiding_BuildingMaint" />
+      <nodes>
+        <classShapeMoniker Id="5d41e225-7a0b-4f48-82c2-495403393e92" />
+        <classShapeMoniker Id="bc81c2de-fb84-4ced-81cd-d43f0514c356" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 24.375); (14.375 : 24); (14.375 : 24.7708968098958); (14.75 : 24.3958968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Buiding/Buiding_BuildPerExecPlan" />
+      <nodes>
+        <classShapeMoniker Id="5d41e225-7a0b-4f48-82c2-495403393e92" />
+        <classShapeMoniker Id="186208da-34a4-4c51-af44-1200d8a8e1f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 22.9767976888021); (14.75 : 22.9767976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/BuildingPlan/BuildingPlan_BuildPerExecPlan" />
+      <nodes>
+        <classShapeMoniker Id="570122ee-2856-4ed2-a3f8-bb6b2128f731" />
+        <classShapeMoniker Id="186208da-34a4-4c51-af44-1200d8a8e1f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 26.5392976888021); (14.75 : 26.5392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Buiding/Buiding_PeriodicalPlanToBuilding" />
+      <nodes>
+        <classShapeMoniker Id="5d41e225-7a0b-4f48-82c2-495403393e92" />
+        <classShapeMoniker Id="4aed7d58-db60-4baf-8f4c-baf2b7b100ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 23.2666648666366); (14.5625 : 23.8291648666366); (14.5625 : 26.113396844401); (14.75 : 26.113396844401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/BuildingPlan/BuildingPlan_PeriodicalPlanToBuilding" />
+      <nodes>
+        <classShapeMoniker Id="570122ee-2856-4ed2-a3f8-bb6b2128f731" />
+        <classShapeMoniker Id="4aed7d58-db60-4baf-8f4c-baf2b7b100ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.34375 : 24.3862939453125); (6.34375 : 25.7892976888021); (12 : 25.7892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Street/Street_Buiding" />
+      <nodes>
+        <classShapeMoniker Id="b8d55375-e551-44c4-acd1-7c7c86bd64e9" />
+        <classShapeMoniker Id="5d41e225-7a0b-4f48-82c2-495403393e92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 23.6931469726563); (5.57291666666667 : 23.6931469726563 : JumpStart); (5.77083583333333 : 23.6931469726563 : JumpEnd); (6.25 : 23.6931469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/District/District_Street" />
+      <nodes>
+        <classShapeMoniker Id="77638822-4b29-4453-b6da-7abe09470f62" />
+        <classShapeMoniker Id="b8d55375-e551-44c4-acd1-7c7c86bd64e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.20923076923077 : 4.30930826822917); (4.20923076923077 : 4.55930826822917); (4.80461538461539 : 4.55930826822917); (4.80461538461539 : 4.30930826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Buse/Buse_Buse" />
+      <nodes>
+        <classShapeMoniker Id="19189f50-f12f-4465-b1db-fc29515a8803" />
+        <classShapeMoniker Id="19189f50-f12f-4465-b1db-fc29515a8803" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.5 : 48.3950512695313); (16.25 : 48.3950512695313); (16.25 : 39.7324039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/BusesService/BusesService_BusesServicesSpar" />
+      <nodes>
+        <classShapeMoniker Id="3d626bc3-31ca-4d4b-b03c-62ffeb110397" />
+        <classShapeMoniker Id="9bfc83c3-d30d-4c70-ab78-708f224de0fd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.25 : 23.75); (10.25 : 19.1065991210938); (10.6979191666667 : 19.1065991210938 : JumpStart); (10.8645858333333 : 19.1065991210938 : JumpEnd); (12 : 19.1065991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Company/Company_StaticIPAddressWithBranch" />
+      <nodes>
+        <classShapeMoniker Id="6a2eee07-0f18-4f8e-94f5-3bc9685524a9" />
+        <classShapeMoniker Id="aff41241-97c9-49c3-87e5-b2903560cf2b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 24.8517976888021); (11.6666666666667 : 24.8517976888021 : JumpStart); (11.8333333333333 : 24.8517976888021 : JumpEnd); (12 : 24.8517976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Company/Company_Buiding" />
+      <nodes>
+        <classShapeMoniker Id="6a2eee07-0f18-4f8e-94f5-3bc9685524a9" />
+        <classShapeMoniker Id="5d41e225-7a0b-4f48-82c2-495403393e92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 30.6642976888021); (5.57291666666667 : 30.6642976888021 : JumpStart); (5.73958333333333 : 30.6642976888021 : JumpEnd); (6.25 : 30.6642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Material/Material_BuildingMaintDetail" />
+      <nodes>
+        <classShapeMoniker Id="59d8c0c8-8358-448a-aad4-0cd8cd4ff9ff" />
+        <classShapeMoniker Id="f2529b3d-fecd-472c-b5e2-e24f9dc35d51" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.3437495 : 29.875); (5.3437495 : 29.0785953776042); (8.875 : 29.0785953776042); (8.875 : 28.0200512695313); (9.25 : 28.0200512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Material/Material_BuildPerExecPlanDetail" />
+      <nodes>
+        <classShapeMoniker Id="59d8c0c8-8358-448a-aad4-0cd8cd4ff9ff" />
+        <classShapeMoniker Id="14ba9b96-81cd-4bfa-8500-74a64d6f5dd5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.45242346379207 : 43.0785953776042); (4.45242346379207 : 43.3285953776042); (5.06174684745593 : 43.3285953776042); (5.06174684745593 : 43.0785953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Mobile/Mobile_Mobile" />
+      <nodes>
+        <classShapeMoniker Id="335159f4-a586-46fa-b793-50ff4c2baad1" />
+        <classShapeMoniker Id="335159f4-a586-46fa-b793-50ff4c2baad1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 7.32774983723958); (18.75 : 7.32774983723958); (18.75 : 11.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Phase/Phase_ReqPhase" />
+      <nodes>
+        <classShapeMoniker Id="f8432f12-21f8-42ed-be98-97b3609daaab" />
+        <classShapeMoniker Id="a9a53690-ae1f-432c-a7c9-73fe5bda621f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.4586362792969 : 13.0881982421875); (18.4586362792969 : 13.3381982421875); (19.0552381835938 : 13.3381982421875); (19.0552381835938 : 13.0881982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ReqPhase/ReqPhase_ReqPhase" />
+      <nodes>
+        <classShapeMoniker Id="a9a53690-ae1f-432c-a7c9-73fe5bda621f" />
+        <classShapeMoniker Id="a9a53690-ae1f-432c-a7c9-73fe5bda621f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.44931705603966 : 19.0112939453125); (2.44931705603966 : 19.2612939453125); (3.06500117938702 : 19.2612939453125); (3.06500117938702 : 19.0112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Brand/Brand_Brand" />
+      <nodes>
+        <classShapeMoniker Id="054838ee-3369-4e3c-b960-573dbf7d1e10" />
+        <classShapeMoniker Id="054838ee-3369-4e3c-b960-573dbf7d1e10" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 36.2700512695313); (11.5416666666667 : 36.2700512695313 : JumpStart); (11.7083333333333 : 36.2700512695313 : JumpEnd); (11.7604166666667 : 36.2700512695313 : JumpStart); (11.9270833333333 : 36.2700512695313 : JumpEnd); (11.9479166666667 : 36.2700512695313 : JumpStart); (12.2083333333333 : 36.2700512695313 : JumpEnd); (12.25 : 36.2700512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Employee/Employee_FollowUpCard" />
+      <nodes>
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+        <classShapeMoniker Id="29d1c80c-a9e4-410a-b59a-718a72bc1436" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 34.567724202474); (15.25 : 34.567724202474)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Employee/Employee_PeriodicalPlanExecDetail" />
+      <nodes>
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+        <classShapeMoniker Id="568de5ff-b5fa-4b50-95ec-af359f9052dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 38.1290104166667); (11.5416666666667 : 38.1290104166667 : JumpStart); (11.7083333333333 : 38.1290104166667 : JumpEnd); (11.7604166666667 : 38.1290104166667 : JumpStart); (11.9270833333333 : 38.1290104166667 : JumpEnd); (11.9479166666667 : 38.1290104166667 : JumpStart); (12.1145833333333 : 38.1290104166667 : JumpEnd); (15.25 : 38.1290104166667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Employee/Employee_BusesServicesSpar" />
+      <nodes>
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+        <classShapeMoniker Id="9bfc83c3-d30d-4c70-ab78-708f224de0fd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.25 : 24.5392976888021); (8.625 : 24.5392976888021); (8.625 : 33.625); (8.79166666666667 : 33.625 : JumpStart); (9.08333333333333 : 33.625 : JumpEnd); (9.16666666666667 : 33.625 : JumpStart); (9.52083333333333 : 33.625 : JumpEnd); (10.5 : 33.625); (10.5 : 34)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Company/Company_Employee" />
+      <nodes>
+        <classShapeMoniker Id="6a2eee07-0f18-4f8e-94f5-3bc9685524a9" />
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.2092307692308 : 38.6554182942708); (10.2092307692308 : 38.9054182942708); (10.8046153846154 : 38.9054182942708); (10.8046153846154 : 38.6554182942708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Employee/Employee_Employee" />
+      <nodes>
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 38.7315991210938); (6.25 : 38.7315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/FuelCardsDefinition/FuelCardsDefinition_FuelCardsCustody" />
+      <nodes>
+        <classShapeMoniker Id="6d9976a2-0697-465e-88b0-0bbe9767cc31" />
+        <classShapeMoniker Id="556f692c-b2fe-4631-843d-8579521d4542" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 39.7131982421875); (4.5 : 40.3277498372396); (9.25 : 40.3277498372396); (9.25 : 39.625); (9.77128255128205 : 39.625 : JumpStart); (9.93794921794871 : 39.625 : JumpEnd); (10.4235897435898 : 39.625 : JumpStart); (10.5902564102564 : 39.625 : JumpEnd); (11.7604166666667 : 39.625 : JumpStart); (11.9270833333333 : 39.625 : JumpEnd); (14.7916666666667 : 39.625 : JumpStart); (14.9583333333333 : 39.625 : JumpEnd); (15 : 39.625); (15 : 40.1663001471354); (16.1666666666667 : 40.1663001471354 : JumpStart); (16.3333333333333 : 40.1663001471354 : JumpEnd); (18 : 40.1663001471354)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/FuelCardsDefinition/FuelCardsDefinition_FuelSupply" />
+      <nodes>
+        <classShapeMoniker Id="6d9976a2-0697-465e-88b0-0bbe9767cc31" />
+        <classShapeMoniker Id="84e6c304-d7ec-4047-9523-236686f08cda" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 21.2892976888021); (3.09166666666667 : 21.2892976888021 : JumpStart); (3.25833333333333 : 21.2892976888021 : JumpEnd); (3.75 : 21.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Model/Model_Class" />
+      <nodes>
+        <classShapeMoniker Id="be687ce4-465b-4cc1-b712-310024aeeca3" />
+        <classShapeMoniker Id="b64ccb25-db83-459f-ba4b-5f2fbe250c62" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.03715852801983 : 19.0112939453125); (2.03715852801983 : 20.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Brand/Brand_Model" />
+      <nodes>
+        <classShapeMoniker Id="054838ee-3369-4e3c-b960-573dbf7d1e10" />
+        <classShapeMoniker Id="be687ce4-465b-4cc1-b712-310024aeeca3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.5937505 : 42.2131982421875); (9.5937505 : 52.3277498372396); (12.25 : 52.3277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/PeriodicalPlan/PeriodicalPlan_Alarm" />
+      <nodes>
+        <classShapeMoniker Id="6a140f73-1755-482d-bab6-3920e96489a6" />
+        <classShapeMoniker Id="889e8a0d-35a6-45cd-9a16-7477375cd352" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.85461588461538 : 40.25); (9.85461588461538 : 39.0304182942708); (11.625 : 39.0304182942708); (11.625 : 32.2604484049479); (12.25 : 32.2604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/PeriodicalPlan/PeriodicalPlan_PeriodicalPlanSpar" />
+      <nodes>
+        <classShapeMoniker Id="6a140f73-1755-482d-bab6-3920e96489a6" />
+        <classShapeMoniker Id="a4a0e8e3-0fbf-47a0-9386-b2d5c32efb7e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.5069230769231 : 40.25); (10.5069230769231 : 39.1554182942708); (11.7604166666667 : 39.1554182942708 : JumpStart); (11.9270833333333 : 39.1554182942708 : JumpEnd); (12.125 : 39.1554182942708); (12.125 : 31.1875); (20.625 : 31.1875); (20.625 : 31.4527498372396); (21 : 31.4527498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/PeriodicalPlan/PeriodicalPlan_PeriodicalPlanToVehcle" />
+      <nodes>
+        <classShapeMoniker Id="6a140f73-1755-482d-bab6-3920e96489a6" />
+        <classShapeMoniker Id="3a4e339c-d7d4-4eba-a471-c31f14163433" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.40625 : 44.125); (14.40625 : 34.190109601237); (14.5416666666667 : 34.190109601237 : JumpStart); (14.8333333333333 : 34.190109601237 : JumpEnd); (14.8541666666667 : 34.190109601237 : JumpStart); (15.2083333333333 : 34.190109601237 : JumpEnd); (15.25 : 34.190109601237)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/PeriodicPlanDetail/PeriodicPlanDetail_PeriodicalPlanExecDetail" />
+      <nodes>
+        <classShapeMoniker Id="374a3b48-25fa-45d4-965e-45b9029ce0d5" />
+        <classShapeMoniker Id="568de5ff-b5fa-4b50-95ec-af359f9052dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 42.1530989583333); (12.3854161666667 : 42.1530989583333 : JumpStart); (12.5520828333333 : 42.1530989583333 : JumpEnd); (13.8906225 : 42.1530989583333); (13.8906225 : 44.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/PeriodicalPlan/PeriodicalPlan_PeriodicPlanDetail" />
+      <nodes>
+        <classShapeMoniker Id="6a140f73-1755-482d-bab6-3920e96489a6" />
+        <classShapeMoniker Id="374a3b48-25fa-45d4-965e-45b9029ce0d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.75 : 44.9142976888021); (12.5 : 44.9142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ServicesSetting/ServicesSetting_PeriodicPlanDetail" />
+      <nodes>
+        <classShapeMoniker Id="9fb73441-61b7-407f-a77b-de0bc3942cd8" />
+        <classShapeMoniker Id="374a3b48-25fa-45d4-965e-45b9029ce0d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 30.8277498372396); (17.03125 : 30.8277498372396); (17.03125 : 33)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/SparePart/SparePart_PeriodicalPlanExecDetail" />
+      <nodes>
+        <classShapeMoniker Id="9f324d44-eab4-4e12-8952-b1200677e570" />
+        <classShapeMoniker Id="568de5ff-b5fa-4b50-95ec-af359f9052dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 32.3731909821715); (12.03125 : 32.9044409821715); (12.03125 : 38.6675027552083); (15.25 : 38.6675027552083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/SparePart/SparePart_BusesServicesSpar" />
+      <nodes>
+        <classShapeMoniker Id="9f324d44-eab4-4e12-8952-b1200677e570" />
+        <classShapeMoniker Id="9bfc83c3-d30d-4c70-ab78-708f224de0fd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 31.755224202474); (12.25 : 31.755224202474)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/SparePart/SparePart_PeriodicalPlanSpar" />
+      <nodes>
+        <classShapeMoniker Id="9f324d44-eab4-4e12-8952-b1200677e570" />
+        <classShapeMoniker Id="a4a0e8e3-0fbf-47a0-9386-b2d5c32efb7e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.65625 : 22.0785953776042); (5.65625 : 32.140625); (9.16666666666667 : 32.140625 : JumpStart); (9.33333333333333 : 32.140625 : JumpEnd); (9.5 : 32.140625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Class/Class_SparePart" />
+      <nodes>
+        <classShapeMoniker Id="b64ccb25-db83-459f-ba4b-5f2fbe250c62" />
+        <classShapeMoniker Id="9f324d44-eab4-4e12-8952-b1200677e570" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.6875025 : 22.0785953776042); (5.6875025 : 26.6264104931641); (6.5 : 26.6264104931641)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Class/Class_SparPart" />
+      <nodes>
+        <classShapeMoniker Id="b64ccb25-db83-459f-ba4b-5f2fbe250c62" />
+        <classShapeMoniker Id="51257d8d-d70d-4154-ba34-195c8de352f0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.69314697265625); (3.5 : 2.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Type/Type_Buse" />
+      <nodes>
+        <classShapeMoniker Id="2a341ecf-f5d7-400a-91f0-c6064238204c" />
+        <classShapeMoniker Id="19189f50-f12f-4465-b1db-fc29515a8803" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.90625 : 11.5208968098958); (16.90625 : 14.8714440332031); (17.2916666666667 : 14.8714440332031 : JumpStart); (17.4583333333333 : 14.8714440332031 : JumpEnd); (17.75 : 14.8714440332031)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/User/User_Process" />
+      <nodes>
+        <classShapeMoniker Id="15313d5e-35d2-485f-9273-3f6fd9bf2dd4" />
+        <classShapeMoniker Id="73431ead-5bcd-44e8-a780-e399ea169bfc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 11.3229484049479); (17.75 : 11.3229484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/User/User_ReqPhase" />
+      <nodes>
+        <classShapeMoniker Id="15313d5e-35d2-485f-9273-3f6fd9bf2dd4" />
+        <classShapeMoniker Id="a9a53690-ae1f-432c-a7c9-73fe5bda621f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 11.161474202474); (17.75 : 11.161474202474)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/User/User_ReqPhase1" />
+      <nodes>
+        <classShapeMoniker Id="15313d5e-35d2-485f-9273-3f6fd9bf2dd4" />
+        <classShapeMoniker Id="a9a53690-ae1f-432c-a7c9-73fe5bda621f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 11.5208968098958); (17.375 : 11.8958968098958); (17.375 : 17.8749995); (17.75 : 17.8749995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/User/User_userRequest" />
+      <nodes>
+        <classShapeMoniker Id="15313d5e-35d2-485f-9273-3f6fd9bf2dd4" />
+        <classShapeMoniker Id="04a76482-897f-473b-8216-790b20afe197" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.25 : 36.3662019856771); (18.0833333333333 : 36.3662019856771 : JumpStart); (17.9166666666667 : 36.3662019856771 : JumpEnd); (14.25 : 36.3662019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Vehcle/Vehcle_FollowUpCard" />
+      <nodes>
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+        <classShapeMoniker Id="29d1c80c-a9e4-410a-b59a-718a72bc1436" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.25 : 34.5104484049479); (21 : 34.5104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Vehcle/Vehcle_StoppedCar" />
+      <nodes>
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+        <classShapeMoniker Id="89ffd177-3af0-44d2-b2ab-6b3ff21b511f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.046878 : 31.375); (20.046878 : 31); (14.5 : 31); (14.5 : 33.3750476074219); (12.2083333333333 : 33.3750476074219 : JumpStart); (11.9479166666667 : 33.3750476074219 : JumpEnd); (11.7083333333333 : 33.3750476074219 : JumpStart); (11.5416666666667 : 33.3750476074219 : JumpEnd); (9.33333333333333 : 33.3750476074219 : JumpStart); (9.16666666666667 : 33.3750476074219 : JumpEnd); (5.5 : 33.3750476074219)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Vehcle/Vehcle_BusAttachment" />
+      <nodes>
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+        <classShapeMoniker Id="10f4d3f1-03d1-42a9-b924-6bef5511d1c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.9146153846154 : 31.375); (19.0667139735215 : 31.2428965382464 : JumpStart); (18.9020340264785 : 31.2172393205545 : JumpEnd); (17.9088451538462 : 31.0625); (11.75 : 31.0625); (11.75 : 33.7176923076923); (11.7069687853587 : 33.7255767089771 : JumpStart); (11.5430312146413 : 33.7556141969717 : JumpEnd); (10.2092307692308 : 34)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Vehcle/Vehcle_Employee" />
+      <nodes>
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.25 : 31.9527498372396); (21 : 31.9527498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Vehcle/Vehcle_PeriodicalPlanToVehcle" />
+      <nodes>
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+        <classShapeMoniker Id="3a4e339c-d7d4-4eba-a471-c31f14163433" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 21.0937505); (5.91666666666667 : 21.0937505 : JumpStart); (6.08333333333333 : 21.0937505 : JumpEnd); (9.72916416666667 : 21.0937505 : JumpStart); (9.89583083333333 : 21.0937505 : JumpEnd); (10.1666666666667 : 21.0937505 : JumpStart); (10.3333333333333 : 21.0937505 : JumpEnd); (10.6979191666667 : 21.0937505 : JumpStart); (10.8645858333333 : 21.0937505 : JumpEnd); (15.5 : 21.0937505); (15.5 : 22.1651025390625); (19.515626 : 22.1651025390625); (19.515626 : 31.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Class/Class_Vehcle" />
+      <nodes>
+        <classShapeMoniker Id="b64ccb25-db83-459f-ba4b-5f2fbe250c62" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 24.269646844401); (11.75 : 24.269646844401); (11.75 : 29.0881168619792); (14.25 : 29.0881168619792); (14.25 : 24.6458968098958); (14.2916666666667 : 24.6458968098958 : JumpStart); (14.5833333333333 : 24.6458968098958 : JumpEnd); (18.984374 : 24.6458968098958); (18.984374 : 31.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Company/Company_Vehcle" />
+      <nodes>
+        <classShapeMoniker Id="6a2eee07-0f18-4f8e-94f5-3bc9685524a9" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.5 : 34.0953836153846); (11.5660744349011 : 34.0293091804835 : JumpStart); (11.6839255650989 : 33.9114580502857 : JumpEnd); (11.7848244349011 : 33.8105591804835 : JumpStart); (11.9026755650989 : 33.6927080502857 : JumpEnd); (11.9375 : 33.6578836153846); (11.9375 : 31.25); (14.4166666666667 : 31.25 : JumpStart); (14.5833333333333 : 31.25 : JumpEnd); (18.0926923076923 : 31.25); (18.25 : 33.5036808393429)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Employee/Employee_Vehcle" />
+      <nodes>
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7d212c31-52c6-493e-887c-1f5930cb4132" absoluteBounds="5.5, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/BusWorkShopDataContext/ConfigMaster" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a978641b-98ae-4a2d-92e6-f575eda5c027" absoluteBounds="5.515, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="520ce9c5-20b2-4d41-bcaf-6def8d51297b" absoluteBounds="4.5, 13.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/BusWorkShopDataContext/UserCompany" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e34883e-15dd-4e45-a885-729ab865f792" absoluteBounds="4.515, 14.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.7812525 : 23.75); (10.7812525 : 14.4431469726562); (7.70833333333333 : 14.4431469726562 : JumpStart); (7.54166666666667 : 14.4431469726562 : JumpEnd); (6.5 : 14.4431469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Company/Company_UserCompany" />
+      <nodes>
+        <classShapeMoniker Id="6a2eee07-0f18-4f8e-94f5-3bc9685524a9" />
+        <classShapeMoniker Id="520ce9c5-20b2-4d41-bcaf-6def8d51297b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15 : 11.45599609375); (6.44270833333333 : 11.45599609375 : JumpStart); (6.27604166666667 : 11.45599609375 : JumpEnd); (6.03125 : 11.45599609375); (6.03125 : 13.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/User/User_UserCompany" />
+      <nodes>
+        <classShapeMoniker Id="15313d5e-35d2-485f-9273-3f6fd9bf2dd4" />
+        <classShapeMoniker Id="520ce9c5-20b2-4d41-bcaf-6def8d51297b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="45ac342b-439d-42b4-a35a-beb11c0931db" absoluteBounds="11.375, 39.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/PeriodicalPlanExecution" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74600071-5b59-4360-874a-a8bdead32847" absoluteBounds="11.39, 40.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.84375 : 39.875); (11.84375 : 33.5416984049479); (11.9479166666667 : 33.5416984049479 : JumpStart); (12.1145833333333 : 33.5416984049479 : JumpEnd); (15.25 : 33.5416984049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/PeriodicalPlanExecution/PeriodicalPlanExecution_PeriodicalPlanExecDetail" />
+      <nodes>
+        <classShapeMoniker Id="45ac342b-439d-42b4-a35a-beb11c0931db" />
+        <classShapeMoniker Id="568de5ff-b5fa-4b50-95ec-af359f9052dc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.15625 : 37.5688297526042); (20.15625 : 41.7492496744792); (13.375 : 41.7492496744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Vehcle/Vehcle_PeriodicalPlanExecution" />
+      <nodes>
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+        <classShapeMoniker Id="45ac342b-439d-42b4-a35a-beb11c0931db" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.57812725 : 42.2131982421875); (10.57812725 : 42.5881982421875); (12.4687495 : 42.5881982421875); (12.4687495 : 42.0304996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/PeriodicalPlan/PeriodicalPlan_PeriodicalPlanExecution" />
+      <nodes>
+        <classShapeMoniker Id="6a140f73-1755-482d-bab6-3920e96489a6" />
+        <classShapeMoniker Id="45ac342b-439d-42b4-a35a-beb11c0931db" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="51fbbc17-39d8-4fec-a3c8-f705b65c90d1" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/BusWorkShopDataContext/vehclesConsumedSparesVw" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49e3091b-f353-460d-9e9f-d4d4aad6f798" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d0939b2-39ca-4073-974a-aed5e9e4a8a3" absoluteBounds="15.75, 19.375, 2, 2.5401025390625">
+      <DataClassMoniker Name="/BusWorkShopDataContext/NetworkDevicesInformation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab97f101-8c75-4027-b320-f8e3be417ef6" absoluteBounds="15.765, 19.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14 : 19.7315991210938); (15.75 : 19.7315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/StaticIPAddressWithBranch/StaticIPAddressWithBranch_NetworkDevicesInformation" />
+      <nodes>
+        <classShapeMoniker Id="aff41241-97c9-49c3-87e5-b2903560cf2b" />
+        <classShapeMoniker Id="3d0939b2-39ca-4073-974a-aed5e9e4a8a3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5687621b-a352-43f6-85bf-8a551c9bea28" absoluteBounds="3.5, 5.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/BusWorkShopDataContext/DeviceWithIPAddress" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3202da48-f091-439b-92c6-014ccb3705b0" absoluteBounds="3.515, 5.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" absoluteBounds="3.125, 29.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/BusWorkShopDataContext/ConfigDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f42f23ed-c185-49b2-add9-59f7d35b00a1" absoluteBounds="3.14, 29.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 29.40625); (5.26041616666667 : 29.40625 : JumpStart); (5.42708283333333 : 29.40625 : JumpEnd); (5.57291666666667 : 29.40625 : JumpStart); (5.73958333333333 : 29.40625 : JumpEnd); (13.0625 : 29.40625); (13.0625 : 28.8381168619792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Buiding" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="5d41e225-7a0b-4f48-82c2-495403393e92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 29.390625); (5.26041616666667 : 29.390625 : JumpStart); (5.42708283333333 : 29.390625 : JumpEnd); (5.57291666666667 : 29.390625 : JumpStart); (5.73958333333333 : 29.390625 : JumpEnd); (12.5624975 : 29.390625); (12.5624975 : 28.8381168619792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Buiding1" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="5d41e225-7a0b-4f48-82c2-495403393e92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.125 : 29.421875); (5.26041616666667 : 29.421875 : JumpStart); (5.42708283333333 : 29.421875 : JumpEnd); (5.57291666666667 : 29.421875 : JumpStart); (5.73958333333333 : 29.421875 : JumpEnd); (13.5625025 : 29.421875); (13.5625025 : 28.8381168619792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Buiding2" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="5d41e225-7a0b-4f48-82c2-495403393e92" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.828127 : 29.375); (3.828127 : 29.2027498372396); (4.15104391666667 : 29.2027498372396 : JumpStart); (4.31771058333333 : 29.2027498372396 : JumpEnd); (4.60416666666667 : 29.2027498372396 : JumpStart); (4.77083333333333 : 29.2027498372396 : JumpEnd); (5.26041616666667 : 29.2027498372396 : JumpStart); (5.42708283333333 : 29.2027498372396 : JumpEnd); (5.57291666666667 : 29.2027498372396 : JumpStart); (5.73958333333333 : 29.2027498372396 : JumpEnd); (9.1875 : 29.2027498372396); (9.1875 : 29.3526025390625); (14.65625 : 29.3526025390625); (14.65625 : 29.2027498372396); (14.75 : 29.2027498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_BuildingMaint" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="bc81c2de-fb84-4ced-81cd-d43f0514c356" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.6875 : 29.375); (4.6875 : 28.8285953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_BuildingPlanDetail" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="2438f623-2e8f-4b37-9a8e-a421033ce14e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.710940625 : 29.375); (4.710940625 : 28.9848453776042); (5.57291666666667 : 28.9848453776042 : JumpStart); (5.73958333333333 : 28.9848453776042 : JumpEnd); (8.79166666666667 : 28.9848453776042 : JumpStart); (8.95833333333333 : 28.9848453776042 : JumpEnd); (9.25 : 28.9848453776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_BuildPerExecPlanDetail" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="14ba9b96-81cd-4bfa-8500-74a64d6f5dd5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.42187675 : 29.375); (3.42187675 : 23.6931469726563); (3.5 : 23.6931469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_District" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="77638822-4b29-4453-b6da-7abe09470f62" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.83363627929687 : 31.3381982421875); (3.83363627929687 : 31.5785953776042); (4.5 : 31.5785953776042); (4.5 : 31.4535953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Material" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="59d8c0c8-8358-448a-aad4-0cd8cd4ff9ff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.2812505 : 31.3381982421875); (3.2812505 : 31.7131982421875); (3.28385829166667 : 31.7131982421875 : JumpStart); (3.49739720833333 : 31.7131982421875 : JumpEnd); (4.5 : 31.7131982421875); (4.5 : 32.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_BusAttachment" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="10f4d3f1-03d1-42a9-b924-6bef5511d1c9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.17187275 : 31.3381982421875); (3.17187275 : 35.7892976888021); (3.17448079166667 : 35.7892976888021 : JumpStart); (3.34114745833333 : 35.7892976888021 : JumpEnd); (9.5 : 35.7892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Employee" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.39062775 : 31.3381982421875); (3.39062775 : 34.9339440332031); (9.5 : 34.9339440332031)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Employee1" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="cd72a03b-37d5-44ce-93d9-b9f1e8b2f2fe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.257814125 : 31.3381982421875); (3.257814125 : 38.7315991210938); (3.5 : 38.7315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_FuelCardsDefinition" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="6d9976a2-0697-465e-88b0-0bbe9767cc31" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.148436375 : 31.3381982421875); (3.148436375 : 51.5969555664063); (3.5 : 51.5969555664063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_ServiceCenter" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="983fa9b4-7849-4ce2-a4d0-62fb7732968f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.414063875 : 31.3381982421875); (3.414063875 : 32.3129525325521); (9.5 : 32.3129525325521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_SparePart" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="9f324d44-eab4-4e12-8952-b1200677e570" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.2812505 : 29.375); (3.2812505 : 27.0653259863282); (3.33854341666667 : 27.0653259863282 : JumpStart); (3.50521008333333 : 27.0653259863282 : JumpEnd); (5.57291666666667 : 27.0653259863282 : JumpStart); (5.73958333333333 : 27.0653259863282 : JumpEnd); (6.5 : 27.0653259863282)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_SparPart" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="51257d8d-d70d-4154-ba34-195c8de352f0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.367191625 : 31.3381982421875); (3.367191625 : 32); (9.25 : 32); (9.25 : 33.75); (15 : 33.75); (15 : 35.9824039713542); (17.875 : 35.9824039713542); (17.875 : 34.4719148763021); (18.25 : 34.4719148763021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Vehcle" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.3242210625 : 31.3381982421875); (3.3242210625 : 32.25); (9 : 32.25); (9 : 33.875); (11.5416666666667 : 33.875 : JumpStart); (11.7083333333333 : 33.875 : JumpEnd); (11.7604166666667 : 33.875 : JumpStart); (11.9270833333333 : 33.875 : JumpEnd); (11.9479166666667 : 33.875 : JumpStart); (12.2083333333333 : 33.875 : JumpEnd); (14.75 : 33.875); (14.75 : 36.1074039713542); (17.625 : 36.1074039713542); (17.625 : 32.892205438151); (18.25 : 32.892205438151)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Vehcle1" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.34570634375 : 31.3381982421875); (3.34570634375 : 32.375); (8.79166666666667 : 32.375 : JumpStart); (9.08333333333333 : 32.375 : JumpEnd); (9.16666666666667 : 32.375 : JumpStart); (9.33333333333333 : 32.375 : JumpEnd); (9.375 : 32.375); (9.375 : 33.8125); (11.5416666666667 : 33.8125 : JumpStart); (11.7083333333333 : 33.8125 : JumpEnd); (11.7604166666667 : 33.8125 : JumpStart); (11.9270833333333 : 33.8125 : JumpEnd); (11.9479166666667 : 33.8125 : JumpStart); (12.2083333333333 : 33.8125 : JumpEnd); (15.125 : 33.8125); (15.125 : 35.8574039713542); (17.5416666666667 : 35.8574039713542 : JumpStart); (17.7083333333333 : 35.8574039713542 : JumpEnd); (17.7916666666667 : 35.8574039713542 : JumpStart); (17.9583333333333 : 35.8574039713542 : JumpEnd); (18 : 35.8574039713542); (18 : 36.7756163619792); (18.25 : 36.7756163619792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Vehcle2" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.30273578125 : 31.3381982421875); (3.30273578125 : 32.4375); (3.30729441666667 : 32.4375 : JumpStart); (3.47396108333333 : 32.4375 : JumpEnd); (8.79166666666667 : 32.4375 : JumpStart); (9.08333333333333 : 32.4375 : JumpEnd); (9.125 : 32.4375); (9.125 : 33.6875); (9.29166666666667 : 33.6875 : JumpStart); (9.52083333333333 : 33.6875 : JumpEnd); (11.5416666666667 : 33.6875 : JumpStart); (11.7083333333333 : 33.6875 : JumpEnd); (11.7604166666667 : 33.6875 : JumpStart); (11.9270833333333 : 33.6875 : JumpEnd); (11.9479166666667 : 33.6875 : JumpStart); (12.2083333333333 : 33.6875 : JumpEnd); (14.875 : 33.6875); (14.875 : 36.2324039713542); (17.75 : 36.2324039713542); (17.75 : 32.1023507190755); (18.0688533456621 : 32.1023507190755 : JumpStart); (18.2355200123287 : 32.1023507190755 : JumpEnd); (18.25 : 32.1023507190755)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Vehcle3" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.2148434375 : 31.3381982421875); (3.2148434375 : 32.0625); (3.24088772916667 : 32.0625 : JumpStart); (3.49739720833333 : 32.0625 : JumpEnd); (8.875 : 32.0625); (8.875 : 33.9375); (11.5416666666667 : 33.9375 : JumpStart); (11.7083333333333 : 33.9375 : JumpEnd); (11.7604166666667 : 33.9375 : JumpStart); (11.9270833333333 : 33.9375 : JumpEnd); (11.9479166666667 : 33.9375 : JumpStart); (12.2083333333333 : 33.9375 : JumpEnd); (14.625 : 33.9375); (14.625 : 36.0449039713542); (18.125 : 36.0449039713542); (18.125 : 33.6820601572266); (18.25 : 33.6820601572266)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Vehcle4" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.23632878125 : 31.3381982421875); (3.23632878125 : 31.9375); (3.24088772916667 : 31.9375 : JumpStart); (3.49739720833333 : 31.9375 : JumpEnd); (5.57291666666667 : 31.9375 : JumpStart); (5.73958333333333 : 31.9375 : JumpEnd); (9.3125 : 31.9375); (9.3125 : 33.4375); (11.5416666666667 : 33.4375 : JumpStart); (11.8333333333333 : 33.4375 : JumpEnd); (11.9479166666667 : 33.4375 : JumpStart); (12.2083333333333 : 33.4375 : JumpEnd); (15.0625 : 33.4375); (15.0625 : 35.9199039713542); (17.5 : 35.9199039713542); (17.5 : 35.1959119238281); (17.5416666666667 : 35.1959119238281 : JumpStart); (17.7083333333333 : 35.1959119238281 : JumpEnd); (17.7916666666667 : 35.1959119238281 : JumpStart); (17.9583333333333 : 35.1959119238281 : JumpEnd); (18.0416666666667 : 35.1959119238281 : JumpStart); (18.2083333333333 : 35.1959119238281 : JumpEnd); (18.25 : 35.1959119238281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Vehcle5" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.19335809375 : 31.3381982421875); (3.19335809375 : 32.28125); (3.26237301041667 : 32.28125 : JumpStart); (3.47396108333333 : 32.28125 : JumpEnd); (4.41666666666667 : 32.28125 : JumpStart); (4.58333333333333 : 32.28125 : JumpEnd); (8.79166666666667 : 32.28125 : JumpStart); (8.95833333333333 : 32.28125 : JumpEnd); (9.1875 : 32.28125); (9.1875 : 33.3125); (9.22916666666667 : 33.3125 : JumpStart); (9.52083333333333 : 33.3125 : JumpEnd); (11.5416666666667 : 33.3125 : JumpStart); (11.8333333333333 : 33.3125 : JumpEnd); (11.8541666666667 : 33.3125 : JumpStart); (12.2083333333333 : 33.3125 : JumpEnd); (14.9375 : 33.3125); (14.9375 : 36.1699039713542); (17.5 : 36.1699039713542); (17.5 : 37.2034750572917); (18.25 : 37.2034750572917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Vehcle6" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.679978515625 : 31.3381982421875); (4.679978515625 : 32.21875); (8.79166666666667 : 32.21875 : JumpStart); (8.95833333333333 : 32.21875 : JumpEnd); (9.16666666666667 : 32.21875 : JumpStart); (9.39583333333333 : 32.21875 : JumpEnd); (9.4375 : 32.21875); (9.4375 : 33.78125); (11.3197836756794 : 33.78125 : JumpStart); (11.4864503423461 : 33.78125 : JumpEnd); (11.5416666666667 : 33.78125 : JumpStart); (11.7083333333333 : 33.78125 : JumpEnd); (11.7308002820513 : 33.78125 : JumpStart); (11.9270833333333 : 33.78125 : JumpEnd); (11.9479166666667 : 33.78125 : JumpStart); (12.2083333333333 : 33.78125 : JumpEnd); (14.9791666666667 : 33.78125 : JumpStart); (15.1458333333333 : 33.78125 : JumpEnd); (15.1875 : 33.78125); (15.1875 : 35.7949039713542); (17.4166666666667 : 35.7949039713542 : JumpStart); (17.7083333333333 : 35.7949039713542 : JumpEnd); (17.9375 : 35.7949039713542); (17.9375 : 36.3790076666667); (18.25 : 36.3790076666667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Vehcle7" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="fdba40f8-adef-476b-a679-bd0ee8ee5c0a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.359375 : 2.1362939453125); (6.359375 : 13.55); (5.95 : 13.55); (5.95 : 13.7208968098958); (4.3 : 13.7208968098958); (4.3 : 20.3); (3.175 : 20.3); (3.175 : 28.95); (3.19791716666667 : 28.95 : JumpStart); (3.50521008333333 : 28.95 : JumpEnd); (4.23437725 : 28.95); (4.23437725 : 29.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigMaster/ConfigMaster_ConfigDetail" />
+      <nodes>
+        <classShapeMoniker Id="7d212c31-52c6-493e-887c-1f5930cb4132" />
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a7d053ce-f95d-4d4f-bab7-5886c0732c35" absoluteBounds="7.375, 21.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/Recommendation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8883ca1-9acf-4e94-b717-6131dd0aedaf" absoluteBounds="7.39, 22.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.2812505 : 29.375); (3.2812505 : 22.769651344401); (5.60416916666667 : 22.769651344401 : JumpStart); (5.77083583333333 : 22.769651344401 : JumpEnd); (7.375 : 22.769651344401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_Recommendation" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="a7d053ce-f95d-4d4f-bab7-5886c0732c35" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="359ddfc3-493c-48d7-8e02-1d3241865850" absoluteBounds="6.625, 16.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BusWorkShopDataContext/MaintReqDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6a7639c4-5bd2-44ca-9190-6ec1b5459a54" absoluteBounds="6.64, 16.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.9492223125 : 29.375); (4.9492223125 : 29.1410953776042); (5.57291666666667 : 29.1410953776042 : JumpStart); (5.73958333333333 : 29.1410953776042 : JumpEnd); (6 : 29.1410953776042); (6 : 17.4527498372396); (6.625 : 17.4527498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BusWorkShopDataContext/ConfigDetail/ConfigDetail_MaintReqDetail" />
+      <nodes>
+        <classShapeMoniker Id="53eac4fa-98e2-4cdb-83b3-3d18cdd4386d" />
+        <classShapeMoniker Id="359ddfc3-493c-48d7-8e02-1d3241865850" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6499908f-f821-4f2f-8d37-ab96a19e3dae" absoluteBounds="11.875, 12.625, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/BusWorkShopDataContext/MaintRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bccf7e24-a812-41f5-9b9d-122fe147bb54" absoluteBounds="11.89, 13.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(13.875 : 15.7508048502604); (14.75 : 15.7508048502604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/MaintRequest/MaintRequest_MaintReqComment" />
+      <nodes>
+        <classShapeMoniker Id="6499908f-f821-4f2f-8d37-ab96a19e3dae" />
+        <classShapeMoniker Id="b49659a3-1d3a-4715-b1bf-740b41068b44" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 13.9142976888021); (14.75 : 13.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/MaintRequest/MaintRequest_MaintReqPicture" />
+      <nodes>
+        <classShapeMoniker Id="6499908f-f821-4f2f-8d37-ab96a19e3dae" />
+        <classShapeMoniker Id="7adc8193-9596-491d-b612-010ff218d07c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 15.1544720166015); (17.2916666666667 : 15.1544720166015 : JumpStart); (17.4583333333333 : 15.1544720166015 : JumpEnd); (17.75 : 15.1544720166015)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/MaintRequest/MaintRequest_Process" />
+      <nodes>
+        <classShapeMoniker Id="6499908f-f821-4f2f-8d37-ab96a19e3dae" />
+        <classShapeMoniker Id="73431ead-5bcd-44e8-a780-e399ea169bfc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.875 : 12.8565991210937); (16.8229166666667 : 12.8565991210937 : JumpStart); (16.9895833333333 : 12.8565991210937 : JumpEnd); (17.2916666666667 : 12.8565991210937 : JumpStart); (17.4583333333333 : 12.8565991210937 : JumpEnd); (17.75 : 12.8565991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/MaintRequest/MaintRequest_ReqPhase" />
+      <nodes>
+        <classShapeMoniker Id="6499908f-f821-4f2f-8d37-ab96a19e3dae" />
+        <classShapeMoniker Id="a9a53690-ae1f-432c-a7c9-73fe5bda621f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.90625 : 16.1266097005208); (11.90625 : 17.5104456549479); (17.2916666666667 : 17.5104456549479 : JumpStart); (17.4583333333333 : 17.5104456549479 : JumpEnd); (17.75 : 17.5104456549479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/MaintRequest/MaintRequest_userRequest" />
+      <nodes>
+        <classShapeMoniker Id="6499908f-f821-4f2f-8d37-ab96a19e3dae" />
+        <classShapeMoniker Id="04a76482-897f-473b-8216-790b20afe197" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.875 : 13.5340734863281); (7.625 : 13.5340734863281); (7.625 : 16.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/MaintRequest/MaintRequest_MaintReqDetail" />
+      <nodes>
+        <classShapeMoniker Id="6499908f-f821-4f2f-8d37-ab96a19e3dae" />
+        <classShapeMoniker Id="359ddfc3-493c-48d7-8e02-1d3241865850" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.8124975 : 23.75); (9.8124975 : 15.2848783365885); (10.6979191666667 : 15.2848783365885 : JumpStart); (10.8645858333333 : 15.2848783365885 : JumpEnd); (11.875 : 15.2848783365885)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BusWorkShopDataContext/Company/Company_MaintRequest" />
+      <nodes>
+        <classShapeMoniker Id="6a2eee07-0f18-4f8e-94f5-3bc9685524a9" />
+        <classShapeMoniker Id="6499908f-f821-4f2f-8d37-ab96a19e3dae" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
