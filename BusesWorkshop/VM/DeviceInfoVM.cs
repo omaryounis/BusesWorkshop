@@ -7,6 +7,7 @@ namespace BusesWorkshop.VM
 {
     public class DeviceInfoVM
     {
+        public int xxxxx { get; set; }
         public int Sn { get; set; }
         public int NetworkDeviceInformationID { get; set; }
         public string IpAddress { get; set; }
