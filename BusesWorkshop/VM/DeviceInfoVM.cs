@@ -20,7 +20,6 @@ namespace BusesWorkshop.VM
         public string RoomName { get; set; }
         public string AssetMasterName { get; set; }
         public string SubAssetMasterName { get; set; }
-        public string hhhhhhhhhhhhh { get; set; }
 
     }
 }
