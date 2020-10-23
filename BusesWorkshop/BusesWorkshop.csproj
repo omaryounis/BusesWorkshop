@@ -157,12 +157,14 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\components.css" />
     <Content Include="assets\css\core.css" />
     <Content Include="assets\css\elements.css" />
     <Content Include="assets\css\example-styles.css" />
     <Content Include="assets\css\icons.css" />
+    <Content Include="assets\css\jquery.datetimepicker.css" />
     <Content Include="assets\css\menu.css" />
     <Content Include="assets\css\pages.css" />
     <Content Include="assets\css\responsive.css" />
@@ -171,12 +173,14 @@
     <Content Include="assets\css\variables.css" />
     <Content Include="assets\images\logo.png" />
     <Content Include="assets\images\logo_sm.png" />
+    <Content Include="assets\js\bootstrap-datetimepicker.min.js" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\detect.js" />
     <Content Include="assets\js\fastclick.js" />
     <Content Include="assets\js\jquery.app.js" />
     <Content Include="assets\js\jquery.blockUI.js" />
     <Content Include="assets\js\jquery.core.js" />
+    <Content Include="assets\js\jquery.datetimepicker.js" />
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\jquery.multi-select.js" />
     <Content Include="assets\js\jquery.multi-select.min.js" />

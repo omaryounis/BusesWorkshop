@@ -162,50 +162,50 @@ namespace BusesWorkshop.Pages
         }
         private void permissions(WorkshopDataContext dc)
         {
-            //try
-            //{
-            //    DataTable dt = Common.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.DeviceWithIPAddress.GetHashCode());
-            //    if (dt.Rows.Count > 0)
-            //    {
-            //        if (dt.Rows[0]["D"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["D"].ToString()))
-            //        {
-            //            Response.Redirect(@"..\Pages\Login.aspx", false);
-            //        }
-            //        if (dt.Rows[0]["R"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["R"].ToString()))
-            //        {
-            //            ViewState["AllowDelete"] = 0;
-            //        }
-            //        else
-            //        {
-            //            ViewState["AllowDelete"] = 0;
-            //        }
+            try
+            {
+                DataTable dt = Common.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.DeviceWithIPAddress.GetHashCode());
+                if (dt.Rows.Count > 0)
+                {
+                    if (dt.Rows[0]["D"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["D"].ToString()))
+                    {
+                        Response.Redirect(@"..\Pages\Login.aspx", false);
+                    }
+                    if (dt.Rows[0]["R"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["R"].ToString()))
+                    {
+                        ViewState["AllowDelete"] = 0;
+                    }
+                    else
+                    {
+                        ViewState["AllowDelete"] = 0;
+                    }
 
-            //        if (dt.Rows[0]["U"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["U"].ToString()))
-            //        {
-            //            ViewState["AllowUpDate"] = 0;
-            //        }
-            //        else
-            //        {
-            //            ViewState["AllowUpDate"] = 1;
-            //        }
-            //        if (dt.Rows[0]["I"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["I"].ToString()))
-            //        {
-            //            ViewState["AllowInsert"] = 0;
-            //        }
-            //        else
-            //        {
-            //            ViewState["AllowInsert"] = 1;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Response.Redirect(@"..\Pages\Login.aspx");
-            //    }
-            //}
-            //catch
-            //{
-            //    Response.Redirect(@"..\Pages\Login.aspx");
-           // }
+                    if (dt.Rows[0]["U"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["U"].ToString()))
+                    {
+                        ViewState["AllowUpDate"] = 0;
+                    }
+                    else
+                    {
+                        ViewState["AllowUpDate"] = 1;
+                    }
+                    if (dt.Rows[0]["I"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["I"].ToString()))
+                    {
+                        ViewState["AllowInsert"] = 0;
+                    }
+                    else
+                    {
+                        ViewState["AllowInsert"] = 1;
+                    }
+                }
+                else
+                {
+                    Response.Redirect(@"..\Pages\Login.aspx");
+                }
+            }
+            catch
+            {
+                Response.Redirect(@"..\Pages\Login.aspx");
+            }
         }
         #endregion
         #region "Events"

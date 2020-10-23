@@ -73,8 +73,11 @@ namespace BusesWorkshop.DAL
             MaintRequestProceeding = 46,
             rpt_FuelCardBalancies = 47,
             rpt_MaintRequests = 48,
-            SearchFollowCars = 49,
-            StaticIPAddressWithBranches=50
+            StaticIPAddressWithBranches = 49,
+            SearchFollowCars = 50,
+            DeviceWithIPAddress=51,
+            NetworkDevicesInformation=52,
+            MaintRequestTechnical = 53
         }
         ;
 

@@ -33,11 +33,6 @@
                                                 <asp:ListItem Text="All" Value="2">All</asp:ListItem>
                                             </asp:DropDownList>
 
-                                            <%--  <asp:RadioButtonList ID="rbtnHold" runat="server" 
-                           >  
-                    <asp:ListItem Text="Hold" Value="1">Hold</asp:ListItem>  
-                    <asp:ListItem Text="All" Value="2">All</asp:ListItem>  
-                </asp:RadioButtonList>    --%>
                                         </div>
                                     </div>
                                     <asp:Button ID="btnSearch" runat="server" Text="بحث" CssClass="btn btn-success pull-left" OnClick="btnSearch_Click"
@@ -98,11 +93,10 @@
         </Toolbars>
         <Columns>
             <dx:GridViewDataColumn FieldName="LeftId" Caption="مسلسل" VisibleIndex="0" />
-            <dx:GridViewDataColumn FieldName="RequestDate" Caption="التاريخ" VisibleIndex="1" />
             <dx:GridViewDataColumn FieldName="CompName" Caption="الشركة" VisibleIndex="2" />
             <dx:GridViewDataColumn FieldName="UserName" Caption="المستخدم" VisibleIndex="3" />
             <dx:GridViewDataColumn FieldName="requestTypes" Caption="نوع الطلب" VisibleIndex="3" />
-            <dx:GridViewDataColumn FieldName="time" Caption=" الوقت " VisibleIndex="3" />
+            <dx:GridViewDataColumn FieldName="RequestDate" Caption="التاريخ" VisibleIndex="1" />
             <dx:GridViewDataColumn FieldName="defdateTime" Caption="الوقت المستغرق" VisibleIndex="3" />
             <dx:GridViewDataColumn FieldName="PhaseName" Caption=" إسم المرحله " VisibleIndex="3" />
             <dx:GridViewDataTextColumn VisibleIndex="4" Caption="#" HeaderStyle-CssClass="align-center" FieldName="None">

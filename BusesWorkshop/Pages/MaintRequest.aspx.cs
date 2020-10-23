@@ -562,7 +562,7 @@ namespace BusesWorkshop.Pages
             _MaintRequest.RequestType = 0;
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            _MaintRequest.RequestDate = DateTime.ParseExact(txt_RequestDate.Text, "MM/dd/yyyy", new CultureInfo("en-US"));
+            _MaintRequest.RequestDate = DateTime.Parse(txt_RequestDate.Text);//DateTime.ParseExact(txt_RequestDate.Text, "MM/dd/yyyy", new CultureInfo("en-US"));
             //var d = Common.GetGregorianDate(txt_RequestDate.Text.ToString());
 
             _MaintRequest.Notes = txt_Notes.Text;
@@ -652,20 +652,20 @@ namespace BusesWorkshop.Pages
                         var RequestPhase = dcWorkShop.ReqPhases.Where(RP => RP.Req_Id == Convert.ToInt32(Maintreqid)).LastOrDefault();
                         if (RequestPhase != null)
                         {
-                            var NextPhaseOrder= RequestPhase.Phase.Phase_Order +1;
-                    var nextPhaseObj = dcWorkShop.Phases.Where(x => x.Phase_Order == NextPhaseOrder).FirstOrDefault();
-                    if (nextPhaseObj != null)
-                        nextPhase = nextPhaseObj.phases_Id;
-                    else
-                    {
-                        nextPhase = dcWorkShop.ReqPhases
-                            .Where(x => x.Req_Id == Convert.ToInt32(Maintreqid))
-                            .Select(rp => rp.Phase_Id).LastOrDefault();
-                    }
-                }
-                      
+                            var NextPhaseOrder = RequestPhase.Phase.Phase_Order + 1;
+                            var nextPhaseObj = dcWorkShop.Phases.Where(x => x.Phase_Order == NextPhaseOrder).FirstOrDefault();
+                            if (nextPhaseObj != null)
+                                nextPhase = nextPhaseObj.phases_Id;
+                            else
+                            {
+                                nextPhase = dcWorkShop.ReqPhases
+                                    .Where(x => x.Req_Id == Convert.ToInt32(Maintreqid))
+                                    .OrderByDescending(x => x.ReqPhaseID).Select(rp => rp.Phase_Id).FirstOrDefault();
+                            }
+                        }
 
-                }
+
+            }
                 ReqPhase ReqPhase = new ReqPhase();
             ReqPhase.Req_Id= Convert.ToInt32(Maintreqid);
 
@@ -677,6 +677,7 @@ namespace BusesWorkshop.Pages
                 dcWorkShop.SubmitChanges();
             
             #endregion
+
             divMsg2.Attributes["class"] = "alert alert-success text-right";
             lblResult2.Text = "تم الحفظ بنجاح";
             DAL.MyClasses.ClearControls(Page);
