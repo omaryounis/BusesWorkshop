@@ -101,19 +101,14 @@ namespace BusesWorkshop.Master
                
                select  new { مسلسل = m.MaintReqId, التاريخ = m.RequestDate, الشركة = m.Company.CompName }).Distinct().ToList();
             Request request = new Request();
-            var recdata = request.GetRecData().Where(
-                
-                p =>
-                ((p.Phase_Order == 1&& p.phase_Step == 0 )
-                
-                ||(p.Phase_Order == 2&& p.phase_Step ==1 ))
-              &&  (p.IsClosed == false || p.IsClosed == null)
-
-               
-                && p.UserId == Convert.ToInt16(Session["UserID"].ToString())
-                ).ToList().Distinct();
-            lblUserRequest.Text = recdata.Count().ToString();
-                ;
+            var recdata = (from m in dc.MaintRequests
+                           join p in dc.ReqPhases
+                           on m.MaintReqId equals p.Req_Id
+                           where p.User_Id == Convert.ToInt16(Session["UserID"].ToString())
+                           && m.IsAccepted!=true || m.IsClosed!=true
+                           select m.MaintReqId).Distinct().Count();
+            lblUserRequest.Text = recdata.ToString();
+            ;
 
 
 
