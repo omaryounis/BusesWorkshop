@@ -8,6 +8,7 @@ namespace BusesWorkshop.VM
     public class 
         RequestVM : IEquatable<RequestVM>
     {
+        public bool? IsPassedToNextPhase { get; set; }
         public string PhaseName { get; set; }
         public int LeftId { get; set; }
         public int RightId { get; set; }

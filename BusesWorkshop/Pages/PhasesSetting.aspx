@@ -50,67 +50,40 @@
                 <%-- <div class="pro_co">
         <div class="col-sm-12">--%>
             
-             <div class="form-group col-md-6">
-                        <label class="col-md-3 control-label">
-                        <asp:Label ID="lbl_phaseName" runat="server" Text="اسم المرحله"></asp:Label>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Save"
-                            Display="Dynamic" ErrorMessage="*Required" ControlToValidate="txtPhaseName"></asp:RequiredFieldValidator>
-
-                    </label>
-                    <div class="col-md-6 text-right" dir="rtl">
-
-                        <asp:TextBox CssClass="form-control" ID="txtPhaseName" runat="server" ValidateRequestMode="Enabled">
-
-                        </asp:TextBox>
-
-                    </div>
-                </div>
-             <div class="form-group col-md-6">
-                        <label class="col-md-3 control-label">
+             <div class="row">
+                        <label class="col-md-2 control-label">
+                                <asp:Label ID="lbl_phaseName" runat="server" Text="اسم المرحله"></asp:Label>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="Save"
+                                    Display="Dynamic" ErrorMessage="*Required" ControlToValidate="txtPhaseName"></asp:RequiredFieldValidator>
+                        </label>
+                        <div class="col-md-4 text-right" dir="rtl">
+                            <asp:TextBox CssClass="form-control" ID="txtPhaseName" runat="server" ValidateRequestMode="Enabled">
+                            </asp:TextBox>
+                        </div>
+                  <label class="col-md-2 control-label">
                         <asp:Label ID="lbl_Order" runat="server" Text=" محدد الترتيب"></asp:Label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ValidationGroup="Save"
                             Display="Dynamic" ErrorMessage="*" ControlToValidate="cb_order"></asp:RequiredFieldValidator>
-                           <asp:CompareValidator runat="server" Operator="DataTypeCheck" Type="Integer" 
+                            <asp:CompareValidator runat="server" Operator="DataTypeCheck" Type="Integer" 
                             ControlToValidate="cb_order" ErrorMessage="محدد الترتيب يجب أن يكن رقم صحيح" />
-                            </label>
-                     <div class="col-md-9 text-right" dir="rtl">
-                         
+                    </label>
+                  <div class="col-md-4 text-right" dir="rtl">
                         <asp:TextBox CssClass="form-control" ID="cb_order" runat="server" ValidateRequestMode="Enabled">
 
-                        </asp:TextBox>
-                        <%--  <asp:TextBox CssClass="form-control" ID="cb_order" runat="server" ValidateRequestMode="Enabled">
-
-                        </asp:TextBox>--%>
-              <%--          <dx:ASPxComboBox ID="cb_order" dir="rtl" runat="server"
-                            CssClass="form-control" DropDownStyle="DropDown"
-                            IncrementalFilteringMode="Contains" ValueType="System.String">
-                            <ClientSideEvents Init="OnInit" LostFocus="OnLostFocus" GotFocus="OnGotFocus" />
-                            <Items>
-                                <dx:ListEditItem Text="" Value="0" />
-                                <dx:ListEditItem Text=" الاولى " Value="1" />
-                                <dx:ListEditItem Text="الثانيه  " Value="2" />
-                                <dx:ListEditItem Text="الثالثه  " Value="3" />
-
-
-                            </Items>
-                            <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
-                        </dx:ASPxComboBox>
-                  --%>
+                        </asp:TextBox> 
                     </div>
-
                 </div>
+              
                   <div class="clearfix"></div>
 
              
-                     <div class="form-group col-md-6">
-                        <label class="col-md-3 control-label">
-                       
+                     <div class="row">
+                          <label class="col-md-2 control-label">
                                 <asp:Label ID="lbl_serviceRequest" runat="server" Text="طلب الخدمه"></asp:Label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="Save"
                                     Display="Dynamic" ErrorMessage="*" ControlToValidate="cb_RequestType"></asp:RequiredFieldValidator>
-                            </label>
-
-                          <div class="col-md-9 text-right" dir="rtl">
+                        </label>
+                          <div class="col-md-4 text-right" dir="rtl">
                                 <dx:ASPxComboBox ID="cb_RequestType" dir="rtl" runat="server"
                                     CssClass="form-control" DropDownStyle="DropDown"
                                     IncrementalFilteringMode="Contains" ValueType="System.String">
@@ -124,34 +97,32 @@
                                     <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
                                 </dx:ASPxComboBox>
                             </div>
-                        </div>
 
-                     <div class="form-group col-md-6">
-                    
-                        <label class="col-md-3 control-label">
+                         
+                        <label class="col-md-2 control-label">
                                 <asp:Label ID="lbl_isactive" runat="server" Text="الحاله "></asp:Label>
 
                                
                           <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ValidationGroup="Save"
                               Display="Dynamic" ErrorMessage="*" ControlToValidate="rdbtn_IsActive"></asp:RequiredFieldValidator>
                             </label>
-
-                         <%--   <div class="col-md-9">--%>
-                                    <div class="col-md-9 radio-st" dir="rtl">
+ 
+                           <div class="col-md-4 radio-st" dir="rtl">
                                 <dx:ASPxRadioButtonList ID="rdbtn_IsActive" runat="server" Width="178px">
                                     <Items>
-                                        <dx:ListEditItem Text="مفعل" Value="0" Selected="true" />
-                                        <dx:ListEditItem Text="غير مفعل" Value="1" />
+                                        <dx:ListEditItem Text="مفعل" Value="1" Selected="true" />
+                                        <dx:ListEditItem Text="غير مفعل" Value="0" />
 
                                     </Items>
                                     <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
-                                </dx:ASPxRadioButtonList>
-                         <%--   </div>--%>
+                                </dx:ASPxRadioButtonList> 
                                 </div>
-                         </div>
+                        </div>
 
-                            <div class="form-group col-md-6">
-                        <label class="col-md-3 control-label">
+                    
+
+                            <div class="row">
+                        <label class="col-md-2 control-label">
                                 <asp:Label ID="lbl_phases" runat="server" Text="المراحل " ></asp:Label>
 
                                
@@ -159,8 +130,7 @@
                               Display="Dynamic" ErrorMessage="*" ControlToValidate="rd_Step"></asp:RequiredFieldValidator>
                             </label>
 
-                         <%--   <div class="col-md-9">--%>
-                                  <div class="col-md-9 text-right   radio-st" dir="rtl"  >
+                                  <div class="col-md-4 text-right   radio-st" dir="rtl"  >
                                 <dx:ASPxRadioButtonList ID="rd_Step" runat="server" Width="178px">
                                     <Items>
                                         <dx:ListEditItem Text="مراحل اعتماد" Value="0" />
@@ -170,7 +140,7 @@
                                     </Items>
                                     <ValidationSettings RequiredField-IsRequired="true"></ValidationSettings>
                                 </dx:ASPxRadioButtonList>
-                         <%--   </div>--%>
+                        
                               
                     
                         </div>

@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BusesWorkshop.Pages
-{
-
-
-    public partial class MaintRequest
-    {
-
+namespace BusesWorkshop.Pages {
+    
+    
+    public partial class MaintRequest {
+        
         /// <summary>
         /// ScriptManager1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-
+        
         /// <summary>
         /// MaintRequestTabPage control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPageControl MaintRequestTabPage;
-
+        
         /// <summary>
         /// Label24 control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label24;
-
+        
         /// <summary>
         /// txt_RequestDate control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_RequestDate;
-
+        
         /// <summary>
         /// RequiredFieldValidator3 control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-
+        
         /// <summary>
         /// Label17 control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label17;
-
+        
         /// <summary>
         /// ddl_companyId control.
         /// </summary>
@@ -76,7 +74,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ddl_companyId;
-
+        
         /// <summary>
         /// RequiredFieldValidator10 control.
         /// </summary>
@@ -85,7 +83,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
-
+        
         /// <summary>
         /// Label31 control.
         /// </summary>
@@ -94,7 +92,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label31;
-
+        
         /// <summary>
         /// ddl_BranchIdInAcc control.
         /// </summary>
@@ -103,7 +101,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ddl_BranchIdInAcc;
-
+        
         /// <summary>
         /// RequiredFieldValidator25 control.
         /// </summary>
@@ -112,7 +110,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator25;
-
+        
         /// <summary>
         /// Label32 control.
         /// </summary>
@@ -121,7 +119,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label32;
-
+        
         /// <summary>
         /// ddl_SectionId control.
         /// </summary>
@@ -130,7 +128,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ddl_SectionId;
-
+        
         /// <summary>
         /// RequiredFieldValidator26 control.
         /// </summary>
@@ -139,7 +137,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator26;
-
+        
         /// <summary>
         /// Label33 control.
         /// </summary>
@@ -148,7 +146,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label33;
-
+        
         /// <summary>
         /// ddl_FloorId control.
         /// </summary>
@@ -157,7 +155,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ddl_FloorId;
-
+        
         /// <summary>
         /// RequiredFieldValidator27 control.
         /// </summary>
@@ -166,7 +164,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator27;
-
+        
         /// <summary>
         /// Label20 control.
         /// </summary>
@@ -175,7 +173,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label20;
-
+        
         /// <summary>
         /// ddl_RoomId control.
         /// </summary>
@@ -184,7 +182,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ddl_RoomId;
-
+        
         /// <summary>
         /// RequiredFieldValidator13 control.
         /// </summary>
@@ -193,7 +191,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator13;
-
+        
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -202,7 +200,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-
+        
         /// <summary>
         /// txt_Notes control.
         /// </summary>
@@ -211,7 +209,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Notes;
-
+        
         /// <summary>
         /// radio_IsAsset control.
         /// </summary>
@@ -220,7 +218,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList radio_IsAsset;
-
+        
         /// <summary>
         /// AssetRow control.
         /// </summary>
@@ -229,7 +227,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl AssetRow;
-
+        
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -238,7 +236,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-
+        
         /// <summary>
         /// ddl_AssetMasterId control.
         /// </summary>
@@ -247,7 +245,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ddl_AssetMasterId;
-
+        
         /// <summary>
         /// Label5 control.
         /// </summary>
@@ -256,7 +254,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-
+        
         /// <summary>
         /// ddl_SubAssetId control.
         /// </summary>
@@ -265,7 +263,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ddl_SubAssetId;
-
+        
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -274,7 +272,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-
+        
         /// <summary>
         /// ddl_WorkId control.
         /// </summary>
@@ -283,7 +281,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox ddl_WorkId;
-
+        
         /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
@@ -292,7 +290,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-
+        
         /// <summary>
         /// RecDiv control.
         /// </summary>
@@ -301,7 +299,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl RecDiv;
-
+        
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -310,7 +308,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-
+        
         /// <summary>
         /// ASPxDropDownEdit1 control.
         /// </summary>
@@ -319,7 +317,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxDropDownEdit ASPxDropDownEdit1;
-
+        
         /// <summary>
         /// Label6 control.
         /// </summary>
@@ -328,7 +326,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-
+        
         /// <summary>
         /// RequiredFieldValidator7 control.
         /// </summary>
@@ -337,7 +335,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
-
+        
         /// <summary>
         /// txt_Description control.
         /// </summary>
@@ -346,7 +344,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Description;
-
+        
         /// <summary>
         /// btnAddWork control.
         /// </summary>
@@ -355,7 +353,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddWork;
-
+        
         /// <summary>
         /// grd_WorksNeeded control.
         /// </summary>
@@ -364,7 +362,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grd_WorksNeeded;
-
+        
         /// <summary>
         /// divmsg3 control.
         /// </summary>
@@ -373,7 +371,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divmsg3;
-
+        
         /// <summary>
         /// lblMsg3 control.
         /// </summary>
@@ -382,7 +380,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMsg3;
-
+        
         /// <summary>
         /// Label8 control.
         /// </summary>
@@ -391,7 +389,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-
+        
         /// <summary>
         /// RequiredFieldValidator8 control.
         /// </summary>
@@ -400,7 +398,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
-
+        
         /// <summary>
         /// FU_Pic control.
         /// </summary>
@@ -409,7 +407,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FU_Pic;
-
+        
         /// <summary>
         /// Label9 control.
         /// </summary>
@@ -418,7 +416,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-
+        
         /// <summary>
         /// RequiredFieldValidator9 control.
         /// </summary>
@@ -427,7 +425,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
-
+        
         /// <summary>
         /// txt_PicDescription control.
         /// </summary>
@@ -436,7 +434,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PicDescription;
-
+        
         /// <summary>
         /// SavePicture control.
         /// </summary>
@@ -445,7 +443,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SavePicture;
-
+        
         /// <summary>
         /// grd_Pictures control.
         /// </summary>
@@ -454,7 +452,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grd_Pictures;
-
+        
         /// <summary>
         /// Save control.
         /// </summary>
@@ -463,7 +461,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Save;
-
+        
         /// <summary>
         /// divMsg2 control.
         /// </summary>
@@ -472,7 +470,7 @@ namespace BusesWorkshop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMsg2;
-
+        
         /// <summary>
         /// lblResult2 control.
         /// </summary>

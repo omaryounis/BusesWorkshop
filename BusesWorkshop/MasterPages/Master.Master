@@ -109,20 +109,11 @@
                          <hr />
                          
                    <li><a href="../Pages/ConfigurationPage.aspx">الملفات العامة</a></li>
-                   <li><a href="../Pages/Rec.aspx">التوصيات</a></li>
+                
                                  <%--  <li><a href="../Pages/VehclesDefinition.aspx">السيارات</a></li>--%>
                                    
                                     
-                                    <li class="has-submenu" >
-                                        <a href="#"></i> إعدادات الدعم الفني </a>
-                                     
-                                       <ul class="submenu" >
-                                 <li><a href="../Pages/StaticIPAddressWithBranches.aspx"><h3>تهيئة عنوان الشبكه للفروع</h3></a></li>
-                                
-                                      </ul>
-                                       
-                                     </li>
-
+                                  
 
                                     
                                </ul>
@@ -140,7 +131,66 @@
                                </ul>
                                </li>   
 
-<li class="has-submenu"><a href="#" id="A56" ><i class="mdi mdi-diamond"></i>الصيانة <i class="fa fa-angle-down"></i></a>
+
+
+
+                            <li class="has-submenu"><a href="#" id="A56" ><i class="mdi mdi-diamond"></i>الدعم الفني 
+    <i class="fa fa-angle-down"></i></a>
+                               <ul class="submenu" id="Ul123" >
+                                     
+                                    <li class="has-submenu" >
+                                        <a href="#"></i> إعدادات الدعم الفني </a>
+                                     
+                                       <ul class="submenu" >
+                                 <li><a href="../Pages/StaticIPAddressWithBranches.aspx"><h3>تهيئة عنوان الشبكه للفروع</h3></a></li>
+                                   <li><a href="../Pages/Rec.aspx">التوصيات</a></li>
+                                           <li><a href="../Pages/ConfigurationPage.aspx">الأعمال المطلوبة</a></li>
+                
+                                      </ul>
+                                       
+                                     </li>
+                                   
+                                    <li class="has-submenu" >
+                                        <a href="#"></i> العمليات علي الدعم الفني </a>
+                                     
+                                       <ul class="submenu" >
+                                 
+                                              
+                                   <li><a href="../Pages/NetworkDevicesInformation.aspx">مسح الشبكه</a> </li>
+                                   
+                                    
+                                   <li><a href="../Pages/DeviceWithIPAddress.aspx">ربط العنوان بالمنقول</a> </li>
+                                   <li><a href="../Pages/MaintRequestTechnical.aspx" >الدعم الفني</a></li>
+                
+                                      </ul> 
+                                       
+                                     </li>
+
+
+                                   <li class="has-submenu" >
+                                        <a href="#"></i> الصلاحيات علي الدعم الفني </a>
+                                     
+                                       <ul class="submenu" >
+                                 
+                                              
+                                   <li ><a href="../Pages/PhasesSetting.aspx">تهيئه المراحل</a></li>
+                                   <li><a href="../Pages/UserPhase.aspx">اسناد مراحل للمستخدمين</a></li>
+                                      </ul> 
+                                       
+                                     </li>
+                                   
+                               </ul>
+                               </li>
+
+
+
+
+
+
+
+
+<li class="has-submenu"><a href="#" id="A56" ><i class="mdi mdi-diamond"></i>الصيانة 
+    <i class="fa fa-angle-down"></i></a>
                                <ul class="submenu" id="Ul123" >
                                    <li><a href="../Pages/PeriodicPlanToVehcle.aspx">اسناد خطة صيانة الى سيارة</a></li>
                                    <li><a href="../Pages/BusCheck.aspx">الصيانة الطارئة للسيارات</a> </li>
@@ -148,18 +198,13 @@
                                    
                                    <hr />
                                    <li><a href="../Pages/MaintRequest.aspx" visible="false">طلب صيانه المباني-طلب الصيانه</a></li>
-                                   <li><a href="../Pages/MaintRequestTechnical.aspx" visible="false">طلب صيانه المباني-الدعم الفني</a></li>
+                                   
                                    <li><a href="../Pages/MaintRequestProceeding.aspx" visible="false">اجراء طلب صيانة مبانى</a></li>
                                    <li><a href="../Pages/PeriodicalPlanToBuilding.aspx">اسناد خطة صيانة الى مبنى</a></li>
                                    <li><a href="../Pages/BuildingMaint.aspx">الصيانة الطارئة للمبانى</a> </li>
                          
                                    <li><a href="../Pages/BuildingPeriocalExec.aspx">الاجراء الدوري للمبانى</a> </li>
-                                   
-                                   <li><a href="../Pages/NetworkDevicesInformation.aspx">مسح الشبكه</a> </li>
-                                   
-                                    
-                                   <li><a href="../Pages/DeviceWithIPAddress.aspx">ربط العنوان بالمنقول</a> </li>
-                                   
+                                 
                                </ul>
                                </li>
 
@@ -198,8 +243,6 @@
                                  <li><a href="../Pages/Groups.aspx">المجموعات</a></li>
                                  <li><a href="../Pages/GroupPermission.aspx">صلاحيات المجموعة</a></li>
                                  <li><a href="../Pages/UserGroup.aspx">مجموعات المستخدمين</a></li>
-                                   <li ><a href="../Pages/PhasesSetting.aspx">تهيئه المراحل</a></li>
-                                   <li><a href="../Pages/UserPhase.aspx">اسناد مراحل للمستخدمين</a></li>
                                   <li><a href="../Pages/Request.aspx">الطلبات</a></li>
                                    </ul>
                             </li>                            

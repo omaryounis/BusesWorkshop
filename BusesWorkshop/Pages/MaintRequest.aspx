@@ -7,25 +7,27 @@
 
 <%--asmaa--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="header" runat="server">
-    
+    <link href="../assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="SupPlaceHolder" runat="server">
      
-    <script src="../plugins/bootstrap-datepicker/js/MyPlugins.js"
-        type="text/javascript"></script>
-     
+    <%--<script src="../plugins/bootstrap-datepicker/js/MyPlugins.js"
+        type="text/javascript"></script>--%>
+    <script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
+
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
 
-
+    
     <script type="text/javascript">
 
         $(function () {
             // var calendar = $.calendars.instance('islamic');
             //$('[id*=txt_RequestDate]').calendarsPicker({ calendar: calendar });
-            $('[id*=txt_RequestDate]').datepicker({
-                format: 'mm/dd/yyyy'
+            $('[id*=txt_RequestDate]').datetimepicker({
+           
             });
+
         });
 
        
@@ -101,14 +103,14 @@
                         <asp:Label ID="Label24" runat="server" Text="تاريخ الطلب"></asp:Label>
                     </label>
                     <div class="col-md-3">
-                        <div class="input-group">
+                        <div class="input-group controls input-append date form_datetime"
+                            data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p">
                             <asp:TextBox ID="txt_RequestDate" ClientId="txt_RequestDate" CssClass="form-control "
                                 runat="server" onkeydown="return false;"></asp:TextBox>
                             <span class="input-group-addon bg-success b-0"><i class="mdi mdi-calendar text-white"></i></span>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ValidationGroup="Save"
                                 Display="Dynamic" ErrorMessage="*" ControlToValidate="txt_RequestDate"></asp:RequiredFieldValidator>
                         </div>
-                        <!-- input-group -->
                     </div>
 
                     

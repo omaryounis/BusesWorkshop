@@ -106,7 +106,7 @@ namespace BusesWorkshop.Pages
                 //    return;
                 //}
                 Phase phaseService = new Phase();
-                phaseService.IsActive = 0;
+                phaseService.IsActive = 1;
                 phaseService.phases_Name = txtPhaseName.Text.Trim();
                 if (cb_RequestType.SelectedItem != null)
                 {
@@ -216,17 +216,17 @@ namespace BusesWorkshop.Pages
         public void fillGridView()
         {
             //is active  =1 not deleted
-            var gettable = from phase in dc.GetTable<Phase>().Where(c => c.IsActive == 0)
+            var gettable = (from phase in dc.GetTable<Phase>().Where(c => c.IsActive == 1)
                            select new PhaseSettingVM
                            {
                                phases_Id = phase.phases_Id,
                                requestType = phase.requestType == 0 ? "طلب صيانه" : phase.requestType == 1 ? "دعم فنى " : phase.requestType == 2 ? "الكل" : "",
                                Phase_Order = phase.Phase_Order.ToString() ,//== 1 ? "الاولى" : phase.Phase_Order == 2 ? "الثانيه" : phase.Phase_Order == 3 ? "الثالثه" : "",
                                phases_Name = phase.phases_Name,
-                               IsActive = phase.IsActive == 0 ? "مفعل" : phase.IsActive == 1 ? "غير مفعل " : "",
+                               IsActive = phase.IsActive == 1 ? "مفعل" : phase.IsActive == 0 ? "غير مفعل " : "",
                                phase_Step = phase.phase_Step == 0 ? "مراحل اعتماد" : phase.phase_Step == 1 ? "مراحل توزيع" : phase.phase_Step == 2 ? "مراحل اجراء" : ""
 
-                           };
+                           }).ToList().OrderBy(x=>int.Parse(x.Phase_Order));
             //  GridViewPhase.Columns[5].Visible = false;
             dt = gettable.CopyToDataTable();
             if (dt.Rows.Count > 0)

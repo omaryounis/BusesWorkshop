@@ -148,7 +148,7 @@ namespace BusesWorkshop.Pages
         {
             try
             {
-                DataTable dt = Common.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.MaintRequest.GetHashCode());
+                DataTable dt = Common.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.MaintRequestTechnical.GetHashCode());
                 if (dt.Rows.Count > 0)
                 {
                     if (dt.Rows[0]["D"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["D"].ToString()))
@@ -558,12 +558,9 @@ namespace BusesWorkshop.Pages
             _MaintRequest.LocationId = int.Parse(ddl_RoomId.SelectedItem.Value.ToString());
             _MaintRequest.RequestedEmpId = EmpId;
             _MaintRequest.RequestType = 1;
-            //DateTime date = txt_RequestDate.Text!=""? DateTime.Parse(txt_RequestDate.Text):DateTime.Now;
-            //var d = Common.GetGregorianDate(txt_RequestDate.Text.ToString());
-            //_MaintRequest.RequestDate  = DateTime.ParseExact(d, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-
+           
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            _MaintRequest.RequestDate = DateTime.ParseExact(txt_RequestDate.Text, "MM/dd/yyyy", new CultureInfo("en-US"));
+            _MaintRequest.RequestDate = DateTime.Parse(txt_RequestDate.Text);
             _MaintRequest.Notes = txt_Notes.Text;
             dcWorkShop.MaintRequests.InsertOnSubmit(_MaintRequest);
             dcWorkShop.SubmitChanges();
@@ -636,34 +633,50 @@ namespace BusesWorkshop.Pages
 
             #endregion
 
+
+
             #region "SaveReqPhase"
             List<ReqPhase> currentApprovedPhases = dcWorkShop.ReqPhases.Where(c => c.Req_Id == Maintreqid).ToList();
             int? nextPhase = 0;
 
             if (currentApprovedPhases.Count == 0)
             {
-                 nextPhase = dcWorkShop.Phases.Where(x => x.Phase_Order == 1).FirstOrDefault().phases_Id;
+                nextPhase = dcWorkShop.Phases.Where(x => x.Phase_Order == 1).FirstOrDefault().phases_Id;
             }
-           
 
-                  else if (currentApprovedPhases.Count > 0)
+
+            else if (currentApprovedPhases.Count > 0)
+            {
+                var RequestPhase = dcWorkShop.ReqPhases.Where(RP => RP.Req_Id == Convert.ToInt32(Maintreqid)).LastOrDefault();
+                if (RequestPhase != null)
                 {
-                    nextPhase = dcWorkShop.ReqPhases
-                        .Where(RP => RP.Req_Id == Convert.ToInt32(Maintreqid))
-                            .Select(rp => rp.Phase_Id).LastOrDefault();
-
+                    var NextPhaseOrder = RequestPhase.Phase.Phase_Order + 1;
+                    var nextPhaseObj = dcWorkShop.Phases.Where(x => x.Phase_Order == NextPhaseOrder).FirstOrDefault();
+                    if (nextPhaseObj != null)
+                        nextPhase = nextPhaseObj.phases_Id;
+                    else
+                    {
+                        nextPhase = dcWorkShop.ReqPhases
+                            .Where(x => x.Req_Id == Convert.ToInt32(Maintreqid))
+                            .OrderByDescending(x => x.ReqPhaseID).Select(rp => rp.Phase_Id).FirstOrDefault();
+                    }
                 }
-                ReqPhase ReqPhase = new ReqPhase();
-            ReqPhase.Req_Id= Convert.ToInt32(Maintreqid);
 
-                ReqPhase.User_Id = int.Parse(Session["UserID"].ToString());
-                ReqPhase.StartDate = DateTime.Now;
-                ReqPhase.EndDate = DateTime.Now;
-                ReqPhase.Phase_Id = nextPhase;//Convert.ToInt32( ddl_Phases.SelectedItem.Value.ToString());
-                dcWorkShop.ReqPhases.InsertOnSubmit(ReqPhase);
-                dcWorkShop.SubmitChanges();
-            
+
+            }
+            ReqPhase ReqPhase = new ReqPhase();
+            ReqPhase.Req_Id = Convert.ToInt32(Maintreqid);
+
+            ReqPhase.User_Id = int.Parse(Session["UserID"].ToString());
+            ReqPhase.StartDate = DateTime.Now;
+            ReqPhase.EndDate = DateTime.Now;
+            ReqPhase.Phase_Id = nextPhase;//Convert.ToInt32( ddl_Phases.SelectedItem.Value.ToString());
+            dcWorkShop.ReqPhases.InsertOnSubmit(ReqPhase);
+            dcWorkShop.SubmitChanges();
+
             #endregion
+
+
             divMsg2.Attributes["class"] = "alert alert-success text-right";
             lblResult2.Text = "تم الحفظ بنجاح";
             DAL.MyClasses.ClearControls(Page);

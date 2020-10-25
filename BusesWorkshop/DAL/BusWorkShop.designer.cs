@@ -132,9 +132,6 @@ namespace BusesWorkshop.DAL.Bus
     partial void InsertProcess(Process instance);
     partial void UpdateProcess(Process instance);
     partial void DeleteProcess(Process instance);
-    partial void InsertReqPhase(ReqPhase instance);
-    partial void UpdateReqPhase(ReqPhase instance);
-    partial void DeleteReqPhase(ReqPhase instance);
     partial void InsertServicesSetting(ServicesSetting instance);
     partial void UpdateServicesSetting(ServicesSetting instance);
     partial void DeleteServicesSetting(ServicesSetting instance);
@@ -222,6 +219,9 @@ namespace BusesWorkshop.DAL.Bus
     partial void InsertMaintRequest(MaintRequest instance);
     partial void UpdateMaintRequest(MaintRequest instance);
     partial void DeleteMaintRequest(MaintRequest instance);
+    partial void InsertReqPhase(ReqPhase instance);
+    partial void UpdateReqPhase(ReqPhase instance);
+    partial void DeleteReqPhase(ReqPhase instance);
     #endregion
 		
 		public WorkshopDataContext() : 
@@ -526,14 +526,6 @@ namespace BusesWorkshop.DAL.Bus
 			}
 		}
 		
-		public System.Data.Linq.Table<ReqPhase> ReqPhases
-		{
-			get
-			{
-				return this.GetTable<ReqPhase>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ServicesSetting> ServicesSettings
 		{
 			get
@@ -771,6 +763,14 @@ namespace BusesWorkshop.DAL.Bus
 			get
 			{
 				return this.GetTable<MaintRequest>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ReqPhase> ReqPhases
+		{
+			get
+			{
+				return this.GetTable<ReqPhase>();
 			}
 		}
 		
@@ -10643,421 +10643,6 @@ namespace BusesWorkshop.DAL.Bus
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReqPhase")]
-	public partial class ReqPhase : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ReqPhaseID;
-		
-		private System.Nullable<int> _User_Id;
-		
-		private System.Nullable<int> _Phase_Id;
-		
-		private System.Nullable<System.DateTime> _StartDate;
-		
-		private System.Nullable<System.DateTime> _EndDate;
-		
-		private System.Nullable<int> _Req_Id;
-		
-		private EntityRef<ReqPhase> _ReqPhase2;
-		
-		private EntityRef<Phase> _Phase;
-		
-		private EntityRef<ReqPhase> _ReqPhase1;
-		
-		private EntityRef<User> _User;
-		
-		private EntityRef<User> _User1;
-		
-		private EntityRef<MaintRequest> _MaintRequest;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnReqPhaseIDChanging(int value);
-    partial void OnReqPhaseIDChanged();
-    partial void OnUser_IdChanging(System.Nullable<int> value);
-    partial void OnUser_IdChanged();
-    partial void OnPhase_IdChanging(System.Nullable<int> value);
-    partial void OnPhase_IdChanged();
-    partial void OnStartDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnStartDateChanged();
-    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnEndDateChanged();
-    partial void OnReq_IdChanging(System.Nullable<int> value);
-    partial void OnReq_IdChanged();
-    #endregion
-		
-		public ReqPhase()
-		{
-			this._ReqPhase2 = default(EntityRef<ReqPhase>);
-			this._Phase = default(EntityRef<Phase>);
-			this._ReqPhase1 = default(EntityRef<ReqPhase>);
-			this._User = default(EntityRef<User>);
-			this._User1 = default(EntityRef<User>);
-			this._MaintRequest = default(EntityRef<MaintRequest>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReqPhaseID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ReqPhaseID
-		{
-			get
-			{
-				return this._ReqPhaseID;
-			}
-			set
-			{
-				if ((this._ReqPhaseID != value))
-				{
-					if (this._ReqPhase1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnReqPhaseIDChanging(value);
-					this.SendPropertyChanging();
-					this._ReqPhaseID = value;
-					this.SendPropertyChanged("ReqPhaseID");
-					this.OnReqPhaseIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Id", DbType="Int")]
-		public System.Nullable<int> User_Id
-		{
-			get
-			{
-				return this._User_Id;
-			}
-			set
-			{
-				if ((this._User_Id != value))
-				{
-					if ((this._User.HasLoadedOrAssignedValue || this._User1.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUser_IdChanging(value);
-					this.SendPropertyChanging();
-					this._User_Id = value;
-					this.SendPropertyChanged("User_Id");
-					this.OnUser_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phase_Id", DbType="Int")]
-		public System.Nullable<int> Phase_Id
-		{
-			get
-			{
-				return this._Phase_Id;
-			}
-			set
-			{
-				if ((this._Phase_Id != value))
-				{
-					if (this._Phase.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPhase_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Phase_Id = value;
-					this.SendPropertyChanged("Phase_Id");
-					this.OnPhase_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> StartDate
-		{
-			get
-			{
-				return this._StartDate;
-			}
-			set
-			{
-				if ((this._StartDate != value))
-				{
-					this.OnStartDateChanging(value);
-					this.SendPropertyChanging();
-					this._StartDate = value;
-					this.SendPropertyChanged("StartDate");
-					this.OnStartDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> EndDate
-		{
-			get
-			{
-				return this._EndDate;
-			}
-			set
-			{
-				if ((this._EndDate != value))
-				{
-					this.OnEndDateChanging(value);
-					this.SendPropertyChanging();
-					this._EndDate = value;
-					this.SendPropertyChanged("EndDate");
-					this.OnEndDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Req_Id", DbType="Int")]
-		public System.Nullable<int> Req_Id
-		{
-			get
-			{
-				return this._Req_Id;
-			}
-			set
-			{
-				if ((this._Req_Id != value))
-				{
-					if (this._MaintRequest.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnReq_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Req_Id = value;
-					this.SendPropertyChanged("Req_Id");
-					this.OnReq_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ReqPhase_ReqPhase", Storage="_ReqPhase2", ThisKey="ReqPhaseID", OtherKey="ReqPhaseID", IsUnique=true, IsForeignKey=false)]
-		public ReqPhase ReqPhase2
-		{
-			get
-			{
-				return this._ReqPhase2.Entity;
-			}
-			set
-			{
-				ReqPhase previousValue = this._ReqPhase2.Entity;
-				if (((previousValue != value) 
-							|| (this._ReqPhase2.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ReqPhase2.Entity = null;
-						previousValue.ReqPhase1 = null;
-					}
-					this._ReqPhase2.Entity = value;
-					if ((value != null))
-					{
-						value.ReqPhase1 = this;
-					}
-					this.SendPropertyChanged("ReqPhase2");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phase_ReqPhase", Storage="_Phase", ThisKey="Phase_Id", OtherKey="phases_Id", IsForeignKey=true)]
-		public Phase Phase
-		{
-			get
-			{
-				return this._Phase.Entity;
-			}
-			set
-			{
-				Phase previousValue = this._Phase.Entity;
-				if (((previousValue != value) 
-							|| (this._Phase.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Phase.Entity = null;
-						previousValue.ReqPhases.Remove(this);
-					}
-					this._Phase.Entity = value;
-					if ((value != null))
-					{
-						value.ReqPhases.Add(this);
-						this._Phase_Id = value.phases_Id;
-					}
-					else
-					{
-						this._Phase_Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Phase");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ReqPhase_ReqPhase", Storage="_ReqPhase1", ThisKey="ReqPhaseID", OtherKey="ReqPhaseID", IsForeignKey=true)]
-		public ReqPhase ReqPhase1
-		{
-			get
-			{
-				return this._ReqPhase1.Entity;
-			}
-			set
-			{
-				ReqPhase previousValue = this._ReqPhase1.Entity;
-				if (((previousValue != value) 
-							|| (this._ReqPhase1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ReqPhase1.Entity = null;
-						previousValue.ReqPhase2 = null;
-					}
-					this._ReqPhase1.Entity = value;
-					if ((value != null))
-					{
-						value.ReqPhase2 = this;
-						this._ReqPhaseID = value.ReqPhaseID;
-					}
-					else
-					{
-						this._ReqPhaseID = default(int);
-					}
-					this.SendPropertyChanged("ReqPhase1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_ReqPhase", Storage="_User", ThisKey="User_Id", OtherKey="ID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.ReqPhases.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.ReqPhases.Add(this);
-						this._User_Id = value.ID;
-					}
-					else
-					{
-						this._User_Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_ReqPhase1", Storage="_User1", ThisKey="User_Id", OtherKey="ID", IsForeignKey=true)]
-		public User User1
-		{
-			get
-			{
-				return this._User1.Entity;
-			}
-			set
-			{
-				User previousValue = this._User1.Entity;
-				if (((previousValue != value) 
-							|| (this._User1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User1.Entity = null;
-						previousValue.ReqPhases1.Remove(this);
-					}
-					this._User1.Entity = value;
-					if ((value != null))
-					{
-						value.ReqPhases1.Add(this);
-						this._User_Id = value.ID;
-					}
-					else
-					{
-						this._User_Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("User1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MaintRequest_ReqPhase", Storage="_MaintRequest", ThisKey="Req_Id", OtherKey="MaintReqId", IsForeignKey=true)]
-		public MaintRequest MaintRequest
-		{
-			get
-			{
-				return this._MaintRequest.Entity;
-			}
-			set
-			{
-				MaintRequest previousValue = this._MaintRequest.Entity;
-				if (((previousValue != value) 
-							|| (this._MaintRequest.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MaintRequest.Entity = null;
-						previousValue.ReqPhases.Remove(this);
-					}
-					this._MaintRequest.Entity = value;
-					if ((value != null))
-					{
-						value.ReqPhases.Add(this);
-						this._Req_Id = value.MaintReqId;
-					}
-					else
-					{
-						this._Req_Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("MaintRequest");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ServicesSetting")]
 	public partial class ServicesSetting : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -16184,13 +15769,13 @@ namespace BusesWorkshop.DAL.Bus
 		
 		private EntitySet<Process> _Processes;
 		
-		private EntitySet<ReqPhase> _ReqPhases;
-		
-		private EntitySet<ReqPhase> _ReqPhases1;
-		
 		private EntitySet<userRequest> _userRequests;
 		
 		private EntitySet<UserCompany> _UserCompanies;
+		
+		private EntitySet<ReqPhase> _ReqPhases;
+		
+		private EntitySet<ReqPhase> _ReqPhases1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -16211,10 +15796,10 @@ namespace BusesWorkshop.DAL.Bus
 		public User()
 		{
 			this._Processes = new EntitySet<Process>(new Action<Process>(this.attach_Processes), new Action<Process>(this.detach_Processes));
-			this._ReqPhases = new EntitySet<ReqPhase>(new Action<ReqPhase>(this.attach_ReqPhases), new Action<ReqPhase>(this.detach_ReqPhases));
-			this._ReqPhases1 = new EntitySet<ReqPhase>(new Action<ReqPhase>(this.attach_ReqPhases1), new Action<ReqPhase>(this.detach_ReqPhases1));
 			this._userRequests = new EntitySet<userRequest>(new Action<userRequest>(this.attach_userRequests), new Action<userRequest>(this.detach_userRequests));
 			this._UserCompanies = new EntitySet<UserCompany>(new Action<UserCompany>(this.attach_UserCompanies), new Action<UserCompany>(this.detach_UserCompanies));
+			this._ReqPhases = new EntitySet<ReqPhase>(new Action<ReqPhase>(this.attach_ReqPhases), new Action<ReqPhase>(this.detach_ReqPhases));
+			this._ReqPhases1 = new EntitySet<ReqPhase>(new Action<ReqPhase>(this.attach_ReqPhases1), new Action<ReqPhase>(this.detach_ReqPhases1));
 			OnCreated();
 		}
 		
@@ -16331,32 +15916,6 @@ namespace BusesWorkshop.DAL.Bus
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_ReqPhase", Storage="_ReqPhases", ThisKey="ID", OtherKey="User_Id")]
-		public EntitySet<ReqPhase> ReqPhases
-		{
-			get
-			{
-				return this._ReqPhases;
-			}
-			set
-			{
-				this._ReqPhases.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_ReqPhase1", Storage="_ReqPhases1", ThisKey="ID", OtherKey="User_Id")]
-		public EntitySet<ReqPhase> ReqPhases1
-		{
-			get
-			{
-				return this._ReqPhases1;
-			}
-			set
-			{
-				this._ReqPhases1.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_userRequest", Storage="_userRequests", ThisKey="ID", OtherKey="UserId")]
 		public EntitySet<userRequest> userRequests
 		{
@@ -16380,6 +15939,32 @@ namespace BusesWorkshop.DAL.Bus
 			set
 			{
 				this._UserCompanies.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_ReqPhase", Storage="_ReqPhases", ThisKey="ID", OtherKey="User_Id")]
+		public EntitySet<ReqPhase> ReqPhases
+		{
+			get
+			{
+				return this._ReqPhases;
+			}
+			set
+			{
+				this._ReqPhases.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_ReqPhase1", Storage="_ReqPhases1", ThisKey="ID", OtherKey="User_Id")]
+		public EntitySet<ReqPhase> ReqPhases1
+		{
+			get
+			{
+				return this._ReqPhases1;
+			}
+			set
+			{
+				this._ReqPhases1.Assign(value);
 			}
 		}
 		
@@ -16415,30 +16000,6 @@ namespace BusesWorkshop.DAL.Bus
 			entity.User = null;
 		}
 		
-		private void attach_ReqPhases(ReqPhase entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_ReqPhases(ReqPhase entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_ReqPhases1(ReqPhase entity)
-		{
-			this.SendPropertyChanging();
-			entity.User1 = this;
-		}
-		
-		private void detach_ReqPhases1(ReqPhase entity)
-		{
-			this.SendPropertyChanging();
-			entity.User1 = null;
-		}
-		
 		private void attach_userRequests(userRequest entity)
 		{
 			this.SendPropertyChanging();
@@ -16461,6 +16022,30 @@ namespace BusesWorkshop.DAL.Bus
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
+		}
+		
+		private void attach_ReqPhases(ReqPhase entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_ReqPhases(ReqPhase entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_ReqPhases1(ReqPhase entity)
+		{
+			this.SendPropertyChanging();
+			entity.User1 = this;
+		}
+		
+		private void detach_ReqPhases1(ReqPhase entity)
+		{
+			this.SendPropertyChanging();
+			entity.User1 = null;
 		}
 	}
 	
@@ -20525,11 +20110,11 @@ namespace BusesWorkshop.DAL.Bus
 		
 		private EntitySet<Process> _Processes;
 		
-		private EntitySet<ReqPhase> _ReqPhases;
-		
 		private EntitySet<userRequest> _userRequests;
 		
 		private EntitySet<MaintReqDetail> _MaintReqDetails;
+		
+		private EntitySet<ReqPhase> _ReqPhases;
 		
 		private EntityRef<Company> _Company;
 		
@@ -20572,9 +20157,9 @@ namespace BusesWorkshop.DAL.Bus
 			this._MaintReqComments = new EntitySet<MaintReqComment>(new Action<MaintReqComment>(this.attach_MaintReqComments), new Action<MaintReqComment>(this.detach_MaintReqComments));
 			this._MaintReqPictures = new EntitySet<MaintReqPicture>(new Action<MaintReqPicture>(this.attach_MaintReqPictures), new Action<MaintReqPicture>(this.detach_MaintReqPictures));
 			this._Processes = new EntitySet<Process>(new Action<Process>(this.attach_Processes), new Action<Process>(this.detach_Processes));
-			this._ReqPhases = new EntitySet<ReqPhase>(new Action<ReqPhase>(this.attach_ReqPhases), new Action<ReqPhase>(this.detach_ReqPhases));
 			this._userRequests = new EntitySet<userRequest>(new Action<userRequest>(this.attach_userRequests), new Action<userRequest>(this.detach_userRequests));
 			this._MaintReqDetails = new EntitySet<MaintReqDetail>(new Action<MaintReqDetail>(this.attach_MaintReqDetails), new Action<MaintReqDetail>(this.detach_MaintReqDetails));
+			this._ReqPhases = new EntitySet<ReqPhase>(new Action<ReqPhase>(this.attach_ReqPhases), new Action<ReqPhase>(this.detach_ReqPhases));
 			this._Company = default(EntityRef<Company>);
 			OnCreated();
 		}
@@ -20902,19 +20487,6 @@ namespace BusesWorkshop.DAL.Bus
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MaintRequest_ReqPhase", Storage="_ReqPhases", ThisKey="MaintReqId", OtherKey="Req_Id")]
-		public EntitySet<ReqPhase> ReqPhases
-		{
-			get
-			{
-				return this._ReqPhases;
-			}
-			set
-			{
-				this._ReqPhases.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MaintRequest_userRequest", Storage="_userRequests", ThisKey="MaintReqId", OtherKey="MaintRequestId")]
 		public EntitySet<userRequest> userRequests
 		{
@@ -20938,6 +20510,19 @@ namespace BusesWorkshop.DAL.Bus
 			set
 			{
 				this._MaintReqDetails.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MaintRequest_ReqPhase", Storage="_ReqPhases", ThisKey="MaintReqId", OtherKey="Req_Id")]
+		public EntitySet<ReqPhase> ReqPhases
+		{
+			get
+			{
+				return this._ReqPhases;
+			}
+			set
+			{
+				this._ReqPhases.Assign(value);
 			}
 		}
 		
@@ -21031,18 +20616,6 @@ namespace BusesWorkshop.DAL.Bus
 			entity.MaintRequest = null;
 		}
 		
-		private void attach_ReqPhases(ReqPhase entity)
-		{
-			this.SendPropertyChanging();
-			entity.MaintRequest = this;
-		}
-		
-		private void detach_ReqPhases(ReqPhase entity)
-		{
-			this.SendPropertyChanging();
-			entity.MaintRequest = null;
-		}
-		
 		private void attach_userRequests(userRequest entity)
 		{
 			this.SendPropertyChanging();
@@ -21065,6 +20638,457 @@ namespace BusesWorkshop.DAL.Bus
 		{
 			this.SendPropertyChanging();
 			entity.MaintRequest = null;
+		}
+		
+		private void attach_ReqPhases(ReqPhase entity)
+		{
+			this.SendPropertyChanging();
+			entity.MaintRequest = this;
+		}
+		
+		private void detach_ReqPhases(ReqPhase entity)
+		{
+			this.SendPropertyChanging();
+			entity.MaintRequest = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ReqPhase")]
+	public partial class ReqPhase : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ReqPhaseID;
+		
+		private System.Nullable<int> _User_Id;
+		
+		private System.Nullable<int> _Phase_Id;
+		
+		private System.Nullable<System.DateTime> _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private System.Nullable<int> _Req_Id;
+		
+		private System.Nullable<bool> _IsPassedToNextPhase;
+		
+		private EntityRef<ReqPhase> _ReqPhase2;
+		
+		private EntityRef<Phase> _Phase;
+		
+		private EntityRef<MaintRequest> _MaintRequest;
+		
+		private EntityRef<User> _User;
+		
+		private EntityRef<ReqPhase> _ReqPhase1;
+		
+		private EntityRef<User> _User1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnReqPhaseIDChanging(int value);
+    partial void OnReqPhaseIDChanged();
+    partial void OnUser_IdChanging(System.Nullable<int> value);
+    partial void OnUser_IdChanged();
+    partial void OnPhase_IdChanging(System.Nullable<int> value);
+    partial void OnPhase_IdChanged();
+    partial void OnStartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    partial void OnReq_IdChanging(System.Nullable<int> value);
+    partial void OnReq_IdChanged();
+    partial void OnIsPassedToNextPhaseChanging(System.Nullable<bool> value);
+    partial void OnIsPassedToNextPhaseChanged();
+    #endregion
+		
+		public ReqPhase()
+		{
+			this._ReqPhase2 = default(EntityRef<ReqPhase>);
+			this._Phase = default(EntityRef<Phase>);
+			this._MaintRequest = default(EntityRef<MaintRequest>);
+			this._User = default(EntityRef<User>);
+			this._ReqPhase1 = default(EntityRef<ReqPhase>);
+			this._User1 = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReqPhaseID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ReqPhaseID
+		{
+			get
+			{
+				return this._ReqPhaseID;
+			}
+			set
+			{
+				if ((this._ReqPhaseID != value))
+				{
+					if (this._ReqPhase1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnReqPhaseIDChanging(value);
+					this.SendPropertyChanging();
+					this._ReqPhaseID = value;
+					this.SendPropertyChanged("ReqPhaseID");
+					this.OnReqPhaseIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_Id", DbType="Int")]
+		public System.Nullable<int> User_Id
+		{
+			get
+			{
+				return this._User_Id;
+			}
+			set
+			{
+				if ((this._User_Id != value))
+				{
+					if ((this._User.HasLoadedOrAssignedValue || this._User1.HasLoadedOrAssignedValue))
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUser_IdChanging(value);
+					this.SendPropertyChanging();
+					this._User_Id = value;
+					this.SendPropertyChanged("User_Id");
+					this.OnUser_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phase_Id", DbType="Int")]
+		public System.Nullable<int> Phase_Id
+		{
+			get
+			{
+				return this._Phase_Id;
+			}
+			set
+			{
+				if ((this._Phase_Id != value))
+				{
+					if (this._Phase.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPhase_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Phase_Id = value;
+					this.SendPropertyChanged("Phase_Id");
+					this.OnPhase_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Req_Id", DbType="Int")]
+		public System.Nullable<int> Req_Id
+		{
+			get
+			{
+				return this._Req_Id;
+			}
+			set
+			{
+				if ((this._Req_Id != value))
+				{
+					if (this._MaintRequest.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnReq_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Req_Id = value;
+					this.SendPropertyChanged("Req_Id");
+					this.OnReq_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPassedToNextPhase", DbType="Bit")]
+		public System.Nullable<bool> IsPassedToNextPhase
+		{
+			get
+			{
+				return this._IsPassedToNextPhase;
+			}
+			set
+			{
+				if ((this._IsPassedToNextPhase != value))
+				{
+					this.OnIsPassedToNextPhaseChanging(value);
+					this.SendPropertyChanging();
+					this._IsPassedToNextPhase = value;
+					this.SendPropertyChanged("IsPassedToNextPhase");
+					this.OnIsPassedToNextPhaseChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ReqPhase_ReqPhase", Storage="_ReqPhase2", ThisKey="ReqPhaseID", OtherKey="ReqPhaseID", IsUnique=true, IsForeignKey=false)]
+		public ReqPhase ReqPhase2
+		{
+			get
+			{
+				return this._ReqPhase2.Entity;
+			}
+			set
+			{
+				ReqPhase previousValue = this._ReqPhase2.Entity;
+				if (((previousValue != value) 
+							|| (this._ReqPhase2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ReqPhase2.Entity = null;
+						previousValue.ReqPhase1 = null;
+					}
+					this._ReqPhase2.Entity = value;
+					if ((value != null))
+					{
+						value.ReqPhase1 = this;
+					}
+					this.SendPropertyChanged("ReqPhase2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phase_ReqPhase", Storage="_Phase", ThisKey="Phase_Id", OtherKey="phases_Id", IsForeignKey=true)]
+		public Phase Phase
+		{
+			get
+			{
+				return this._Phase.Entity;
+			}
+			set
+			{
+				Phase previousValue = this._Phase.Entity;
+				if (((previousValue != value) 
+							|| (this._Phase.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Phase.Entity = null;
+						previousValue.ReqPhases.Remove(this);
+					}
+					this._Phase.Entity = value;
+					if ((value != null))
+					{
+						value.ReqPhases.Add(this);
+						this._Phase_Id = value.phases_Id;
+					}
+					else
+					{
+						this._Phase_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Phase");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MaintRequest_ReqPhase", Storage="_MaintRequest", ThisKey="Req_Id", OtherKey="MaintReqId", IsForeignKey=true)]
+		public MaintRequest MaintRequest
+		{
+			get
+			{
+				return this._MaintRequest.Entity;
+			}
+			set
+			{
+				MaintRequest previousValue = this._MaintRequest.Entity;
+				if (((previousValue != value) 
+							|| (this._MaintRequest.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MaintRequest.Entity = null;
+						previousValue.ReqPhases.Remove(this);
+					}
+					this._MaintRequest.Entity = value;
+					if ((value != null))
+					{
+						value.ReqPhases.Add(this);
+						this._Req_Id = value.MaintReqId;
+					}
+					else
+					{
+						this._Req_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("MaintRequest");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_ReqPhase", Storage="_User", ThisKey="User_Id", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.ReqPhases.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.ReqPhases.Add(this);
+						this._User_Id = value.ID;
+					}
+					else
+					{
+						this._User_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ReqPhase_ReqPhase", Storage="_ReqPhase1", ThisKey="ReqPhaseID", OtherKey="ReqPhaseID", IsForeignKey=true)]
+		public ReqPhase ReqPhase1
+		{
+			get
+			{
+				return this._ReqPhase1.Entity;
+			}
+			set
+			{
+				ReqPhase previousValue = this._ReqPhase1.Entity;
+				if (((previousValue != value) 
+							|| (this._ReqPhase1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ReqPhase1.Entity = null;
+						previousValue.ReqPhase2 = null;
+					}
+					this._ReqPhase1.Entity = value;
+					if ((value != null))
+					{
+						value.ReqPhase2 = this;
+						this._ReqPhaseID = value.ReqPhaseID;
+					}
+					else
+					{
+						this._ReqPhaseID = default(int);
+					}
+					this.SendPropertyChanged("ReqPhase1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_ReqPhase1", Storage="_User1", ThisKey="User_Id", OtherKey="ID", IsForeignKey=true)]
+		public User User1
+		{
+			get
+			{
+				return this._User1.Entity;
+			}
+			set
+			{
+				User previousValue = this._User1.Entity;
+				if (((previousValue != value) 
+							|| (this._User1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User1.Entity = null;
+						previousValue.ReqPhases1.Remove(this);
+					}
+					this._User1.Entity = value;
+					if ((value != null))
+					{
+						value.ReqPhases1.Add(this);
+						this._User_Id = value.ID;
+					}
+					else
+					{
+						this._User_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
