@@ -8,6 +8,7 @@ namespace BusesWorkshop.VM
     public class 
         RequestVM : IEquatable<RequestVM>
     {
+        public int RequestCount { get; set; }
         public bool? IsPassedToNextPhase { get; set; }
         public string PhaseName { get; set; }
         public int LeftId { get; set; }
@@ -31,6 +32,8 @@ namespace BusesWorkshop.VM
         public string defdateTime { get; set; }
         public string None
             {get;set;}
+        public bool? FromForward { get; internal set; }
+
         public bool Equals(RequestVM req)
         {
             if (

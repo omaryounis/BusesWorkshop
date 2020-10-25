@@ -105,7 +105,10 @@ namespace BusesWorkshop.Master
                            join p in dc.ReqPhases
                            on m.MaintReqId equals p.Req_Id
                            where p.User_Id == Convert.ToInt16(Session["UserID"].ToString())
-                           && m.IsAccepted!=true || m.IsClosed!=true
+                           && (m.IsAccepted==false||
+                           m.IsAccepted == null ) &&
+                           (m.IsClosed == false ||
+                           m.IsClosed == null)
                            select m.MaintReqId).Distinct().Count();
             lblUserRequest.Text = recdata.ToString();
             ;

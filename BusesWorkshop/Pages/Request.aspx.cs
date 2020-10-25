@@ -68,7 +68,7 @@ namespace BusesWorkshop.Pages
                     MaintRequestTabPage.TabPages[0].Visible = true;
 
 
-                }           
+                }
                 var Duserpermis =
                    from up in dcWorkShop.User_Phases
                    join p in dcWorkShop.Phases
@@ -151,13 +151,13 @@ namespace BusesWorkshop.Pages
                         select new RequestVM
                         {
                             LeftId = m.MaintReqId,
-                            RightId = ((m.CompanyId == c.ID) ? c.ID : 0)
-                        ,
+                            RightId = ((m.CompanyId == c.ID) ? c.ID : 0),
+                            FromForward=rp.FromForward,
                             MaintReqId = m.MaintReqId,
                             RequestDate = m.RequestDate,
                             CompName = m.Company.CompName,
                             UserName = u.Name,
-                            UserId = u.ID,
+                            UserId = uP.User_ID,
                             phase_Step = p.phase_Step,
                             IsClosed = m.IsClosed,
                             IsAccepted = m.IsAccepted,
@@ -174,7 +174,7 @@ namespace BusesWorkshop.Pages
                             , None = null,
                             PhaseName=p.phases_Name
 
-                        }).ToList();
+                        }).Distinct().ToList();
                                     return d;
         }
         public void FillGridRequests()
@@ -188,12 +188,15 @@ namespace BusesWorkshop.Pages
 
             if (MaintRequestTabPage.ActiveTabIndex == 0 || MaintRequestTabPage.ActiveTabIndex == -1)
             {
-
+                //var t = GetRecData().GroupBy(x => x.MaintReqId).Where(c=>c.Count()==1).Select(x=>x.Key);
+                var UserID = Convert.ToInt16(Session["UserID"].ToString());
                 var d = GetRecData()
-                    .Where(p => (p.phase_Step == 0 && p.IsPassedToNextPhase!=true )
-                    /*&& p.Phase_Order == 1*/
-                    && p.UserId == Convert.ToInt16(Session["UserID"].ToString()) && (p.IsClosed == false || p.IsClosed == null) && p.IsAccepted == null).Distinct();//اعتماد)
-
+                    .Where(p => (p.phase_Step == 0
+                                && p.IsPassedToNextPhase==null)
+                    // && (p.FromForward == null || p.FromForward ==false)
+                    //&& t.Contains(p.MaintReqId)
+                    && p.UserId ==UserID && (p.IsClosed == false || p.IsClosed == null) && p.IsAccepted == null).Distinct();//اعتماد)
+                   
                 if (d != null)
                 {
                     if (d.ToList().Count > 0)
@@ -210,6 +213,10 @@ namespace BusesWorkshop.Pages
                     else
                     {
                         Session["dxgrd_Requests"] = "";
+
+                        dxgrd_Requests.DataSource = null;
+
+                        dxgrd_Requests.DataBind();
                     }
                 }
 
@@ -218,9 +225,8 @@ namespace BusesWorkshop.Pages
             {
 
                 var dd = GetRecData().Where(p => p.phase_Step == 1 
-                && p.IsPassedToNextPhase != true &&
-                /*p.Phase_Order == 2 &&*/
-                (p.IsAccepted == false || p.IsAccepted == null) && (p.IsClosed == false || p.IsClosed == null) && p.UserId == Convert.ToInt16(Session["UserID"].ToString())).Distinct();//.ToList().Distinct();//.AsQueryable();
+                && p.IsPassedToNextPhase != true 
+               && (p.IsAccepted == false || p.IsAccepted == null) && (p.IsClosed == false || p.IsClosed == null) && p.UserId == Convert.ToInt16(Session["UserID"].ToString())).Distinct();//.ToList().Distinct();//.AsQueryable();
                                                                                                                                                                                        // DataTable dt = dd.CopyToDataTable();
                 if (dd.Count() > 0)
                 {
@@ -245,7 +251,10 @@ namespace BusesWorkshop.Pages
             else if (MaintRequestTabPage.ActiveTabIndex == 2)
             {
 
-                var dd = GetRecData().Where(p => p.phase_Step == 2 && p.IsPassedToNextPhase != true && p.UserId == Convert.ToInt16(Session["UserID"].ToString())).Distinct();//.ToList().Distinct();//.AsQueryable();
+                var dd = GetRecData()
+                    .Where(p => p.phase_Step == 2 && p.IsPassedToNextPhase != true
+                        && (p.FromForward == null || p.FromForward == false)
+                    && p.UserId == Convert.ToInt16(Session["UserID"].ToString())).Distinct();//.ToList().Distinct();//.AsQueryable();
                                                                                                                                             // DataTable dt = dd.CopyToDataTable();
                 if (dd.Count() > 0)
                 {
@@ -269,58 +278,58 @@ namespace BusesWorkshop.Pages
         }
         public void fillGrdUsersRequest(int? req_Id)
         {
-            var userRecData =
-           from u in dcWorkShop.Users
-               //  join m in dcWorkShop.MaintRequests on u.ID equals m.RequestedEmpId into j1
-           join m in dcWorkShop.userRequests on u.ID equals m.UserId into j1
-           join uc in dcWorkShop.UserCompanies on u.ID equals uc.UserID
-           join uP in dcWorkShop.User_Phases on u.ID equals uP.User_ID
-           join P in dcWorkShop.Phases on uP.phases_Id equals P.phases_Id
-           where P.phase_Step == 1
 
-           from j2 in j1.DefaultIfEmpty()
-           group j2 by new { u.ID, u.Name } into g
-           // from user in dcWorkShop.Users
+            int? NextPhaseOrder = null;
+            int nextPhaseID;
+            var RequestPhase = dcWorkShop.ReqPhases.
+                               Where(RP => RP.Req_Id ==
+                               Convert.ToInt32(req_Id))
+                              .OrderByDescending(x => x.ReqPhaseID).FirstOrDefault();
+            if (RequestPhase != null)
+            {
+                NextPhaseOrder = RequestPhase.Phase.Phase_Order + 1;
+            }
+            var nextPhaseObj = dcWorkShop.Phases.Where(x => x.Phase_Order == NextPhaseOrder).FirstOrDefault();
+            if (nextPhaseObj != null)
+            {
+                var userRecData =
+                    from u in dcWorkShop.Users
+                    join up in dcWorkShop.User_Phases on u.ID equals up.User_ID
+                    join p in dcWorkShop.Phases on up.phases_Id equals p.phases_Id
+                    where p.phases_Id == nextPhaseObj.phases_Id
+                    && up.IsActive==1
+                    select new
+                    {
+                        user_Id = u.ID,
+                        name = u.Name
+                    };
+                dxUserRequests.DataSource = userRecData.ToList();
+                dxUserRequests.DataBind();
+            }
+            else
+            {
+                dxUserRequests.DataSource = null;
+                dxUserRequests.DataBind();
 
-           select new
-           {
-
-               user_Id = g.Key.ID,
-               name = g.Key.Name,
-               RecCount = g.Count(t => t.MaintRequestId != null && t.IsDeleted == null)
-
-           };
-
-
-
-            //  ViewState["userRecData"] = userRecData;
-
-            var query =
-    //in gj.DefaultIfEmpty()
-    from a in dcWorkShop.MaintRequests
-
-    join uc in dcWorkShop.UserCompanies on a.CompanyId equals uc.ID
-    join u in dcWorkShop.Users on uc.UserID
-
-     equals u.ID into US
-
-    from d in
-   US.DefaultIfEmpty()
-    group a by a.RequestedEmpId into g //into gj
-
-    //join user in dcWorkShop.Users on g.Key equals user.ID 
-    //where u.ID==req_Id
-    //from subpet in g.DefaultIfEmpty()
-
-    select new
-    {
+            }
 
 
-        RecCount = g.Count()
+            // var userRecData =
+            //from u in dcWorkShop.Users
+            //join m in dcWorkShop.userRequests on u.ID equals m.UserId into j1
+            //join uc in dcWorkShop.UserCompanies on u.ID equals uc.UserID
+            //join uP in dcWorkShop.User_Phases on u.ID equals uP.User_ID
+            //join P in dcWorkShop.Phases on uP.phases_Id equals P.phases_Id
+            //where P.Phase_Order ==NextPhaseOrder
+            //from j2 in j1.DefaultIfEmpty()
+            //group j2 by new { u.ID, u.Name } into g
+            //select new
+            //{
+            //    user_Id = g.Key.ID,
+            //    name = g.Key.Name,
+            //    RecCount = g.Count(t => t.MaintRequestId != null && t.IsDeleted == null)
+            // };
 
-    };
-            dxUserRequests.DataSource = userRecData.ToList();
-            dxUserRequests.DataBind();
         }
 
         #endregion
@@ -484,7 +493,7 @@ reqID))
 
             if (e.CommandArgs.CommandName == "Go")
             {
-                fillGrdUsersRequest(0);
+                fillGrdUsersRequest(int.Parse(advanceRequestId.ToString()));
 
                 RequestID.Value = advanceRequestId.ToString();
                 PayAccountPOPOUP.ShowOnPageLoad = true;
@@ -504,7 +513,8 @@ reqID))
             {
                 return;
             }
-            int ID = int.Parse(container.KeyValue.ToString());
+
+            int UserID = int.Parse(container.KeyValue.ToString());
             ////////update user request
             var OlduserRequest = dcWorkShop.userRequests.Where(ur => ur.MaintRequestId == Convert.ToInt32(RequestID.Value)).ToList();
             foreach (userRequest userReq in OlduserRequest)
@@ -514,58 +524,73 @@ reqID))
                 dcWorkShop.SubmitChanges();
             }
             ///////////insert userRequest
+            ///
+            ReqPhase RequestPhase = new ReqPhase();
             userRequest userRequest = new userRequest();
-            userRequest.StartDate = DateTime.Now.Date;
-
+            userRequest.StartDate = DateTime.Now.Date; 
             userRequest.MaintRequestId = Convert.ToInt32(RequestID.Value);//Convert.ToInt16(Session["redid"].ToString());
-            userRequest.UserId = ID;//Convert.ToInt32( ddl_AcccountName.SelectedItem.Value.ToString());
+            userRequest.UserId = UserID;//Convert.ToInt32( ddl_AcccountName.SelectedItem.Value.ToString());
             dcWorkShop.userRequests.InsertOnSubmit(userRequest);
             dcWorkShop.SubmitChanges();
             PayAccountPOPOUP.ShowOnPageLoad = false;
             #region "SaveReqPhase"
             int? nextPhase = 0;
             List<ReqPhase> currentApprovedPhases = dcWorkShop.ReqPhases.Where(c => c.Req_Id == Convert.ToInt32(RequestID.Value)).ToList();
-
             if (currentApprovedPhases.Count == 0)
             {
                 nextPhase = dcWorkShop.Phases.Where(x => x.Phase_Order == 1).FirstOrDefault().phases_Id;
             }
-
             else if (currentApprovedPhases.Count > 0)
             {
-                nextPhase = dcWorkShop.ReqPhases
-                    .Where(RP => RP.Req_Id == Convert.ToInt32(RequestID.Value))
-                        .Select(rp => rp.Phase_Id).OrderByDescending(x => x.Value).FirstOrDefault();
-
+                 RequestPhase = dcWorkShop.ReqPhases.Where(RP => RP.Req_Id == Convert.ToInt32(RequestID.Value)).OrderByDescending(x => x.ReqPhaseID).FirstOrDefault();
+                if (RequestPhase != null)
+                {
+                    var NextPhaseOrder = RequestPhase.Phase.Phase_Order + 1;
+                    var nextPhaseObj = dcWorkShop.Phases.Where(x => x.Phase_Order == NextPhaseOrder).FirstOrDefault();
+                    if (nextPhaseObj != null)
+                        nextPhase = nextPhaseObj.phases_Id;
+                    else
+                    {
+                        nextPhase = dcWorkShop.ReqPhases
+                            .Where(x => x.Req_Id == Convert.ToInt32(RequestID.Value))
+                            .OrderByDescending(x => x.ReqPhaseID).Select(rp => rp.Phase_Id).FirstOrDefault();
+                    }
+                }
             }
 
             ReqPhase ReqPhase = new ReqPhase();
             ReqPhase.User_Id = int.Parse(Session["UserID"].ToString());
             ReqPhase.StartDate = DateTime.Now;
-            // ReqPhase.EndDate = DateTime.Now;
-            ReqPhase.Phase_Id = nextPhase;//Convert.ToInt32( ddl_Phases.SelectedItem.Value.ToString());
+            ReqPhase.Phase_Id = RequestPhase.Phase_Id;
+            ReqPhase.Req_Id = Convert.ToInt32(RequestID.Value);
+            ReqPhase.FromForward = true;
             dcWorkShop.ReqPhases.InsertOnSubmit(ReqPhase);
+            //dcWorkShop.SubmitChanges();
+
+
+            ReqPhase ReqPhase1 = new ReqPhase();
+            ReqPhase1.User_Id = UserID;
+            ReqPhase1.StartDate = DateTime.Now;
+            ReqPhase1.Phase_Id = nextPhase;
+            ReqPhase1.Req_Id = Convert.ToInt32(RequestID.Value);
+            dcWorkShop.ReqPhases.InsertOnSubmit(ReqPhase1);
             dcWorkShop.SubmitChanges();
 
             #endregion
             /////////////update user phase
             ////////update
-            var OlduserPhase = dcWorkShop.User_Phases.Where(ur => ur.phases_Id == nextPhase).ToList();
-            foreach (User_Phase UserPhases in OlduserPhase)
-            {
-                UserPhases.IsActive = 1;
-                UserPhases.User_ID = ID;
-                dcWorkShop.SubmitChanges();
-            }
-            ///////////insert
-            User_Phase UserPhase = new User_Phase();
-            UserPhase.User_ID = int.Parse(Session["UserID"].ToString());
-            dcWorkShop.User_Phases.InsertOnSubmit(UserPhase);
-            dcWorkShop.SubmitChanges();
-
-
-
-
+            //var OlduserPhase = dcWorkShop.User_Phases.Where(ur => ur.phases_Id == nextPhase).ToList();
+            //foreach (User_Phase UserPhases in OlduserPhase)
+            //{
+            //    UserPhases.IsActive = 1;
+            //    UserPhases.User_ID = ID;
+            //    dcWorkShop.SubmitChanges();
+            //}
+            /////////////insert
+            //User_Phase UserPhase = new User_Phase();
+            //UserPhase.User_ID = int.Parse(Session["UserID"].ToString());
+            //dcWorkShop.User_Phases.InsertOnSubmit(UserPhase);
+            //dcWorkShop.SubmitChanges();
         }
 
 

@@ -20673,6 +20673,8 @@ namespace BusesWorkshop.DAL.Bus
 		
 		private System.Nullable<bool> _IsPassedToNextPhase;
 		
+		private System.Nullable<bool> _FromForward;
+		
 		private EntityRef<ReqPhase> _ReqPhase2;
 		
 		private EntityRef<Phase> _Phase;
@@ -20703,6 +20705,8 @@ namespace BusesWorkshop.DAL.Bus
     partial void OnReq_IdChanged();
     partial void OnIsPassedToNextPhaseChanging(System.Nullable<bool> value);
     partial void OnIsPassedToNextPhaseChanged();
+    partial void OnFromForwardChanging(System.Nullable<bool> value);
+    partial void OnFromForwardChanged();
     #endregion
 		
 		public ReqPhase()
@@ -20868,6 +20872,26 @@ namespace BusesWorkshop.DAL.Bus
 					this._IsPassedToNextPhase = value;
 					this.SendPropertyChanged("IsPassedToNextPhase");
 					this.OnIsPassedToNextPhaseChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FromForward", DbType="Bit")]
+		public System.Nullable<bool> FromForward
+		{
+			get
+			{
+				return this._FromForward;
+			}
+			set
+			{
+				if ((this._FromForward != value))
+				{
+					this.OnFromForwardChanging(value);
+					this.SendPropertyChanging();
+					this._FromForward = value;
+					this.SendPropertyChanged("FromForward");
+					this.OnFromForwardChanged();
 				}
 			}
 		}

@@ -108,7 +108,9 @@
                     <dx:ASPxButton ID="btn_Forward" runat="server" Text=" رفع الطلب " CommandName="Forward">
                     </dx:ASPxButton>
 
-                    <dx:ASPxButton ID="btn_Aprove" runat="server" Text="تحويل" CommandName="Go" Width="25px">
+                    <dx:ASPxButton ID="btn_Aprove" runat="server" Text="تحويل" CommandName="Go" Width="25px"
+                        
+                        >
                     </dx:ASPxButton>
                     <dx:ASPxButton ID="btn_Details" runat="server" Text="تفاصيل" CommandName="Details" Width="25px">
                     </dx:ASPxButton>
@@ -144,7 +146,7 @@
                     <Columns>
                         <dx:GridViewDataColumn FieldName="user_Id" VisibleIndex="0" Visible="false" />
                         <dx:GridViewDataColumn FieldName="name" VisibleIndex="1" />
-                        <dx:GridViewDataColumn FieldName="RecCount" VisibleIndex="2" />
+                        <%--<dx:GridViewDataColumn FieldName="RecCount" VisibleIndex="2" />--%>
                         <dx:GridViewDataTextColumn FieldName="None" VisibleIndex="3" Width="10%" Caption="#" HeaderStyle-CssClass="align-center">
                             <DataItemTemplate>
                                 <dx:ASPxButton ID="btn_Foward" runat="server" Text="تحويل" OnClick="btnForward_Click" Width="25px">
