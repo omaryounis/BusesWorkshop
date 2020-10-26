@@ -78,7 +78,10 @@ namespace BusesWorkshop.DAL
             DeviceWithIPAddress=51,
             NetworkDevicesInformation=52,
             MaintRequestTechnical = 53,
-            Request = 54
+            Request = 54,
+            PhasesSetting=55,
+            UserPhase=56,
+            Rec = 57
         }
         ;
 

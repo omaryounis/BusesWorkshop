@@ -249,7 +249,7 @@ namespace BusesWorkshop.Pages
         {
             try
             {
-                DataTable dt = Common.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.ServicesSettings.GetHashCode());
+                DataTable dt = Common.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.PhasesSetting.GetHashCode());
                 if (dt.Rows.Count > 0)
                 {
                     if (dt.Rows[0]["D"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["D"].ToString()))
