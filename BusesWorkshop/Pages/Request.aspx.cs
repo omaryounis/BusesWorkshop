@@ -596,16 +596,29 @@ reqID))
 
         protected void dxUserRequests_HtmlDataCellPrepared(object sender, ASPxGridViewTableDataCellEventArgs e)
         {
-            var userReq = dcWorkShop.userRequests.Where(x => x.IsDeleted == null).ToList();
+            var userReq = dcWorkShop.userRequests.Where(x => x.IsDeleted == null && x.UserId != int.Parse(Session["UserID"].ToString())).ToList();
             var grid = (ASPxGridView)sender;
             ASPxButton btnForward = new ASPxButton();
+            if (Convert.ToInt32(e.KeyValue.ToString())== int.Parse(Session["UserID"].ToString()))
+            {
+                btnForward = (ASPxButton)grid.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "btn_Foward");
+                btnForward.Visible = false;
+            }
+            else
+            {
+                btnForward = (ASPxButton)grid.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "btn_Foward");
+                btnForward.Visible = true;
+            }
+
+
             foreach (var ur in userReq)
             {
                 if (ur.UserId == Convert.ToInt32(e.KeyValue.ToString())
-           &&
-           (ur.MaintRequestId == null ? 0 : ur.MaintRequestId.Value) == Convert.ToInt32(RequestID.Value.ToString()))
+                       &&
+                       (ur.MaintRequestId == null ? 0 : ur.MaintRequestId.Value) == Convert.ToInt32(RequestID.Value.ToString())
+                   )
 
-                    if (e.DataColumn.FieldName == "None")
+                    if (e.DataColumn.FieldName == "name")
                     {
                         btnForward = (ASPxButton)grid.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "btn_Foward");
 
