@@ -162,6 +162,7 @@
                                    <li><a href="../Pages/DeviceWithIPAddress.aspx">ربط العنوان بالمنقول</a> </li>
                                    <li><a href="../Pages/MaintRequestTechnical.aspx" >الدعم الفني</a></li>
                 
+                                        <li><a href="../Pages/Request.aspx">الطلبات</a></li>
                                       </ul> 
                                        
                                      </li>
@@ -243,7 +244,6 @@
                                  <li><a href="../Pages/Groups.aspx">المجموعات</a></li>
                                  <li><a href="../Pages/GroupPermission.aspx">صلاحيات المجموعة</a></li>
                                  <li><a href="../Pages/UserGroup.aspx">مجموعات المستخدمين</a></li>
-                                  <li><a href="../Pages/Request.aspx">الطلبات</a></li>
                                    </ul>
                             </li>                            
                            
