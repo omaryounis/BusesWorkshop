@@ -77,7 +77,8 @@ namespace BusesWorkshop.DAL
             SearchFollowCars = 50,
             DeviceWithIPAddress=51,
             NetworkDevicesInformation=52,
-            MaintRequestTechnical = 53
+            MaintRequestTechnical = 53,
+            Request = 54
         }
         ;
 

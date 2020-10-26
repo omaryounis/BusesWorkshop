@@ -97,7 +97,7 @@ namespace BusesWorkshop.Pages
                 }
 
 
-                DataTable dt = Users.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.UserGroup.GetHashCode());
+                DataTable dt = Users.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.Request.GetHashCode());
                 if (dt.Rows.Count > 0)
                 {
                     if (dt.Rows[0]["D"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["D"].ToString()))
