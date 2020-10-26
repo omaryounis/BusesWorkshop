@@ -98,7 +98,16 @@ namespace BusesWorkshop.Pages
        
         private void FillCompanies()
         {
-            ddl_companyId.DataSource = dcWorkShop.Companies.ToList();
+            var userID = int.Parse(Session["UserID"].ToString());
+            ddl_companyId.DataSource =(from c  in dcWorkShop.Companies
+                                      join uc in dcWorkShop.UserCompanies
+                                      on c.ID equals uc.CompID
+                                      where uc.UserID == userID
+                                      select new
+                                      {
+                                          c.CompName,
+                                          c.ID
+                                      }).Distinct();
             ddl_companyId.TextField = "CompName";
             ddl_companyId.ValueField = "ID";
             ddl_companyId.DataBind();
