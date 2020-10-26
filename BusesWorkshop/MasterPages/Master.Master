@@ -175,11 +175,11 @@
                                               
                                    <li ><a href="../Pages/PhasesSetting.aspx">تهيئه المراحل</a></li>
                                    <li><a href="../Pages/UserPhase.aspx">اسناد مراحل للمستخدمين</a></li>
-                                        <li><a href="../Pages/Request.aspx">الطلبات</a></li>
+                                       
                                       </ul> 
                                        
                                      </li>
-                                   
+                                    <li><a href="../Pages/Request.aspx">الطلبات</a></li>
                                </ul>
                                </li>
 
