@@ -81,7 +81,8 @@ namespace BusesWorkshop.DAL
             Request = 54,
             PhasesSetting=55,
             UserPhase=56,
-            Rec = 57
+            Rec = 57,
+            rpt_InsuranceAlarm=58, 
         }
         ;
 

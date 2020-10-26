@@ -36,7 +36,7 @@ namespace BusesWorkshop.Reports
         {
             try
             {
-                DataTable dt = Common.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.PeriodicalMaitenencePlan.GetHashCode());
+                DataTable dt = Common.GetUserPermission(dc, int.Parse(Session["UserID"].ToString()), Common.PagesEnum.rpt_MaintRequests.GetHashCode());
                 if (dt.Rows.Count > 0)
                 {
                     if (dt.Rows[0]["D"].ToString() != string.Empty && !bool.Parse(dt.Rows[0]["D"].ToString()))
