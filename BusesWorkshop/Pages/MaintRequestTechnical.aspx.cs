@@ -206,7 +206,7 @@ namespace BusesWorkshop.Pages
         {
             
             permissions(dcWorkShop);
-            Page.Title = "طلب صيانة مبانى";
+            Page.Title = "طلب الدعم الفني";
             if (!IsPostBack)
             {
                
