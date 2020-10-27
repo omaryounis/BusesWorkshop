@@ -1405,6 +1405,20 @@ namespace BusesWorkshop.DAL.Bus
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), vehcleId, companyId, fueL, motorNo, bodyNo, cC, counterReadingStartSart, counterReadingStartEnd, averageFuelConsumptionStart, averageFuelConsumptionEnd, color, cylenderNo, manufactureYearStart, manufactureYearEnd, manufacturingCountry, startOperationDateStart, startOperationDateEnd, endOperationDateStart, endOperationDateEnd, isActive, isInActive, userId);
 			return ((ISingleResult<VehclesSelectAllSecondResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Approve_Request_First_Step")]
+		public ISingleResult<sp_Approve_Request_First_StepResult> sp_Approve_Request_First_Step([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<sp_Approve_Request_First_StepResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Approve_Request_Second_Step")]
+		public ISingleResult<sp_Approve_Request_Second_StepResult> sp_Approve_Request_Second_Step([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<sp_Approve_Request_Second_StepResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Act.Alarms")]
@@ -26681,6 +26695,238 @@ namespace BusesWorkshop.DAL.Bus
 				if ((this._Color != value))
 				{
 					this._Color = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Approve_Request_First_StepResult
+	{
+		
+		private System.Nullable<int> _Req_Id;
+		
+		private string _CompName;
+		
+		private string _UserName;
+		
+		private string _requestTypes;
+		
+		private System.DateTime _RequestDate;
+		
+		private string _PhaseName;
+		
+		public sp_Approve_Request_First_StepResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Req_Id", DbType="Int")]
+		public System.Nullable<int> Req_Id
+		{
+			get
+			{
+				return this._Req_Id;
+			}
+			set
+			{
+				if ((this._Req_Id != value))
+				{
+					this._Req_Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompName", DbType="NVarChar(150)")]
+		public string CompName
+		{
+			get
+			{
+				return this._CompName;
+			}
+			set
+			{
+				if ((this._CompName != value))
+				{
+					this._CompName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_requestTypes", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string requestTypes
+		{
+			get
+			{
+				return this._requestTypes;
+			}
+			set
+			{
+				if ((this._requestTypes != value))
+				{
+					this._requestTypes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestDate", DbType="DateTime NOT NULL")]
+		public System.DateTime RequestDate
+		{
+			get
+			{
+				return this._RequestDate;
+			}
+			set
+			{
+				if ((this._RequestDate != value))
+				{
+					this._RequestDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhaseName", DbType="NVarChar(50)")]
+		public string PhaseName
+		{
+			get
+			{
+				return this._PhaseName;
+			}
+			set
+			{
+				if ((this._PhaseName != value))
+				{
+					this._PhaseName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Approve_Request_Second_StepResult
+	{
+		
+		private System.Nullable<int> _Req_Id;
+		
+		private string _CompName;
+		
+		private string _UserName;
+		
+		private string _requestTypes;
+		
+		private System.DateTime _RequestDate;
+		
+		private string _PhaseName;
+		
+		public sp_Approve_Request_Second_StepResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Req_Id", DbType="Int")]
+		public System.Nullable<int> Req_Id
+		{
+			get
+			{
+				return this._Req_Id;
+			}
+			set
+			{
+				if ((this._Req_Id != value))
+				{
+					this._Req_Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompName", DbType="NVarChar(150)")]
+		public string CompName
+		{
+			get
+			{
+				return this._CompName;
+			}
+			set
+			{
+				if ((this._CompName != value))
+				{
+					this._CompName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_requestTypes", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string requestTypes
+		{
+			get
+			{
+				return this._requestTypes;
+			}
+			set
+			{
+				if ((this._requestTypes != value))
+				{
+					this._requestTypes = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestDate", DbType="DateTime NOT NULL")]
+		public System.DateTime RequestDate
+		{
+			get
+			{
+				return this._RequestDate;
+			}
+			set
+			{
+				if ((this._RequestDate != value))
+				{
+					this._RequestDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhaseName", DbType="NVarChar(50)")]
+		public string PhaseName
+		{
+			get
+			{
+				return this._PhaseName;
+			}
+			set
+			{
+				if ((this._PhaseName != value))
+				{
+					this._PhaseName = value;
 				}
 			}
 		}
