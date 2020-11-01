@@ -153,12 +153,19 @@ namespace BusesWorkshop.Pages
                                 .Where(x => x.HDID == HDID);
                 //////////////////////////////////////////////////////////
                 foreach (var item in DeviceInfoVMS)
-                {
+                {   
                     var StaticIP = int.Parse(ddl_StaticIP.SelectedItem.Value.ToString());
                     var OldDataComparing = oldData.Where(x => x.IpAddress == item.IpAddress && x.HDID == StaticIP).FirstOrDefault();
                     if (OldDataComparing != null)
                     {
-                        OldDataComparing.IsActive = true;
+                        if (item.IsActive == true)
+                        {
+                            OldDataComparing.IsActive = true;
+                        }
+                        else
+                        {
+                            OldDataComparing.IsActive = false;
+                        }
                     }
                     else
                     {
@@ -169,7 +176,7 @@ namespace BusesWorkshop.Pages
                         obj.HDID = int.Parse(ddl_StaticIP.SelectedItem.Value.ToString());
                         obj.InsertDate = DateTime.Now;
                         obj.IsDeleted = false;
-                        obj.IsActive = true;
+                        obj.IsActive = item.IsActive;
                         obj.UserID = int.Parse(Session["UserID"].ToString());
                         dc.NetworkDevicesInformations.InsertOnSubmit(obj);
                     }
@@ -242,6 +249,7 @@ namespace BusesWorkshop.Pages
                              on p.NetworkDeviceInformationId equals i.ID
                              select new
                              {
+                                 i.IsActive,
                                  p.ID,
                                  p.CompanyId,
                                  p.BranchIdInAcc,
@@ -278,7 +286,7 @@ namespace BusesWorkshop.Pages
                          on asset.AST_ID equals astName.ID
                          select new DeviceInfoVM
                          {
-                            
+                             IsActive=l.IsActive,
                              CompName = l.CompName,
                              BranchAccName = a.LocationName,
                              SectionName = aa.LocationName,
