@@ -108,7 +108,9 @@ namespace BusesWorkshop.Master
                            && (m.IsAccepted==false||
                            m.IsAccepted == null ) &&
                            (m.IsClosed == false ||
-                           m.IsClosed == null)
+                           m.IsClosed == null
+                           &&(p.FromForward!=false)
+                           )
                            select m.MaintReqId).Distinct().Count();
             lblUserRequest.Text = recdata.ToString();
             ;

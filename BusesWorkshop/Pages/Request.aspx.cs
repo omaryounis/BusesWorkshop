@@ -491,9 +491,18 @@ reqID))
                             item.IsPassedToNextPhase = true;
                         }
                     }
-
+                    var ReqID = Convert.ToInt32(advanceRequestId.ToString());
                     ReqPhase ReqPhase = new ReqPhase();
-                    ReqPhase.Req_Id = Convert.ToInt32(advanceRequestId.ToString());
+                    var list = dcWorkShop.ReqPhases.Where(x => x.Req_Id == ReqID && x.FromForward == true).ToList();
+                    if (list.Count > 0)
+                    {
+                        foreach(var item in list)
+                        {
+                            item.FromForward = false;
+                        }
+                        ReqPhase.FromForward = false;
+                    }
+                    ReqPhase.Req_Id = ReqID;
                     ReqPhase.User_Id = int.Parse(Session["UserID"].ToString());
                     ReqPhase.StartDate = DateTime.Now;
                     ReqPhase.IsPassedToNextPhase = true;
@@ -517,12 +526,19 @@ reqID))
                 PCDetail.ShowOnPageLoad = true;
             }
 
-            if (e.CommandArgs.CommandName == "Go")
+          else if (e.CommandArgs.CommandName == "Go")
             {
                 fillGrdUsersRequest(int.Parse(advanceRequestId.ToString()));
 
                 RequestID.Value = advanceRequestId.ToString();
                 PayAccountPOPOUP.ShowOnPageLoad = true;
+            }
+           else if (e.CommandArgs.CommandName == "TakeDec")
+            {
+                //fillGrdUsersRequest(int.Parse(advanceRequestId.ToString()));
+                Session["ReqID"] = int.Parse(advanceRequestId.ToString());
+                Response.Redirect("TakeDec.aspx");
+
             }
             FillGridRequests();
         }
@@ -712,6 +728,9 @@ reqID))
             ASPxButton btn_Details = (ASPxButton)grid.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "btn_Details");
             ASPxButton btn_Aprove = (ASPxButton)grid.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "btn_Aprove");
 
+            ASPxButton btn_TakeDec = (ASPxButton)grid.FindRowCellTemplateControl(e.VisibleIndex, e.DataColumn, "btn_TakeDec");
+
+
             if (MaintRequestTabPage.ActiveTabIndex == 0)
 
             {
@@ -723,6 +742,7 @@ reqID))
                     btn_Close.Visible = true;
                     btn_Hold.Visible = true;
                     btn_Details.Visible = true;
+                    btn_TakeDec.Visible = false;
                 }
             }
             else if (MaintRequestTabPage.ActiveTabIndex == 1)
@@ -734,6 +754,7 @@ reqID))
                     btn_Close.Visible = false;
                     btn_Hold.Visible = false;
                     btn_Details.Visible = false;
+                    btn_TakeDec.Visible = false;
                 }
             }
             else if (MaintRequestTabPage.ActiveTabIndex ==2)
@@ -745,6 +766,7 @@ reqID))
                     btn_Close.Visible = true;
                     btn_Hold.Visible = false;
                     btn_Details.Visible = true;
+                    btn_TakeDec.Visible = true;
                 }
 
 

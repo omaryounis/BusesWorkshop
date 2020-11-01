@@ -108,11 +108,12 @@
                     <dx:ASPxButton ID="btn_Forward" runat="server" Text=" رفع الطلب " CommandName="Forward">
                     </dx:ASPxButton>
 
-                    <dx:ASPxButton ID="btn_Aprove" runat="server" Text="تحويل" CommandName="Go" Width="25px"
-                        
-                        >
+                    <dx:ASPxButton ID="btn_Aprove" runat="server" Text="تحويل" CommandName="Go" Width="25px">
                     </dx:ASPxButton>
                     <dx:ASPxButton ID="btn_Details" runat="server" Text="تفاصيل" CommandName="Details" Width="25px">
+                    </dx:ASPxButton>
+
+                    <dx:ASPxButton ID="btn_TakeDec" runat="server" Text="إجراء" CommandName="TakeDec" Width="25px">
                     </dx:ASPxButton>
 
                 </DataItemTemplate>
