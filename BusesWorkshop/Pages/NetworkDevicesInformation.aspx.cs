@@ -223,6 +223,7 @@ namespace BusesWorkshop.Pages
             #endregion
             lst = scan(ddl_StaticIP.Text);
             var HDID =int.Parse(ddl_StaticIP.SelectedItem.Value.ToString());
+        
             var list = dc.NetworkDevicesInformations.Where(x => x.HDID == HDID).ToList();
             foreach(var item in list)
             {
@@ -232,6 +233,7 @@ namespace BusesWorkshop.Pages
                     deviceInfoVM.DeviceName = item.DeviceName;
                     deviceInfoVM.MacAddress = item.MacAddress;
                     deviceInfoVM.IpAddress = item.IpAddress;
+                    deviceInfoVM.IsActive = false;
                     deviceInfoVM.NetworkDeviceInformationID = item.ID;
                     deviceInfoVM.Status = "OFF";
                     lst.Add(deviceInfoVM);
